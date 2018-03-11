@@ -15,16 +15,15 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     @IBOutlet weak var basketCountLabel: UILabel!
     var userIsInTheMiddleOfTyping = false
     private var brain = CalculatorBrain()
+    @IBOutlet weak var bluetoothButton: UIButton!
+    @IBOutlet weak var basketSumLabel: UILabel!
     
     var displayValue: Double {
         get {
-            let Formatter: NumberFormatter = NumberFormatter()
-            Formatter.locale = NSLocale(localeIdentifier: "EN") as Locale?
-            let final = Formatter.number(from: currentPriceLabel.text!)
-            return Double(truncating: final!)
+            return Double(truncating: currentPriceLabel.text!.ToEnLocal())
         }
         set {
-            currentPriceLabel.text = String(newValue).replacedEnglishDigitsWithArabic
+            currentPriceLabel.text = String(newValue.withCommas()).replacedEnglishDigitsWithArabic
         }
     }
     
@@ -41,10 +40,16 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     
     func onBTReturnScanResults(_ devices: [Any]!) {
         BBDeviceController.shared().connectBT(devices[0] as! NSObject);
+        BBDeviceController.shared().stopBTScan()
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
+        bluetoothButton.isSelected = true
+    }
+    
+    func onBTDisconnected() {
+        bluetoothButton.isSelected = false
     }
     
     func onError(_ errorType: BBDeviceErrorType, errorMessage: String!) {
@@ -100,7 +105,8 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = currentPriceLabel.text!
-            currentPriceLabel!.text = textCurrentlyInDisplay + digit
+            let sumStrings = textCurrentlyInDisplay + digit
+            currentPriceLabel!.text = String(Double(truncating: sumStrings.ToEnLocal()).withCommas()).replacedEnglishDigitsWithArabic
         } else {
             currentPriceLabel!.text = digit
             userIsInTheMiddleOfTyping = true
@@ -116,7 +122,10 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     
     @IBAction func addToListEvent(_ sender: Any) {
         if displayValue != 0 {
-            BasketData.sharedInstance.items.add(currentPriceLabel.text!)
+            BasketData.sharedInstance.items.add(displayValue)
+            let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
+            let sum = arr.reduce(0, +)
+            basketSumLabel.text = String(sum.withCommas()).replacedEnglishDigitsWithArabic
             basketCountLabel.text = String(BasketData.sharedInstance.items.count).replacedEnglishDigitsWithArabic
         }
     }
@@ -125,6 +134,8 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         
     }
     
+    @IBAction func ShowBLEList(_ sender: Any) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -146,5 +157,19 @@ public extension String {
                    "9": "۹"]
         map.forEach { str = str.replacingOccurrences(of: $0, with: $1) }
         return str
+    }
+    
+    func ToEnLocal() -> NSNumber {
+        let Formatter: NumberFormatter = NumberFormatter()
+        Formatter.numberStyle = .decimal
+        Formatter.locale = NSLocale(localeIdentifier: "EN") as Locale?
+        return Formatter.number(from: self.replacingOccurrences(of: ",", with: ""))!
+    }
+}
+extension Double {
+    func withCommas() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        return numberFormatter.string(from: NSNumber(value:self))!
     }
 }

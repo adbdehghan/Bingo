@@ -11,10 +11,9 @@ target 'Bingo' do
   pod 'NVActivityIndicatorView'
   pod 'ZAlertView'
   pod 'IQKeyboardManagerSwift'
-  pod 'Bluetonium'
   pod 'KVSpinnerView'
   pod 'paper-onboarding'
-  
+  pod 'TCPickerView'
 
   target 'BingoTests' do
     inherit! :search_paths

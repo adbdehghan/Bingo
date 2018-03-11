@@ -171,6 +171,10 @@
                                 </constraints>
                                 <color key="tintColor" red="0.32549019607843138" green="0.82352941176470584" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="Ble_Off"/>
+                                <state key="selected" image="bluetooth"/>
+                                <connections>
+                                    <action selector="ShowBLEList:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DnV-8r-sMW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fb-Gz-Vas">
                                 <rect key="frame" x="12" y="33" width="21" height="18"/>
@@ -557,6 +561,8 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="basketCountLabel" destination="4HQ-oO-OeO" id="HWF-rE-967"/>
+                        <outlet property="basketSumLabel" destination="Tev-N9-yrV" id="6tX-kY-hOF"/>
+                        <outlet property="bluetoothButton" destination="CKm-YE-meb" id="GCw-hB-X1S"/>
                         <outlet property="currentPriceLabel" destination="pWh-5J-mkh" id="ZA3-iP-4r2"/>
                         <outlet property="functionView" destination="xUl-IU-3Xm" id="d8U-Qa-5wk"/>
                     </connections>
@@ -701,6 +707,7 @@
         <image name="aghlam" width="20" height="20"/>
         <image name="backspace-arrow" width="24" height="19"/>
         <image name="balance" width="18" height="17"/>
+        <image name="bluetooth" width="10" height="18"/>
         <image name="close" width="16" height="16"/>
         <image name="kharid" width="17" height="16"/>
         <image name="menu" width="21" height="13"/>

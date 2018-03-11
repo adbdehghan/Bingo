@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (4.6.0)
-  - Bluetonium (2.1.0)
   - IQKeyboardManagerSwift (5.0.6)
   - KVSpinnerView (1.0.1)
   - NVActivityIndicatorView (4.1.0):
@@ -8,28 +7,29 @@ PODS:
   - NVActivityIndicatorView/Presenter (4.1.0)
   - paper-onboarding (3.0.1)
   - SwiftyJSON (4.0.0)
+  - TCPickerView (0.1.8)
   - ZAlertView (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
-  - Bluetonium
   - IQKeyboardManagerSwift
   - KVSpinnerView
   - NVActivityIndicatorView
   - paper-onboarding
   - SwiftyJSON
+  - TCPickerView
   - ZAlertView
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  Bluetonium: 45d465084e1a663b579e2c8d937aebf5551c2d67
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   KVSpinnerView: ce89cec80a5776ba4639c312770f01c8a091e80a
   NVActivityIndicatorView: dc4726052dc24e89fa8576d43acf9e96f61d49db
   paper-onboarding: 0aa1746d820fcf44371d41ee521aa3d8e5679263
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TCPickerView: eb6f39d3cc10b72a66c9db5300bffde08d9077e8
   ZAlertView: 59fffdb4e37a01df461835566d5101052b8af953
 
-PODFILE CHECKSUM: 87b2410d931ac2f441f54ad836590e8899d3012a
+PODFILE CHECKSUM: 8a3bd27d00d3d845f8c0da8aeb87c5f78a1c516f
 
 COCOAPODS: 1.4.0
