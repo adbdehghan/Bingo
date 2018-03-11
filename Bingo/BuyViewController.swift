@@ -47,6 +47,10 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         BBDeviceController.shared().getDeviceInfo();
     }
     
+    func onError(_ errorType: BBDeviceErrorType, errorMessage: String!) {
+        
+    }
+    
     func CustomizeViews()
     {
         functionView.layer.cornerRadius = 3
