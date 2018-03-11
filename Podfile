@@ -13,6 +13,7 @@ target 'Bingo' do
   pod 'IQKeyboardManagerSwift'
   pod 'Bluetonium'
   pod 'KVSpinnerView'
+  pod 'paper-onboarding'
   
 
   target 'BingoTests' do
