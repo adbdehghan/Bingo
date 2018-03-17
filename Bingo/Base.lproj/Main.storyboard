@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14081.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -795,17 +796,58 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPw-5F-hDn">
                                 <rect key="frame" x="10" y="74" width="355" height="582"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PYn-au-IoK">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PYn-au-IoK">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="582"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pZ0-DT-aHa" customClass="BasketTableViewCell" customModule="Bingo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="355" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="pZ0-DT-aHa" customClass="BasketTableViewCell" customModule="Bingo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="355" height="65"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pZ0-DT-aHa" id="Zjk-Lr-MbF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="65"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnW-ta-NKP">
+                                                            <rect key="frame" x="29" y="17" width="279" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="5FI-kO-BdF"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="20"/>
+                                                            <color key="textColor" red="0.31372549019607843" green="0.39215686274509803" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYF-u1-eai">
+                                                            <rect key="frame" x="316" y="22" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="1MW-9Z-Nkq"/>
+                                                                <constraint firstAttribute="width" constant="20" id="8d5-Me-MZO"/>
+                                                            </constraints>
+                                                            <state key="normal" image="hazf"/>
+                                                        </button>
+                                                        <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PtC-rb-28Z">
+                                                            <rect key="frame" x="17" y="63" width="321" height="2"/>
+                                                            <color key="backgroundColor" red="0.31372549019607843" green="0.39215686274509803" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="2" id="roZ-d6-4yY"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="PtC-rb-28Z" secondAttribute="bottom" id="A0I-Tp-faj"/>
+                                                        <constraint firstItem="PtC-rb-28Z" firstAttribute="leading" secondItem="Zjk-Lr-MbF" secondAttribute="leading" constant="17" id="Fw3-aj-Kme"/>
+                                                        <constraint firstAttribute="trailing" secondItem="PtC-rb-28Z" secondAttribute="trailing" constant="17" id="IAZ-KC-2Zw"/>
+                                                        <constraint firstItem="OnW-ta-NKP" firstAttribute="leading" secondItem="Zjk-Lr-MbF" secondAttribute="leadingMargin" constant="14" id="Rf7-tr-eTq"/>
+                                                        <constraint firstItem="rYF-u1-eai" firstAttribute="centerY" secondItem="Zjk-Lr-MbF" secondAttribute="centerY" id="hlI-8A-aQo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rYF-u1-eai" secondAttribute="trailing" constant="19" id="iU1-K3-0Wt"/>
+                                                        <constraint firstItem="OnW-ta-NKP" firstAttribute="top" secondItem="Zjk-Lr-MbF" secondAttribute="topMargin" constant="6" id="jij-E8-GhN"/>
+                                                        <constraint firstItem="rYF-u1-eai" firstAttribute="leading" secondItem="OnW-ta-NKP" secondAttribute="trailing" constant="8" id="vCb-SU-LBw"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="OnW-ta-NKP" secondAttribute="bottom" constant="7" id="ym4-cE-mRT"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="priceLabel" destination="OnW-ta-NKP" id="xSn-wG-dJJ"/>
+                                                    <outlet property="removeButton" destination="rYF-u1-eai" id="o7o-Hh-k8k"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -838,6 +880,9 @@
                                     <constraint firstAttribute="height" constant="14" id="zR1-Wr-ECE"/>
                                 </constraints>
                                 <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="CloseWindowEvent:" destination="B6a-XO-p5o" eventType="touchUpInside" id="HkP-kI-H1q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -856,12 +901,13 @@
                         <viewLayoutGuide key="safeArea" id="EDs-vr-sON"/>
                     </view>
                     <connections>
+                        <outlet property="basketSumLabel" destination="c7o-q4-yX4" id="yYs-QJ-QRl"/>
                         <outlet property="basketTableView" destination="PYn-au-IoK" id="FJf-Qs-gAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ok-Bk-Rfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1050"/>
+            <point key="canvasLocation" x="749.60000000000002" y="1049.3253373313344"/>
         </scene>
         <!--پرداخت قبض-->
         <scene sceneID="ZyH-zs-nlB">
@@ -929,6 +975,7 @@
         <image name="balance" width="18" height="17"/>
         <image name="bluetooth" width="10" height="18"/>
         <image name="close" width="16" height="16"/>
+        <image name="hazf" width="22" height="22"/>
         <image name="kharid" width="17" height="16"/>
         <image name="menu" width="21" height="13"/>
         <image name="pardakht_ghabz" width="17" height="15"/>
