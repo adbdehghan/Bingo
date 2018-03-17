@@ -17,10 +17,16 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     private var brain = CalculatorBrain()
     @IBOutlet weak var bluetoothButton: UIButton!
     @IBOutlet weak var basketSumLabel: UILabel!
+    @IBOutlet weak var firstRowStack: UIStackView!
+    @IBOutlet weak var secondRowStack: UIStackView!
+    @IBOutlet weak var thirdRowStack: UIStackView!
+    @IBOutlet weak var fifthRowStack: UIStackView!
+    @IBOutlet weak var calculatorContainerView: UIView!
+    @IBOutlet weak var deviceConnectivityStatusLabel: UILabel!
     
     var displayValue: Double {
         get {
-            return Double(truncating: currentPriceLabel.text!.ToEnLocal())
+            return currentPriceLabel.text!.ToEnLocal()
         }
         set {
             currentPriceLabel.text = String(newValue.withCommas()).replacedEnglishDigitsWithArabic
@@ -36,8 +42,6 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         BBDeviceController.shared().delegate = self;
         BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
         CustomizeViews()
-        
-        
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {
@@ -48,10 +52,12 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
         bluetoothButton.isSelected = true
+        deviceConnectivityStatusLabel.text = "دستگاه متصل است"
     }
     
     func onBTDisconnected() {
         bluetoothButton.isSelected = false
+        deviceConnectivityStatusLabel.text = "دستگاه متصل نیست"
     }
     
     func onError(_ errorType: BBDeviceErrorType, errorMessage: String!) {
@@ -66,8 +72,29 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         functionView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
         functionView.layer.shadowRadius = 3
         
+        calculatorContainerView.layer.shadowColor = UIColor.darkGray.cgColor
+        calculatorContainerView.layer.shadowOpacity = 0.6
+        calculatorContainerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
+        calculatorContainerView.layer.shadowRadius = 3
+        
         basketCountLabel.adjustsFontSizeToFitWidth = true
         currentPriceLabel.adjustsFontSizeToFitWidth = true
+        basketSumLabel.adjustsFontSizeToFitWidth = true
+        
+        let stackArray:NSMutableArray = NSMutableArray()
+        stackArray.addObjects(from: [firstRowStack,secondRowStack,thirdRowStack,fifthRowStack])
+        
+        for stack in stackArray {
+            for item in (stack as! UIStackView).subviews
+            {
+                if item.subviews.first is UIButton
+                {
+                    let button = item.subviews.first as! UIButton
+                    button.layer.cornerRadius = button.frame.width/2
+                }
+            }
+        }
+        
     }
 
     @IBAction func DecimalEvent(_ sender: Any) {
@@ -100,6 +127,14 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         if !(currentPriceLabel.text?.isEmpty)!
         {
             currentPriceLabel.text?.removeLast()
+            if !(currentPriceLabel.text?.isEmpty)!
+            {
+                currentPriceLabel!.text = String(currentPriceLabel.text!.ToEnLocal().withCommas()).replacedEnglishDigitsWithArabic
+            }
+            else
+            {
+                currentPriceLabel!.text = "۰"
+            }
         }
     }
     
@@ -108,7 +143,7 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = currentPriceLabel.text!
             let sumStrings = textCurrentlyInDisplay + digit
-            currentPriceLabel!.text = String(Double(truncating: sumStrings.ToEnLocal()).withCommas()).replacedEnglishDigitsWithArabic
+            currentPriceLabel!.text =  String(sumStrings.ToEnLocal().withCommas()).replacedEnglishDigitsWithArabic
         } else {
             currentPriceLabel!.text = digit
             userIsInTheMiddleOfTyping = true
@@ -161,17 +196,21 @@ public extension String {
         return str
     }
     
-    func ToEnLocal() -> NSNumber {
+    func ToEnLocal() -> Double {
         let Formatter: NumberFormatter = NumberFormatter()
         Formatter.numberStyle = .decimal
+        Formatter.roundingMode = .down
+        Formatter.maximumFractionDigits = 100
         Formatter.locale = NSLocale(localeIdentifier: "EN") as Locale?
-        return Formatter.number(from: self.replacingOccurrences(of: ",", with: ""))!
+        return Formatter.number(from: self.replacingOccurrences(of: ",", with: ""))!.doubleValue
     }
 }
 extension Double {
     func withCommas() -> String {
         let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.roundingMode = .down
+        numberFormatter.maximumFractionDigits = 100
         return numberFormatter.string(from: NSNumber(value:self))!
     }
 }

@@ -21,6 +21,8 @@
 		3A3DCF1520559B11006D5E28 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3DCF1420559B11006D5E28 /* ExternalAccessory.framework */; };
 		3A3DCF1720559B18006D5E28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3DCF1620559B18006D5E28 /* MediaPlayer.framework */; };
 		3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3DCF182055A358006D5E28 /* IntroductionViewController.swift */; };
+		3AADBEC3205C94CF00BFDD50 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */; };
+		3AADBEC6205D47D600BFDD50 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADBEC5205D47D600BFDD50 /* BasketTableViewCell.swift */; };
 		3AC68A66205426F100553184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC68A65205426F100553184 /* AppDelegate.swift */; };
 		3AC68A6D205426F100553184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC68A6B205426F100553184 /* Main.storyboard */; };
 		3AC68A72205426F200553184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC68A70205426F200553184 /* LaunchScreen.storyboard */; };
@@ -71,6 +73,8 @@
 		3A3DCF1420559B11006D5E28 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		3A3DCF1620559B18006D5E28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3A3DCF182055A358006D5E28 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		3AADBEC5205D47D600BFDD50 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		3AC68A62205426F100553184 /* Bingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC68A65205426F100553184 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AC68A6C205426F100553184 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +176,14 @@
 			path = BBDeviceLibrary;
 			sourceTree = "<group>";
 		};
+		3AADBEC4205D47AE00BFDD50 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				3AADBEC5205D47D600BFDD50 /* BasketTableViewCell.swift */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		3AC68A59205426F100553184 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +214,7 @@
 				3A3DCF0B20559812006D5E28 /* Bingo_Bridging_Header_h.h */,
 				3AC68A65205426F100553184 /* AppDelegate.swift */,
 				3AC68AA7205472F500553184 /* BuyViewController.swift */,
+				3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */,
 				3A3DCF182055A358006D5E28 /* IntroductionViewController.swift */,
 				3AC68A6B205426F100553184 /* Main.storyboard */,
 				3AC68A70205426F200553184 /* LaunchScreen.storyboard */,
@@ -232,6 +245,7 @@
 		3AC68A9B20545D2B00553184 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3AADBEC4205D47AE00BFDD50 /* TableCell */,
 				3A3DCF0020559763006D5E28 /* BBDeviceLibrary */,
 				3A3DCEFD2055835D006D5E28 /* Helper */,
 				3A3DCEFA20557431006D5E28 /* Calculator Brain */,
@@ -598,11 +612,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AADBEC3205C94CF00BFDD50 /* BasketViewController.swift in Sources */,
 				3A3DCEFC20557431006D5E28 /* CalculatorBrain.swift in Sources */,
 				3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */,
 				3AC68A66205426F100553184 /* AppDelegate.swift in Sources */,
 				3AC68AA8205472F500553184 /* BuyViewController.swift in Sources */,
 				3A3DCEFF20558380006D5E28 /* BasketData.swift in Sources */,
+				3AADBEC6205D47D600BFDD50 /* BasketTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
