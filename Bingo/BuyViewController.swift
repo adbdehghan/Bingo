@@ -36,6 +36,8 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         BBDeviceController.shared().delegate = self;
         BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
         CustomizeViews()
+        
+        
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {
