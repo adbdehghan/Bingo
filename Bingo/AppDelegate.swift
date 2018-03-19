@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import DualSlideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    var window: UIWindow?    
+    var storyboard: UIStoryboard?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        let leftView = storyboard?.instantiateViewController(withIdentifier: "LeftMenuController")
+        let rightView = storyboard?.instantiateViewController(withIdentifier: "RightMenuController")
+        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
+        
+        let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
+        window!.rootViewController = controller
+        window!.makeKeyAndVisible()
+        
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
         
         UITabBarItem.appearance()

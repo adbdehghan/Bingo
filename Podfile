@@ -14,6 +14,7 @@ target 'Bingo' do
   pod 'KVSpinnerView'
   pod 'paper-onboarding'
   pod 'TCPickerView'
+  pod 'DualSlideMenu'
 
   target 'BingoTests' do
     inherit! :search_paths
