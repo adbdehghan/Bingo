@@ -72,10 +72,10 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         functionView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
         functionView.layer.shadowRadius = 3
         
-        calculatorContainerView.layer.shadowColor = UIColor.darkGray.cgColor
-        calculatorContainerView.layer.shadowOpacity = 0.6
-        calculatorContainerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
-        calculatorContainerView.layer.shadowRadius = 3
+//        calculatorContainerView.layer.shadowColor = UIColor.darkGray.cgColor
+//        calculatorContainerView.layer.shadowOpacity = 0.6
+//        calculatorContainerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
+//        calculatorContainerView.layer.shadowRadius = 3
         
         basketCountLabel.adjustsFontSizeToFitWidth = true
         currentPriceLabel.adjustsFontSizeToFitWidth = true
@@ -84,16 +84,16 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         let stackArray:NSMutableArray = NSMutableArray()
         stackArray.addObjects(from: [firstRowStack,secondRowStack,thirdRowStack,fifthRowStack])
         
-        for stack in stackArray {
-            for item in (stack as! UIStackView).subviews
-            {
-                if item.subviews.first is UIButton
-                {
-                    let button = item.subviews.first as! UIButton
-                    button.layer.cornerRadius = button.frame.width/2
-                }
-            }
-        }
+//        for stack in stackArray {
+//            for item in (stack as! UIStackView).subviews
+//            {
+//                if item.subviews.first is UIButton
+//                {
+//                    let button = item.subviews.first as! UIButton
+//                    button.layer.cornerRadius = button.frame.width/2
+//                }
+//            }
+//        }
         
     }
 

@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
         
         let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
+        controller.leftSideOffset = 275
+        controller.rightSideOffset = 275
         window!.rootViewController = controller
         window!.makeKeyAndVisible()
         
