@@ -26,8 +26,22 @@ class RightMenuViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
         cell.menuImage.image = UIImage(named:menuImages[indexPath.row] as! String)
+        cell.menuButton.tag = indexPath.row
+        cell.menuButton.tintColor = .lightGray
+        cell.menuButton.addTarget(self, action:#selector(self.MenuTapped), for: .touchUpInside)
         cell.backgroundColor = UIColor.clear
         return cell
+    }
+    
+    @objc func MenuTapped(sender:UIButton!)
+    {
+        let btnsendtag:UIButton = sender
+        switch btnsendtag.tag {
+        case 0:
+            break
+        default:
+            break
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

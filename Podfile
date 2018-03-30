@@ -15,7 +15,8 @@ target 'Bingo' do
   pod 'paper-onboarding'
   pod 'TCPickerView'
   pod 'DualSlideMenu'
-
+  pod 'EMAlertController'
+  
   target 'BingoTests' do
     inherit! :search_paths
     # Pods for testing

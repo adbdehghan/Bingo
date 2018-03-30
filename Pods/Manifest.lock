@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.6.0)
   - DualSlideMenu (1.7.3)
+  - EMAlertController (1.0.1)
   - IQKeyboardManagerSwift (5.0.6)
   - KVSpinnerView (1.0.1)
   - NVActivityIndicatorView (4.1.0):
@@ -14,6 +15,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - DualSlideMenu
+  - EMAlertController
   - IQKeyboardManagerSwift
   - KVSpinnerView
   - NVActivityIndicatorView
@@ -25,6 +27,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   DualSlideMenu: 8e1c5255a95c3dcfc1c6dc470105278765f52093
+  EMAlertController: db945aa666b737b86b0d22c9ee464e552fc63bb8
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   KVSpinnerView: ce89cec80a5776ba4639c312770f01c8a091e80a
   NVActivityIndicatorView: dc4726052dc24e89fa8576d43acf9e96f61d49db
@@ -33,6 +36,6 @@ SPEC CHECKSUMS:
   TCPickerView: eb6f39d3cc10b72a66c9db5300bffde08d9077e8
   ZAlertView: 59fffdb4e37a01df461835566d5101052b8af953
 
-PODFILE CHECKSUM: 444aea7591a84f078ff781f78b9a2a67d0acc358
+PODFILE CHECKSUM: 4739cf5129a32620af5dfe79ce12f5356dea5494
 
 COCOAPODS: 1.4.0

@@ -16,16 +16,39 @@ class LeftMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
-        menuTitles = ["","","","",""]
+        menuImages = ["start_connection","start_connection_printer","print_sample","print_sample_simply_print"]
+        menuTitles = ["start connection","start connection printer","print sample","print sample simply print"]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuTitles.count
+        return menuImages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
+        cell.menuImage.image = UIImage(named:menuImages[indexPath.row] as! String)
+        cell.menuButton.tag = indexPath.row
+        cell.menuButton.tintColor = .lightGray
+        cell.menuButton.addTarget(self, action:#selector(self.MenuTapped), for: .touchUpInside)
+        cell.titleLabel.text = menuTitles[indexPath.row] as! String
+        cell.titleLabel.numberOfLines = 0
+        cell.backgroundColor = UIColor.clear
+        return cell
+    }
+    
+    @objc func MenuTapped(sender:UIButton!)
+    {
+        let btnsendtag:UIButton = sender
+        switch btnsendtag.tag {
+        case 0:
+            break
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 
     /*

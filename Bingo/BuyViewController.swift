@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EMAlertController
 
 class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate {
 
@@ -51,13 +52,11 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
-        bluetoothButton.isSelected = true
-        deviceConnectivityStatusLabel.text = "دستگاه متصل است"
+        bluetoothButton.isSelected = true        
     }
     
     func onBTDisconnected() {
         bluetoothButton.isSelected = false
-        deviceConnectivityStatusLabel.text = "دستگاه متصل نیست"
     }
     
     func onError(_ errorType: BBDeviceErrorType, errorMessage: String!) {
@@ -71,11 +70,6 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         functionView.layer.shadowOpacity = 0.4
         functionView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
         functionView.layer.shadowRadius = 3
-        
-//        calculatorContainerView.layer.shadowColor = UIColor.darkGray.cgColor
-//        calculatorContainerView.layer.shadowOpacity = 0.6
-//        calculatorContainerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
-//        calculatorContainerView.layer.shadowRadius = 3
         
         basketCountLabel.adjustsFontSizeToFitWidth = true
         currentPriceLabel.adjustsFontSizeToFitWidth = true
@@ -172,7 +166,9 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     }
     
     @IBAction func ShowBLEList(_ sender: Any) {
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
