@@ -34,6 +34,7 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         }
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +63,61 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     func onError(_ errorType: BBDeviceErrorType, errorMessage: String!) {
         
     }
+    
+    @IBAction func SendEvent(_ sender: Any) {
+        let alert = EMAlertController(title: "ارسال به کارتخوان؟", message: "در صورت تایید درخواست شما به دستگاه خودپرداز ارسال می‌شود.")
+        
+        let cancel = EMAlertAction(title: "لغو", style: .cancel)
+        let confirm = EMAlertAction(title: "تایید", style: .normal) {
+            self.ConfirmSend()
+        }
+        
+        alert.addAction(action: cancel)
+        alert.addAction(action: confirm)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func cancel()
+    {
+        
+    }
+    
+    func ConfirmSend()
+    {
+        var inputData = Dictionary<AnyHashable, Any>()
+        let formatter:DateFormatter = DateFormatter()
+        formatter.dateFormat = "YYMMddHHmmss"
+        formatter.timeZone = NSTimeZone.local
+        let currentTime = formatter.string(from: Date())
+        inputData["terminalTime"] = currentTime
+        
+        let currencyCharacter = NSArray(objects: NSNumber(value: (BBDeviceCurrencyCharacter.U.hashValue)),NSNumber(value: BBDeviceCurrencyCharacter.S.hashValue),NSNumber(value: BBDeviceCurrencyCharacter.D.hashValue))
+        
+        inputData["currencyCharacters"] = currencyCharacter
+        inputData["currencyCode"] = "364"
+        inputData["transactionType"] = NSNumber(value: BBDeviceTransactionType.payment.hashValue)
+        
+        let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
+        let sum = arr.reduce(0, +)
+        inputData["amount"] = String(sum)
+        BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+    }
+    
+    
+    func onWaiting(forCard checkCardMode: BBDeviceCheckCardMode) {
+        
+        let alert = EMAlertController(title: "کارت", message: "منتظر کشیدن کارت")
+        let cancel = EMAlertAction(title: "لغو", style: .cancel){
+            BBDeviceController.shared().cancelCheckCard()
+        }
+        alert.addAction(action: cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func onReturn(_ result: BBDeviceCheckCardResult, cardData: [AnyHashable : Any]!) {
+        
+    }
+    
     
     func CustomizeViews()
     {
