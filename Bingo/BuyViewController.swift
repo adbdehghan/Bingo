@@ -24,6 +24,8 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     @IBOutlet weak var fifthRowStack: UIStackView!
     @IBOutlet weak var calculatorContainerView: UIView!
     @IBOutlet weak var deviceConnectivityStatusLabel: UILabel!
+    var waitForCartAlert:EMAlertController!
+    var waitForAmountAlert:EMAlertController!
     
     var displayValue: Double {
         get {
@@ -66,24 +68,36 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     
     @IBAction func SendEvent(_ sender: Any) {
         let alert = EMAlertController(title: "ارسال به کارتخوان؟", message: "در صورت تایید درخواست شما به دستگاه خودپرداز ارسال می‌شود.")
-        
+        alert.iconImage = UIImage(named: "pos")
         let cancel = EMAlertAction(title: "لغو", style: .cancel)
+        cancel.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+        cancel.titleColor =  UIColor.init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1)
         let confirm = EMAlertAction(title: "تایید", style: .normal) {
-            self.ConfirmSend()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                self.ConfirmSend()
+            }
+            
         }
-        
+        confirm.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+        confirm.titleColor = UIColor.init(red: 76/255, green: 182/255, blue: 172/255, alpha: 1)
         alert.addAction(action: cancel)
         alert.addAction(action: confirm)
         present(alert, animated: true, completion: nil)
     }
     
-    func cancel()
-    {
-        
-    }
-    
     func ConfirmSend()
     {
+        waitForAmountAlert = EMAlertController(title: "", message: "منتظر تایید مبلغ")
+        waitForAmountAlert.iconImage = UIImage(named: "tick")
+        let cancel = EMAlertAction(title: "لغو", style: .cancel){
+            BBDeviceController.shared().cancelSetAmount()
+        }
+        cancel.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+        cancel.titleColor =  UIColor.init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1)
+        waitForAmountAlert.addAction(action: cancel)
+        
+        present(waitForAmountAlert, animated: true, completion: nil)
+        
         var inputData = Dictionary<AnyHashable, Any>()
         let formatter:DateFormatter = DateFormatter()
         formatter.dateFormat = "YYMMddHHmmss"
@@ -100,24 +114,88 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
         let sum = arr.reduce(0, +)
         inputData["amount"] = String(sum)
-        BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+        inputData["cashbackAmount1"] = String(sum)
+        BBDeviceController.shared().setAmount(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+        
+
     }
     
+    func onReturnAmountConfirmResult(_ isConfirmed: Bool) {
+        if isConfirmed {
+            waitForAmountAlert.dismiss(animated: true, completion: nil)
+            var inputData = Dictionary<AnyHashable, Any>()
+            let formatter:DateFormatter = DateFormatter()
+            formatter.dateFormat = "YYMMddHHmmss"
+            formatter.timeZone = NSTimeZone.local
+            let currentTime = formatter.string(from: Date())
+            inputData["terminalTime"] = currentTime
+            
+            let currencyCharacter = NSArray(objects: NSNumber(value: (BBDeviceCurrencyCharacter.U.hashValue)),NSNumber(value: BBDeviceCurrencyCharacter.S.hashValue),NSNumber(value: BBDeviceCurrencyCharacter.D.hashValue))
+            
+            inputData["currencyCharacters"] = currencyCharacter
+            inputData["currencyCode"] = "364"
+            inputData["transactionType"] = NSNumber(value: BBDeviceTransactionType.payment.hashValue)
+            
+            let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
+            let sum = arr.reduce(0, +)
+            inputData["amount"] = String(sum)
+            inputData["cashbackAmount1"] = String(sum)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+
+            }
+
+        }
+        else
+        {
+            waitForAmountAlert.dismiss(animated: true, completion: nil)
+        }
+    }
     
     func onWaiting(forCard checkCardMode: BBDeviceCheckCardMode) {
         
-        let alert = EMAlertController(title: "کارت", message: "منتظر کشیدن کارت")
+        waitForCartAlert = EMAlertController(title: "", message: "منتظر کشیدن کارت")
+        waitForCartAlert.iconImage = UIImage(named: "pos")
         let cancel = EMAlertAction(title: "لغو", style: .cancel){
             BBDeviceController.shared().cancelCheckCard()
         }
-        alert.addAction(action: cancel)
-        present(alert, animated: true, completion: nil)
+        cancel.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+        cancel.titleColor =  UIColor.init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1)
+        waitForCartAlert.addAction(action: cancel)
+        
+        present(waitForCartAlert, animated: true, completion: nil)
     }
     
     func onReturn(_ result: BBDeviceCheckCardResult, cardData: [AnyHashable : Any]!) {
         
+        waitForCartAlert.dismiss(animated: true, completion: nil)
+        
+            var inputData = Dictionary<AnyHashable, Any>()
+            
+            inputData["pinEntryTimeout"] = "15"
+//            inputData["orderID"] = "364"
+            
+            BBDeviceController.shared().startPinEntry(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+
     }
     
+    func onRequestPinEntry(_ pinEntrySource: BBDevicePinEntrySource) {
+        
+        waitForCartAlert = EMAlertController(title: "", message: "منتظر دریافت رمز عبور")
+        waitForCartAlert.iconImage = UIImage(named: "pos")
+        let cancel = EMAlertAction(title: "لغو", style: .cancel){
+            BBDeviceController.shared().cancelCheckCard()
+        }
+        cancel.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+        cancel.titleColor =  UIColor.init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1)
+        waitForCartAlert.addAction(action: cancel)
+        
+        present(waitForCartAlert, animated: true, completion: nil)
+    }
+    
+    func onReturn(_ result: BBDevicePinEntryResult, data: [AnyHashable : Any]!) {
+        waitForCartAlert.dismiss(animated: true, completion: nil)
+    }
     
     func CustomizeViews()
     {

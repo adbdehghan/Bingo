@@ -63,7 +63,7 @@ open class EMAlertController: UIViewController {
   internal var titleLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = UIFont.boldSystemFont(ofSize: 17)
+    label.font = UIFont(name: "IRANSans-Bold", size: 14)
     label.textAlignment = .center
     label.textColor = .black
     label.numberOfLines = 2
@@ -74,7 +74,7 @@ open class EMAlertController: UIViewController {
   internal var messageTextView: UITextView = {
     let textview = UITextView()
     textview.translatesAutoresizingMaskIntoConstraints = false
-    textview.font = UIFont.systemFont(ofSize: 14)
+    textview.font = UIFont(name: "IRANSans-Medium", size: 12)
     textview.textAlignment = .center
     textview.isEditable = false
     textview.showsHorizontalScrollIndicator = false
