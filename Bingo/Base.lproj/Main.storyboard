@@ -1045,6 +1045,9 @@
                                 <state key="normal" title="فعال‌سازی">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="ActiveEvent:" destination="OWl-9p-MbB" eventType="touchUpInside" id="ftd-r2-ikL"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4E-oi-Hvh" customClass="TweeAttributedTextField" customModule="Bingo" customModuleProvider="target">
                                 <rect key="frame" x="63" y="388" width="249" height="32"/>
@@ -1108,6 +1111,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ODV-9d-P2M"/>
                     <connections>
+                        <outlet property="ActiveButton" destination="WkB-Wx-6ca" id="2Ov-Nh-FRG"/>
                         <segue destination="2iy-vU-o0r" kind="show" identifier="next" id="Yra-Nk-86k"/>
                     </connections>
                 </viewController>

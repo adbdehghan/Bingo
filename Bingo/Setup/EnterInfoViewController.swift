@@ -10,10 +10,12 @@ import UIKit
 
 class EnterInfoViewController: UIViewController {
 
+    @IBOutlet weak var ActiveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ActiveButton.layer.cornerRadius = 4
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +23,10 @@ class EnterInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func ActiveEvent(_ sender: Any) {
+        performSegue(withIdentifier: "next", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
