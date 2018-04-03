@@ -1,0 +1,6 @@
+framework module TIHexColor {
+  umbrella header "TIHexColor-umbrella.h"
+
+  export *
+  module * { export * }
+}

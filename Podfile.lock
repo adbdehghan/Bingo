@@ -7,7 +7,10 @@ PODS:
   - NVActivityIndicatorView (4.1.0):
     - NVActivityIndicatorView/Presenter (= 4.1.0)
   - NVActivityIndicatorView/Presenter (4.1.0)
+  - paper-onboarding (3.0.1)
   - SwiftyJSON (4.0.0)
+  - TIHexColor (1.0)
+  - UnderLineTextField (2.0.6)
   - ZAlertView (1.0.4)
 
 DEPENDENCIES:
@@ -17,7 +20,10 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KVSpinnerView
   - NVActivityIndicatorView
+  - paper-onboarding
   - SwiftyJSON
+  - TIHexColor
+  - UnderLineTextField (~> 2.0)
   - ZAlertView
 
 SPEC CHECKSUMS:
@@ -27,9 +33,12 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   KVSpinnerView: ce89cec80a5776ba4639c312770f01c8a091e80a
   NVActivityIndicatorView: dc4726052dc24e89fa8576d43acf9e96f61d49db
+  paper-onboarding: 0aa1746d820fcf44371d41ee521aa3d8e5679263
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TIHexColor: cd08f26b7b0ca5056991beac157c8c0004efade1
+  UnderLineTextField: afe9212c6e171580004576aab679b87a6484769c
   ZAlertView: 59fffdb4e37a01df461835566d5101052b8af953
 
-PODFILE CHECKSUM: 1d0a57af0ab677aea650c644c71828bd25a96b03
+PODFILE CHECKSUM: eff71bf696a85c98bee86dbb30c5d6dcd0acc595
 
 COCOAPODS: 1.4.0

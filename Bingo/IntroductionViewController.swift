@@ -7,13 +7,69 @@
 //
 
 import UIKit
+import paper_onboarding
+import TIHexColor
 
 class IntroductionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let onboarding = PaperOnboarding(itemsCount: 3)
+        onboarding.dataSource = self
+        onboarding.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(onboarding)
+        
+        // add constraints
+        for attribute: NSLayoutAttribute in [.left, .right, .top, .bottom] {
+            let constraint = NSLayoutConstraint(item: onboarding,
+                                                attribute: attribute,
+                                                relatedBy: .equal,
+                                                toItem: view,
+                                                attribute: attribute,
+                                                multiplier: 1,
+                                                constant: 0)
+            view.addConstraint(constraint)
+        }
+    }
+    
+    func onboardingItem(at index: Int) -> OnboardingItemInfo {
+
+        return [
+            OnboardingItemInfo(imageName:UIImage(named:"page_1")!,
+                               title: "",
+                               description: "پایانه خرید خود را همه‌جا همراه داشته باشید",
+                               iconName: UIImage(named:"page_1")!,
+                               color: UIColor.colorWithHexString(baseHexString: "25c6da", alpha: 1),
+                               titleColor: UIColor.white,
+                               descriptionColor: UIColor.white,
+                               titleFont: UIFont.boldSystemFont(ofSize: 10),
+                               descriptionFont:  UIFont(name: "IRANSans-Medium", size: 15)!),
+            
+            OnboardingItemInfo(imageName: UIImage(named:"page_2")!,
+                               title: "",
+                               description: "گزارش‌ همه تراکنش‌های خود را مشاهده کنید",
+                               iconName: UIImage(named:"page_2")!,
+                               color: UIColor.colorWithHexString(baseHexString: "4cb6ac", alpha: 1),
+                               titleColor: UIColor.white,
+                               descriptionColor: UIColor.white,
+                               titleFont:  UIFont(name: "IRANSans-Medium", size: 11)!,
+                               descriptionFont:  UIFont(name: "IRANSans-Medium", size: 15)!),
+            
+            OnboardingItemInfo(imageName: UIImage(named:"page_3")!,
+                               title: "",
+                               description: "به سادگی و با سرعت محصولات خود را بفروشید",
+                               iconName: UIImage(named:"page_3")!,
+                               color: UIColor.colorWithHexString(baseHexString:"81c683", alpha: 1),
+                               titleColor: UIColor.white,
+                               descriptionColor: UIColor.white,
+                               titleFont: UIFont(name: "IRANSans-Medium", size: 11)!,
+                               descriptionFont:  UIFont(name: "IRANSans-Medium", size: 15)!)
+            ][index]
+    }
+    
+    func onboardingItemsCount() -> Int {
+        return 3
     }
 
     override func didReceiveMemoryWarning() {
