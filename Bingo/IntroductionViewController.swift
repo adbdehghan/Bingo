@@ -10,13 +10,15 @@ import UIKit
 import paper_onboarding
 import TIHexColor
 
-class IntroductionViewController: UIViewController {
 
+class IntroductionViewController: UIViewController,PaperOnboardingDelegate,PaperOnboardingDataSource {
+    var onboarding:PaperOnboarding!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let onboarding = PaperOnboarding(itemsCount: 3)
+        onboarding = PaperOnboarding(itemsCount: 3)
         onboarding.dataSource = self
+        onboarding.delegate = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(onboarding)
         
@@ -31,10 +33,13 @@ class IntroductionViewController: UIViewController {
                                                 constant: 0)
             view.addConstraint(constraint)
         }
-    }
+    }    
     
-    func onboardingItem(at index: Int) -> OnboardingItemInfo {
-
+    func onboardingItemsCount() -> Int {
+        return 3
+    }
+ 
+    func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo {
         return [
             OnboardingItemInfo(imageName:UIImage(named:"page_1")!,
                                title: "",
@@ -59,7 +64,7 @@ class IntroductionViewController: UIViewController {
             OnboardingItemInfo(imageName: UIImage(named:"page_3")!,
                                title: "",
                                description: "به سادگی و با سرعت محصولات خود را بفروشید",
-                               iconName: UIImage(named:"page_3")!,
+                               iconName: UIImage(named:"felesh")!,
                                color: UIColor.colorWithHexString(baseHexString:"81c683", alpha: 1),
                                titleColor: UIColor.white,
                                descriptionColor: UIColor.white,
@@ -68,10 +73,14 @@ class IntroductionViewController: UIViewController {
             ][index]
     }
     
-    func onboardingItemsCount() -> Int {
-        return 3
+    func onboardingDidTransitonToIndex(_ index: Int) {
+        if index == 2 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.performSegue(withIdentifier: "prepare", sender: self)
+            }
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

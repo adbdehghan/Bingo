@@ -8,6 +8,7 @@
 
 import UIKit
 import DualSlideMenu
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,20 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        
-        let leftView = storyboard?.instantiateViewController(withIdentifier: "LeftMenuController")
-        let rightView = storyboard?.instantiateViewController(withIdentifier: "RightMenuController")
-        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
-        
-        let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
-        controller.leftSideOffset = 275
-        controller.rightSideOffset = 275
-        window!.rootViewController = controller
-        window!.makeKeyAndVisible()
+        IQKeyboardManager.sharedManager().enable = true
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        
+//        
+//        let leftView = storyboard?.instantiateViewController(withIdentifier: "LeftMenuController")
+//        let rightView = storyboard?.instantiateViewController(withIdentifier: "RightMenuController")
+//        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
+//        
+//        let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
+//        controller.leftSideOffset = 275
+//        controller.rightSideOffset = 275
+//        window!.rootViewController = controller
+//        window!.makeKeyAndVisible()
         
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
         

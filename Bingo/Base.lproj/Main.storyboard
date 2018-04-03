@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWF-Uf-L8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="-321"/>
+            <point key="canvasLocation" x="1511" y="-321"/>
         </scene>
         <!--شارژ مستقیم-->
         <scene sceneID="hNz-n2-bh7">
@@ -918,7 +918,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ok-Bk-Rfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="1049.3253373313344"/>
+            <point key="canvasLocation" x="745" y="1070"/>
         </scene>
         <!--پرداخت قبض-->
         <scene sceneID="ZyH-zs-nlB">
@@ -927,13 +927,6 @@
                     <view key="view" contentMode="scaleToFill" id="d2f-RA-NVK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaG-2e-ET2">
-                                <rect key="frame" x="67" y="315" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29803921568627451" green="0.71372549019607845" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7Y3-zT-uOm"/>
                     </view>
@@ -943,7 +936,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ml3-JZ-h9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="359"/>
+            <point key="canvasLocation" x="1510" y="358"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gSK-lA-jjn">
@@ -982,7 +975,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJa-PN-HQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1818" y="0.0"/>
+            <point key="canvasLocation" x="-1470" y="0.0"/>
         </scene>
         <!--Introduction View Controller-->
         <scene sceneID="pAK-0C-vNU">
@@ -994,10 +987,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kpj-Yc-K39"/>
                     </view>
+                    <connections>
+                        <segue destination="1PA-FQ-vG8" kind="show" identifier="prepare" id="7RL-A4-sqq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDM-OQ-f46" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-908" y="-7"/>
+            <point key="canvasLocation" x="-751" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lav-ba-X0j">
@@ -1014,12 +1010,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6PF-Zp-aGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1818" y="707"/>
+            <point key="canvasLocation" x="-751" y="706"/>
         </scene>
-        <!--View Controller-->
+        <!--Enter Info View Controller-->
         <scene sceneID="3DR-Km-A8J">
             <objects>
-                <viewController id="OWl-9p-MbB" sceneMemberID="viewController">
+                <viewController id="OWl-9p-MbB" customClass="EnterInfoViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sd2-cc-u4h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1039,31 +1035,6 @@
                                 <color key="textColor" red="0.31372549019607843" green="0.39215686274509803" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="کد ترمینال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4E-oi-Hvh" customClass="UnderLineTextField" customModule="UnderLineTextField">
-                                <rect key="frame" x="63" y="370" width="249" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="S1J-bm-rqK"/>
-                                </constraints>
-                                <color key="textColor" red="0.5607843137254902" green="0.63137254901960782" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="inactiveLineColor">
-                                        <color key="value" red="0.6588235294117647" green="0.74117647058823533" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="کد ترمینال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l2r-3a-cgg" customClass="UnderLineTextField" customModule="UnderLineTextField">
-                                <rect key="frame" x="63" y="436" width="249" height="71"/>
-                                <color key="textColor" red="0.56078431370000004" green="0.63137254899999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="inactiveLineColor">
-                                        <color key="value" red="0.6588235294" green="0.74117647060000003" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkB-Wx-6ca">
                                 <rect key="frame" x="63" y="556" width="249" height="44"/>
                                 <color key="backgroundColor" red="0.14509803921568626" green="0.77647058823529413" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1075,21 +1046,60 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4E-oi-Hvh" customClass="TweeAttributedTextField" customModule="Bingo" customModuleProvider="target">
+                                <rect key="frame" x="63" y="388" width="249" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="S1J-bm-rqK"/>
+                                </constraints>
+                                <color key="textColor" red="0.5607843137254902" green="0.63137254901960782" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.6588235294" green="0.74117647060000003" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" red="0.1450980392" green="0.77647058820000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" red="0.6588235294" green="0.74117647060000003" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="کد ترمینال"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="0.18086472602739725" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ktd-ON-Sf9" firstAttribute="trailing" secondItem="U4E-oi-Hvh" secondAttribute="trailing" constant="63" id="2TZ-21-VGb"/>
                             <constraint firstItem="RTb-sK-jrk" firstAttribute="leading" secondItem="Ktd-ON-Sf9" secondAttribute="leading" constant="16" id="3XO-2z-4MT"/>
                             <constraint firstItem="Ktd-ON-Sf9" firstAttribute="trailing" secondItem="WkB-Wx-6ca" secondAttribute="trailing" constant="63" id="4hd-ou-SB0"/>
                             <constraint firstItem="NIG-0B-071" firstAttribute="leading" secondItem="Ktd-ON-Sf9" secondAttribute="leading" constant="104" id="78L-Pg-XfS"/>
-                            <constraint firstItem="l2r-3a-cgg" firstAttribute="top" secondItem="RTb-sK-jrk" secondAttribute="bottom" constant="93" id="856-F6-ZM1"/>
                             <constraint firstItem="Ktd-ON-Sf9" firstAttribute="trailing" secondItem="NIG-0B-071" secondAttribute="trailing" constant="104" id="Chc-1X-g45"/>
-                            <constraint firstItem="Ktd-ON-Sf9" firstAttribute="trailing" secondItem="l2r-3a-cgg" secondAttribute="trailing" constant="63" id="Dgs-oX-BJC"/>
-                            <constraint firstItem="U4E-oi-Hvh" firstAttribute="top" secondItem="RTb-sK-jrk" secondAttribute="bottom" constant="27" id="Mir-gm-2mK"/>
+                            <constraint firstItem="U4E-oi-Hvh" firstAttribute="top" secondItem="RTb-sK-jrk" secondAttribute="bottom" constant="45" id="Mir-gm-2mK"/>
                             <constraint firstItem="U4E-oi-Hvh" firstAttribute="leading" secondItem="Ktd-ON-Sf9" secondAttribute="leading" constant="63" id="Nc1-ZC-VYk"/>
                             <constraint firstItem="Ktd-ON-Sf9" firstAttribute="bottom" secondItem="WkB-Wx-6ca" secondAttribute="bottom" constant="67" id="b3I-4A-SdW"/>
                             <constraint firstItem="WkB-Wx-6ca" firstAttribute="leading" secondItem="Ktd-ON-Sf9" secondAttribute="leading" constant="63" id="hBA-zT-OpU"/>
-                            <constraint firstItem="l2r-3a-cgg" firstAttribute="leading" secondItem="Ktd-ON-Sf9" secondAttribute="leading" constant="63" id="kGB-xK-HBx"/>
                             <constraint firstItem="RTb-sK-jrk" firstAttribute="top" secondItem="NIG-0B-071" secondAttribute="bottom" constant="55" id="lyu-db-u12"/>
                             <constraint firstItem="NIG-0B-071" firstAttribute="top" secondItem="Ktd-ON-Sf9" secondAttribute="top" constant="103" id="rfb-5q-SQO"/>
                             <constraint firstItem="Ktd-ON-Sf9" firstAttribute="trailing" secondItem="RTb-sK-jrk" secondAttribute="trailing" constant="16" id="rtV-km-1lk"/>
@@ -1103,7 +1113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcd-Ha-7pp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1087.2" y="706.59670164917543"/>
+            <point key="canvasLocation" x="-1650.4000000000001" y="1473.913043478261"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dVB-Sl-CsS">
@@ -1230,7 +1240,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9jc-ca-5GT" firstAttribute="trailing" secondItem="HlL-nA-dQa" secondAttribute="trailing" constant="63" id="6ly-T3-aJi"/>
                             <constraint firstItem="9jc-ca-5GT" firstAttribute="trailing" secondItem="iJF-kb-5r2" secondAttribute="trailing" constant="104" id="KCl-dp-HBI"/>
@@ -1259,7 +1269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KH-lb-OJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1087.2" y="1418.1409295352325"/>
+            <point key="canvasLocation" x="-929" y="1474"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1367,7 +1377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqg-Vy-BvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.200000000000003" y="706.59670164917543"/>
+            <point key="canvasLocation" x="-39" y="706"/>
         </scene>
         <!--Left Menu View Controller-->
         <scene sceneID="iaJ-qm-toV">
@@ -1472,7 +1482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zh-4U-5L5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.200000000000003" y="-666.11694152923542"/>
+            <point key="canvasLocation" x="-39" y="-690"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="79j-Ag-YyD">
@@ -1599,7 +1609,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dIj-BP-ELF" firstAttribute="trailing" secondItem="wAN-Q1-Myg" secondAttribute="trailing" constant="64" id="3CQ-Rn-TO4"/>
                             <constraint firstItem="3Hw-o5-kKK" firstAttribute="top" secondItem="xrW-Zu-tlZ" secondAttribute="bottom" constant="21" id="4jH-W2-lC1"/>
@@ -1628,7 +1638,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zo-Yq-DNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-358" y="1418"/>
+            <point key="canvasLocation" x="-204" y="1474"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NvC-wa-FZq">
@@ -1665,7 +1675,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="r2f-fY-E3D" firstAttribute="trailing" secondItem="ofd-6D-99u" secondAttribute="trailing" constant="63" id="BM3-uV-RVN"/>
                             <constraint firstItem="ZpA-JK-PdH" firstAttribute="leading" secondItem="r2f-fY-E3D" secondAttribute="leading" constant="16" id="Dt6-KS-6Sc"/>
@@ -1682,7 +1692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8s-sq-0cv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="2110"/>
+            <point key="canvasLocation" x="-204" y="2179"/>
         </scene>
     </scenes>
     <resources>
