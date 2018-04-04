@@ -9,13 +9,27 @@
 import UIKit
 
 class BillViewController: UIViewController {
-
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var barcodeButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        UICustomization()
+        
     }
-
+    
+    func UICustomization()
+    {
+        barcodeButton.layer.cornerRadius = 3
+        sendButton.layer.cornerRadius = 3
+        containerView.layer.cornerRadius = 3
+        containerView.layer.shadowColor = UIColor.darkGray.cgColor
+        containerView.layer.shadowOpacity = 0.4
+        containerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
+        containerView.layer.shadowRadius = 3
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
