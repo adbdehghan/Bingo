@@ -41,7 +41,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دریافت موجودی، با کارمزد ۱۲۰۶ ریال می‌باشد، تایید می‌کنید؟" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-iE-fWC">
-                                        <rect key="frame" x="41" y="282" width="294" height="60"/>
+                                        <rect key="frame" x="41" y="280" width="294" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="VKx-CG-8vw"/>
                                         </constraints>
@@ -54,7 +54,7 @@
                                 <constraints>
                                     <constraint firstItem="0Ps-Sv-b8r" firstAttribute="leading" secondItem="PV8-d2-Qrg" secondAttribute="leading" constant="127" id="QZJ-bm-4Ei"/>
                                     <constraint firstAttribute="trailing" secondItem="zfu-iE-fWC" secondAttribute="trailing" constant="40" id="XBX-AB-yJn"/>
-                                    <constraint firstItem="zfu-iE-fWC" firstAttribute="top" secondItem="0Ps-Sv-b8r" secondAttribute="bottom" constant="52" id="XJT-hl-1LN"/>
+                                    <constraint firstItem="zfu-iE-fWC" firstAttribute="top" secondItem="0Ps-Sv-b8r" secondAttribute="bottom" constant="50" id="XJT-hl-1LN"/>
                                     <constraint firstItem="0Ps-Sv-b8r" firstAttribute="top" secondItem="PV8-d2-Qrg" secondAttribute="top" constant="116" id="c4j-da-Yxb"/>
                                     <constraint firstAttribute="trailing" secondItem="0Ps-Sv-b8r" secondAttribute="trailing" constant="128" id="isE-I0-6jS"/>
                                     <constraint firstItem="zfu-iE-fWC" firstAttribute="leading" secondItem="PV8-d2-Qrg" secondAttribute="leading" constant="41" id="naK-Vp-PGx"/>
