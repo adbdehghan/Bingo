@@ -44,6 +44,9 @@
 		3AF5637B20742CA700695CF9 /* TweeAttributedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637620742CA700695CF9 /* TweeAttributedTextField.swift */; };
 		3AF5637C20742CA700695CF9 /* TweeBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637720742CA700695CF9 /* TweeBorderedTextField.swift */; };
 		3AF5637D20742CA700695CF9 /* TweePlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637820742CA700695CF9 /* TweePlaceholderTextField.swift */; };
+		64AA6F0D20744AB700857580 /* DirectChargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA6F0C20744AB700857580 /* DirectChargeViewController.swift */; };
+		64AA6F0F20744B0600857580 /* HoldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA6F0E20744B0600857580 /* HoldingViewController.swift */; };
+		64AA6F1120744B2500857580 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA6F1020744B2500857580 /* BillViewController.swift */; };
 		D4181EB5CF05576B030AB8B1 /* Pods_Bingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38CE07C330CF94166950B70 /* Pods_Bingo.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +121,9 @@
 		3AF5637820742CA700695CF9 /* TweePlaceholderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweePlaceholderTextField.swift; sourceTree = "<group>"; };
 		45C92566874DB63B29DD1240 /* Pods_BingoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F29584064AD9059EA96D39 /* Pods-Bingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bingo/Pods-Bingo.debug.xcconfig"; sourceTree = "<group>"; };
+		64AA6F0C20744AB700857580 /* DirectChargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectChargeViewController.swift; sourceTree = "<group>"; };
+		64AA6F0E20744B0600857580 /* HoldingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingViewController.swift; sourceTree = "<group>"; };
+		64AA6F1020744B2500857580 /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		AB5D30F9D82FA10BE1262E2D /* Pods-BingoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingoUITests/Pods-BingoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C566E63505277F1B06D3FAE7 /* Pods-BingoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingoTests/Pods-BingoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D00B0AF25BBA34DE55273385 /* Pods_BingoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,14 +236,11 @@
 			children = (
 				3AC69E3F2055B0150033C5EA /* Bingo.entitlements */,
 				3AC68A9B20545D2B00553184 /* Libraries */,
+				64AA6F0820744A6B00857580 /* Menu */,
 				3AF563702074275B00695CF9 /* Setup */,
+				64AA6F0720744A3F00857580 /* Main Views */,
 				3A3DCF0B20559812006D5E28 /* Bingo_Bridging_Header_h.h */,
 				3AC68A65205426F100553184 /* AppDelegate.swift */,
-				3A3DCF182055A358006D5E28 /* IntroductionViewController.swift */,
-				3AC68AA7205472F500553184 /* BuyViewController.swift */,
-				3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */,
-				3A17D9CF2066F449002F51A0 /* RightMenuViewController.swift */,
-				3A17D9D32066F7A9002F51A0 /* LeftMenuViewController.swift */,
 				3AC68A6B205426F100553184 /* Main.storyboard */,
 				3AC68A70205426F200553184 /* LaunchScreen.storyboard */,
 				3AC68A73205426F200553184 /* Info.plist */,
@@ -292,6 +295,7 @@
 		3AF563702074275B00695CF9 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				3A3DCF182055A358006D5E28 /* IntroductionViewController.swift */,
 				3AF563712074277E00695CF9 /* EnterInfoViewController.swift */,
 			);
 			path = Setup;
@@ -336,6 +340,27 @@
 				45C92566874DB63B29DD1240 /* Pods_BingoUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64AA6F0720744A3F00857580 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				3AC68AA7205472F500553184 /* BuyViewController.swift */,
+				3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */,
+				64AA6F0C20744AB700857580 /* DirectChargeViewController.swift */,
+				64AA6F0E20744B0600857580 /* HoldingViewController.swift */,
+				64AA6F1020744B2500857580 /* BillViewController.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		64AA6F0820744A6B00857580 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3A17D9CF2066F449002F51A0 /* RightMenuViewController.swift */,
+				3A17D9D32066F7A9002F51A0 /* LeftMenuViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -659,12 +684,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64AA6F0F20744B0600857580 /* HoldingViewController.swift in Sources */,
+				64AA6F0D20744AB700857580 /* DirectChargeViewController.swift in Sources */,
 				3AADBEC3205C94CF00BFDD50 /* BasketViewController.swift in Sources */,
 				3A3DCEFC20557431006D5E28 /* CalculatorBrain.swift in Sources */,
 				3A17D9D02066F449002F51A0 /* RightMenuViewController.swift in Sources */,
 				3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */,
 				3AF5637A20742CA700695CF9 /* TweeActiveTextField.swift in Sources */,
 				3AF563722074277E00695CF9 /* EnterInfoViewController.swift in Sources */,
+				64AA6F1120744B2500857580 /* BillViewController.swift in Sources */,
 				3AF5637B20742CA700695CF9 /* TweeAttributedTextField.swift in Sources */,
 				3A17D9D42066F7A9002F51A0 /* LeftMenuViewController.swift in Sources */,
 				3AF5637C20742CA700695CF9 /* TweeBorderedTextField.swift in Sources */,
