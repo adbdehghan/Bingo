@@ -10,11 +10,13 @@ import UIKit
 
 class EnterInfoViewController: UIViewController {
 
+    @IBOutlet weak var phoneNumberTextField: TweeAttributedTextField!
     @IBOutlet weak var ActiveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ActiveButton.layer.cornerRadius = 4
+        self.navigationItem.title = ""
         
     }
 

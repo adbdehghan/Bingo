@@ -44,6 +44,9 @@
 		3AF5637B20742CA700695CF9 /* TweeAttributedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637620742CA700695CF9 /* TweeAttributedTextField.swift */; };
 		3AF5637C20742CA700695CF9 /* TweeBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637720742CA700695CF9 /* TweeBorderedTextField.swift */; };
 		3AF5637D20742CA700695CF9 /* TweePlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637820742CA700695CF9 /* TweePlaceholderTextField.swift */; };
+		3AF5638F2076641700695CF9 /* CheckPersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5638E2076641700695CF9 /* CheckPersonalInfoViewController.swift */; };
+		3AF563912076644200695CF9 /* CheckBusinessInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF563902076644200695CF9 /* CheckBusinessInfoViewController.swift */; };
+		3AF563932076645300695CF9 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF563922076645300695CF9 /* DoneViewController.swift */; };
 		64AA6F0D20744AB700857580 /* DirectChargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA6F0C20744AB700857580 /* DirectChargeViewController.swift */; };
 		64AA6F0F20744B0600857580 /* HoldingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA6F0E20744B0600857580 /* HoldingViewController.swift */; };
 		64AA6F1120744B2500857580 /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA6F1020744B2500857580 /* BillViewController.swift */; };
@@ -119,6 +122,9 @@
 		3AF5637620742CA700695CF9 /* TweeAttributedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweeAttributedTextField.swift; sourceTree = "<group>"; };
 		3AF5637720742CA700695CF9 /* TweeBorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweeBorderedTextField.swift; sourceTree = "<group>"; };
 		3AF5637820742CA700695CF9 /* TweePlaceholderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweePlaceholderTextField.swift; sourceTree = "<group>"; };
+		3AF5638E2076641700695CF9 /* CheckPersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPersonalInfoViewController.swift; sourceTree = "<group>"; };
+		3AF563902076644200695CF9 /* CheckBusinessInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBusinessInfoViewController.swift; sourceTree = "<group>"; };
+		3AF563922076645300695CF9 /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
 		45C92566874DB63B29DD1240 /* Pods_BingoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F29584064AD9059EA96D39 /* Pods-Bingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bingo/Pods-Bingo.debug.xcconfig"; sourceTree = "<group>"; };
 		64AA6F0C20744AB700857580 /* DirectChargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectChargeViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +303,9 @@
 			children = (
 				3A3DCF182055A358006D5E28 /* IntroductionViewController.swift */,
 				3AF563712074277E00695CF9 /* EnterInfoViewController.swift */,
+				3AF5638E2076641700695CF9 /* CheckPersonalInfoViewController.swift */,
+				3AF563902076644200695CF9 /* CheckBusinessInfoViewController.swift */,
+				3AF563922076645300695CF9 /* DoneViewController.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -689,6 +698,7 @@
 				3AADBEC3205C94CF00BFDD50 /* BasketViewController.swift in Sources */,
 				3A3DCEFC20557431006D5E28 /* CalculatorBrain.swift in Sources */,
 				3A17D9D02066F449002F51A0 /* RightMenuViewController.swift in Sources */,
+				3AF563912076644200695CF9 /* CheckBusinessInfoViewController.swift in Sources */,
 				3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */,
 				3AF5637A20742CA700695CF9 /* TweeActiveTextField.swift in Sources */,
 				3AF563722074277E00695CF9 /* EnterInfoViewController.swift in Sources */,
@@ -697,6 +707,8 @@
 				3A17D9D42066F7A9002F51A0 /* LeftMenuViewController.swift in Sources */,
 				3AF5637C20742CA700695CF9 /* TweeBorderedTextField.swift in Sources */,
 				3AC68A66205426F100553184 /* AppDelegate.swift in Sources */,
+				3AF563932076645300695CF9 /* DoneViewController.swift in Sources */,
+				3AF5638F2076641700695CF9 /* CheckPersonalInfoViewController.swift in Sources */,
 				3AF5637D20742CA700695CF9 /* TweePlaceholderTextField.swift in Sources */,
 				3A17D9D22066F6D3002F51A0 /* MenuTableViewCell.swift in Sources */,
 				3AC68AA8205472F500553184 /* BuyViewController.swift in Sources */,
