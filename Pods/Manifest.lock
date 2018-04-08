@@ -10,6 +10,7 @@ PODS:
   - NVActivityIndicatorView/Presenter (4.1.0)
   - paper-onboarding (3.0.1)
   - SwiftyJSON (4.0.0)
+  - TCPickerView (0.1.8)
   - TIHexColor (1.0)
   - ZAlertView (1.0.4)
 
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - paper-onboarding
   - SwiftyJSON
+  - TCPickerView
   - TIHexColor
   - ZAlertView
 
@@ -36,9 +38,10 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: dc4726052dc24e89fa8576d43acf9e96f61d49db
   paper-onboarding: 0aa1746d820fcf44371d41ee521aa3d8e5679263
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TCPickerView: eb6f39d3cc10b72a66c9db5300bffde08d9077e8
   TIHexColor: cd08f26b7b0ca5056991beac157c8c0004efade1
   ZAlertView: 59fffdb4e37a01df461835566d5101052b8af953
 
-PODFILE CHECKSUM: d22f14ab316a37b53c193a1195564f53db4cc6c1
+PODFILE CHECKSUM: cbc8fd1fb82b7edad172abd8550d331e6f46d2da
 
 COCOAPODS: 1.4.0

@@ -8,8 +8,9 @@
 
 import UIKit
 import EMAlertController
+import TCPickerView
 
-class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,TCPickerViewDelegate {
 
     @IBOutlet weak var phoneNumberTextField: TweeAttributedTextField!
     @IBOutlet weak var bluetoothButton: UIButton!
@@ -21,19 +22,17 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
     var priceArray = ["۱۰.۰۰۰","۲۰.۰۰۰","۵۰.۰۰۰","۱۰۰.۰۰۰","۲۰۰.۰۰۰"]
     var priceArrayMap = ["10000","20000","50000","100000","200000"]
     var selectedPrice = ""
+        let picker = TCPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        BBDeviceController.shared().isDebugLogEnabled = true;
-        BBDeviceController.shared().delegate = self;
-        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
         
         chargePriceTableView.dataSource = self
         chargePriceTableView.delegate = self
         
         UICustomization()
     }
+    
     
     func onBTReturnScanResults(_ devices: [Any]!) {
         BBDeviceController.shared().connectBT(devices[0] as! NSObject);
@@ -43,6 +42,7 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
         bluetoothButton.isSelected = true
+        BleList.sharedInstance.isConnected = true
     }
     
     func onBTDisconnected() {
@@ -197,10 +197,6 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         waitForCartAlert.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func ShowBLEList(_ sender: Any) {
-        
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -266,6 +262,10 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         containerView.layer.shadowOpacity = 0.4
         containerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
         containerView.layer.shadowRadius = 3
+        if BleList.sharedInstance.isConnected
+        {
+            bluetoothButton.isSelected = true
+        }
     }
     
     @IBAction func phonenumberTextChanged(_ textField: UITextField) {
@@ -289,6 +289,30 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         
         let newLength = text.utf16.count + string.utf16.count - range.length
         return newLength <= 11 // Bool
+    }
+    
+    @IBAction func ShowBLEList(_ sender: Any) {
+        
+        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+        
+        picker.title = "دستگاه ها"
+        
+        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
+        picker.values = values
+        picker.delegate = self
+        picker.selection = .single
+        picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
+        picker.completion = { (selectedIndexes) in
+            for i in selectedIndexes {
+                print(values[i].title)
+            }
+        }
+        picker.show()
+    }
+    
+    func pickerView(_ pickerView: TCPickerView, didSelectRowAtIndex index: Int) {
+        
+        BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[index] as! NSObject);
     }
     
     override func didReceiveMemoryWarning() {

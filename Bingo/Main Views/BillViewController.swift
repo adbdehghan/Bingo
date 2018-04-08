@@ -9,8 +9,9 @@
 import UIKit
 import EMAlertController
 import BarcodeScanner
+import TCPickerView
 
-class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,BarcodeScannerCodeDelegate,BarcodeScannerDismissalDelegate,BarcodeScannerErrorDelegate {
+class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,BarcodeScannerCodeDelegate,BarcodeScannerDismissalDelegate,BarcodeScannerErrorDelegate,TCPickerViewDelegate {
 
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var barcodeButton: UIButton!
@@ -18,13 +19,11 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     @IBOutlet weak var bluetoothButton: UIButton!
     var waitForCartAlert:EMAlertController!
     var waitForAmountAlert:EMAlertController!
+    let picker = TCPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        BBDeviceController.shared().isDebugLogEnabled = true;
-        BBDeviceController.shared().delegate = self;
-        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+
         
         UICustomization()
         
@@ -38,6 +37,7 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
         bluetoothButton.isSelected = true
+        BleList.sharedInstance.isConnected = true
     }
     
     func onBTDisconnected() {
@@ -181,6 +181,26 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     
     @IBAction func ShowBLEList(_ sender: Any) {
         
+        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+        
+        picker.title = "دستگاه ها"
+        
+        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
+        picker.values = values
+        picker.delegate = self
+        picker.selection = .single
+        picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
+        picker.completion = { (selectedIndexes) in
+            for i in selectedIndexes {
+                print(values[i].title)
+            }
+        }
+        picker.show()
+    }
+    
+    func pickerView(_ pickerView: TCPickerView, didSelectRowAtIndex index: Int) {
+        
+        BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[index] as! NSObject);
     }
     
     @IBAction func ShowBarcodeReader(_ sender: Any) {
@@ -218,6 +238,10 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
         containerView.layer.shadowOpacity = 0.4
         containerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
         containerView.layer.shadowRadius = 3
+        if BleList.sharedInstance.isConnected
+        {
+            bluetoothButton.isSelected = true
+        }
         
     }
     override func didReceiveMemoryWarning() {

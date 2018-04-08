@@ -56,6 +56,7 @@ class TCPickerTableViewCell: UITableViewCell {
     
     fileprivate func initialize() {
         self.titleLabel = UILabel(frame: CGRect.zero)
+        self.titleLabel?.font = UIFont(name: "IRANSans", size: 14.0)
         self.checkmarkImageView = UIImageView(frame: CGRect.zero)
         self.checkmarkImageView?.contentMode = .scaleAspectFit
         self.setupUI()

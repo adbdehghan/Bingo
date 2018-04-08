@@ -8,8 +8,10 @@
 
 import UIKit
 import EMAlertController
+import TCPickerView
 
-class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate {
+class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,TCPickerViewDelegate {
+
 
     @IBOutlet weak var functionView: UIView!
     @IBOutlet weak var currentPriceLabel: UILabel!
@@ -26,6 +28,7 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     @IBOutlet weak var deviceConnectivityStatusLabel: UILabel!
     var waitForCartAlert:EMAlertController!
     var waitForAmountAlert:EMAlertController!
+    let picker = TCPickerView()
     
     var displayValue: Double {
         get {
@@ -45,16 +48,20 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
         BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+        
         CustomizeViews()
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {
+        BleList.sharedInstance.devices.addObjects(from: devices)
         BBDeviceController.shared().connectBT(devices[0] as! NSObject);
-        BBDeviceController.shared().stopBTScan()
+        
+        
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
+        BleList.sharedInstance.isConnected = true
         bluetoothButton.isSelected = true        
     }
     
@@ -212,16 +219,10 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         let stackArray:NSMutableArray = NSMutableArray()
         stackArray.addObjects(from: [firstRowStack,secondRowStack,thirdRowStack,fifthRowStack])
         
-//        for stack in stackArray {
-//            for item in (stack as! UIStackView).subviews
-//            {
-//                if item.subviews.first is UIButton
-//                {
-//                    let button = item.subviews.first as! UIButton
-//                    button.layer.cornerRadius = button.frame.width/2
-//                }
-//            }
-//        }
+        if BleList.sharedInstance.isConnected
+        {
+            bluetoothButton.isSelected = true
+        }
         
     }
 
@@ -301,7 +302,28 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     
     @IBAction func ShowBLEList(_ sender: Any) {
         
+        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+        
+        picker.title = "دستگاه ها"
+        
+        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
+        picker.values = values
+        picker.delegate = self
+        picker.selection = .single
+        picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
+        picker.completion = { (selectedIndexes) in
+            for i in selectedIndexes {
+                print(values[i].title)
+            }
+        }
+        picker.show()
     }
+    
+    func pickerView(_ pickerView: TCPickerView, didSelectRowAtIndex index: Int) {
+        
+        BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[index] as! NSObject);
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

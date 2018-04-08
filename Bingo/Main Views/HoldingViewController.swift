@@ -8,21 +8,20 @@
 
 import UIKit
 import EMAlertController
+import TCPickerView
 
-class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate {
+class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,TCPickerViewDelegate{
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var bluetoothButton: UIButton!
     var waitForCartAlert:EMAlertController!
     var waitForAmountAlert:EMAlertController!
+    let picker = TCPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UICustomization()
 
-        BBDeviceController.shared().isDebugLogEnabled = true;
-        BBDeviceController.shared().delegate = self;
-        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
     }
     func onBTReturnScanResults(_ devices: [Any]!) {
         BBDeviceController.shared().connectBT(devices[0] as! NSObject);
@@ -32,6 +31,7 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
         bluetoothButton.isSelected = true
+        BleList.sharedInstance.isConnected = true
     }
     
     func onBTDisconnected() {
@@ -170,6 +170,26 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     
     @IBAction func ShowBLEList(_ sender: Any) {
         
+        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+        
+        picker.title = "دستگاه ها"
+        
+        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
+        picker.values = values
+        picker.delegate = self
+        picker.selection = .single
+        picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
+        picker.completion = { (selectedIndexes) in
+            for i in selectedIndexes {
+                print(values[i].title)
+            }
+        }
+        picker.show()
+    }
+    
+    func pickerView(_ pickerView: TCPickerView, didSelectRowAtIndex index: Int) {
+        
+        BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[index] as! NSObject);
     }
     
     func UICustomization()
@@ -184,6 +204,10 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
         containerView.layer.shadowOpacity = 0.4
         containerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
         containerView.layer.shadowRadius = 3
+        if BleList.sharedInstance.isConnected
+        {
+            bluetoothButton.isSelected = true
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -231,8 +231,8 @@ open class TCPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
         self.containerView?.layer.cornerRadius = 15.0
         self.containerView?.clipsToBounds = true
         self.titleLabel?.text = "Select"
-        self.doneButton?.setTitle("Done", for: .normal)
-        self.closeButton?.setTitle("Close", for: .normal)
+        self.doneButton?.setTitle("انتخاب", for: .normal)
+        self.closeButton?.setTitle("بستن", for: .normal)
         
         self.doneButton?.titleLabel?.textAlignment = .center
         self.closeButton?.titleLabel?.textAlignment = .center
@@ -242,8 +242,8 @@ open class TCPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
         self.closeButtonColor = grayColor
         self.mainColor = UIColor(red: 75/255, green: 178/255,
             blue: 218/255, alpha: 1)
-        self.titleFont = UIFont(name: "Helvetica-Bold", size: 15.0)
-        self.buttonFont = UIFont(name: "Helvetica", size: 15.0)
+        self.titleFont = UIFont(name: "IRANSans-Bold", size: 15.0)
+        self.buttonFont = UIFont(name: "IRANSans-Medium", size: 15.0)
         self.tableView?.separatorInset = UIEdgeInsets(
             top: 0, left: 0, bottom: 0, right: 0)
         self.tableView?.rowHeight = 50
@@ -313,7 +313,7 @@ open class TCPickerView: UIView, UITableViewDataSource, UITableViewDelegate {
         cell.viewModel = TCPickerTableViewCell.ViewModel(
             title: value.title,
             isChecked: value.isChecked
-        )
+        )        
         return cell
     }
     

@@ -18,6 +18,7 @@ target 'Bingo' do
   pod 'EMAlertController'
   pod 'TIHexColor'
   pod 'BarcodeScanner'
+  pod 'TCPickerView'
   
   target 'BingoTests' do
     inherit! :search_paths

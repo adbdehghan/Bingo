@@ -25,6 +25,8 @@
 		3A3DCF1720559B18006D5E28 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3DCF1620559B18006D5E28 /* MediaPlayer.framework */; };
 		3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3DCF182055A358006D5E28 /* IntroductionViewController.swift */; };
 		3A3FFB90207A52B6008BD69B /* ChargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB8F207A52B6008BD69B /* ChargeTableViewCell.swift */; };
+		3A3FFB94207AC130008BD69B /* BleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB93207AC130008BD69B /* BleList.swift */; };
+		3A3FFB97207AD9E2008BD69B /* BatteryIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */; };
 		3AADBEC3205C94CF00BFDD50 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */; };
 		3AADBEC6205D47D600BFDD50 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADBEC5205D47D600BFDD50 /* BasketTableViewCell.swift */; };
 		3AC68A66205426F100553184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC68A65205426F100553184 /* AppDelegate.swift */; };
@@ -93,6 +95,8 @@
 		3A3DCF1620559B18006D5E28 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3A3DCF182055A358006D5E28 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		3A3FFB8F207A52B6008BD69B /* ChargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeTableViewCell.swift; sourceTree = "<group>"; };
+		3A3FFB93207AC130008BD69B /* BleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleList.swift; sourceTree = "<group>"; };
+		3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryIndicator.swift; sourceTree = "<group>"; };
 		3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		3AADBEC5205D47D600BFDD50 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		3AC68A62205426F100553184 /* Bingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3DCEFE20558380006D5E28 /* BasketData.swift */,
+				3A3FFB93207AC130008BD69B /* BleList.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -206,6 +211,14 @@
 				3A3DCF0720559763006D5E28 /* VASMerchantConfig.h */,
 			);
 			path = BBDeviceLibrary;
+			sourceTree = "<group>";
+		};
+		3A3FFB95207AD9E2008BD69B /* Battery Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */,
+			);
+			path = "Battery Indicator";
 			sourceTree = "<group>";
 		};
 		3AADBEC4205D47AE00BFDD50 /* TableCell */ = {
@@ -279,6 +292,7 @@
 		3AC68A9B20545D2B00553184 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3A3FFB95207AD9E2008BD69B /* Battery Indicator */,
 				3AF5637320742CA700695CF9 /* TweeTextField */,
 				3AADBEC4205D47AE00BFDD50 /* TableCell */,
 				3A3DCF0020559763006D5E28 /* BBDeviceLibrary */,
@@ -653,6 +667,7 @@
 				"${BUILT_PRODUCTS_DIR}/KVSpinnerView/KVSpinnerView.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TCPickerView/TCPickerView.framework",
 				"${BUILT_PRODUCTS_DIR}/TIHexColor/TIHexColor.framework",
 				"${BUILT_PRODUCTS_DIR}/ZAlertView/ZAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
@@ -667,6 +682,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVSpinnerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TCPickerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TIHexColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
@@ -704,7 +720,9 @@
 				3A3DCEFC20557431006D5E28 /* CalculatorBrain.swift in Sources */,
 				3A17D9D02066F449002F51A0 /* RightMenuViewController.swift in Sources */,
 				3AF563912076644200695CF9 /* CheckBusinessInfoViewController.swift in Sources */,
+				3A3FFB97207AD9E2008BD69B /* BatteryIndicator.swift in Sources */,
 				3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */,
+				3A3FFB94207AC130008BD69B /* BleList.swift in Sources */,
 				3AF5637A20742CA700695CF9 /* TweeActiveTextField.swift in Sources */,
 				3AF563722074277E00695CF9 /* EnterInfoViewController.swift in Sources */,
 				64AA6F1120744B2500857580 /* BillViewController.swift in Sources */,
@@ -904,7 +922,10 @@
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = Bingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Bingo/Libraries/BBDeviceLibrary",
@@ -942,7 +963,10 @@
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = Bingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Bingo/Libraries/BBDeviceLibrary",
@@ -980,7 +1004,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = BingoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Teska.BingoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -998,7 +1026,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = BingoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Teska.BingoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1015,7 +1047,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = BingoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Teska.BingoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1032,7 +1068,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = BingoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Teska.BingoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
