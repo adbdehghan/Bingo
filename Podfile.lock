@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - BarcodeScanner (3.0.1)
   - DualSlideMenu (1.7.3)
   - EMAlertController (1.0.1)
   - IQKeyboardManagerSwift (5.0.6)
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - BarcodeScanner
   - DualSlideMenu
   - EMAlertController
   - IQKeyboardManagerSwift
@@ -26,6 +28,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  BarcodeScanner: c1dd3174997dacde30fd0aae949691b65bc184fc
   DualSlideMenu: 8e1c5255a95c3dcfc1c6dc470105278765f52093
   EMAlertController: db945aa666b737b86b0d22c9ee464e552fc63bb8
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
@@ -36,6 +39,6 @@ SPEC CHECKSUMS:
   TIHexColor: cd08f26b7b0ca5056991beac157c8c0004efade1
   ZAlertView: 59fffdb4e37a01df461835566d5101052b8af953
 
-PODFILE CHECKSUM: 34ba2e108ccd7d536c2fa3c4ecd8ad03ee08bf0e
+PODFILE CHECKSUM: d22f14ab316a37b53c193a1195564f53db4cc6c1
 
 COCOAPODS: 1.4.0

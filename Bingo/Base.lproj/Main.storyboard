@@ -189,7 +189,7 @@
                                 <state key="normal" image="menu"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-IL-I9G">
-                                <rect key="frame" x="12" y="35.5" width="21" height="18"/>
+                                <rect key="frame" x="12" y="36" width="21" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="21" id="NNd-OL-DYc"/>
                                     <constraint firstAttribute="height" constant="18" id="fxG-eM-WQr"/>
@@ -197,7 +197,7 @@
                                 <state key="normal" image="Setting_menu"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFh-xY-Okh">
-                                <rect key="frame" x="42" y="35.5" width="10" height="18"/>
+                                <rect key="frame" x="42" y="36" width="10" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="ObI-lF-VBc"/>
                                     <constraint firstAttribute="width" constant="10" id="VSp-u6-xzJ"/>
@@ -218,8 +218,8 @@
                                         <color key="textColor" red="0.31372549020000001" green="0.3921568627" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r6A-Sc-li3" customClass="TweeAttributedTextField" customModule="Bingo" customModuleProvider="target">
-                                        <rect key="frame" x="28" y="75.5" width="320" height="32"/>
+                                    <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r6A-Sc-li3" customClass="TweeAttributedTextField" customModule="Bingo" customModuleProvider="target">
+                                        <rect key="frame" x="28" y="77" width="320" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="cdx-ru-L7w"/>
                                         </constraints>
@@ -259,16 +259,75 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="۰۹۱۹۵۹۸۱۲۰۵"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="phonenumberTextChanged:" destination="9pv-A4-QxB" eventType="editingChanged" id="0Al-xg-pLf"/>
+                                            <outlet property="delegate" destination="9pv-A4-QxB" id="nf9-cH-dTq"/>
+                                        </connections>
                                     </textField>
+                                    <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zoe-4Q-Gai">
+                                        <rect key="frame" x="0.0" y="133" width="375" height="344"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="54" id="qXI-es-eqB" customClass="ChargeTableViewCell" customModule="Bingo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="54"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qXI-es-eqB" id="nR7-cS-H4K">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ql8-uW-Lpd">
+                                                            <rect key="frame" x="49" y="7" width="277" height="40"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qep-Up-tQx">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
+                                                                    <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="18"/>
+                                                                    <state key="normal" title="۱۰.۰۰۰">
+                                                                        <color key="titleColor" red="0.56078431370000004" green="0.63137254899999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="Qep-Up-tQx" secondAttribute="bottom" id="WwR-bS-hUP"/>
+                                                                <constraint firstItem="Qep-Up-tQx" firstAttribute="top" secondItem="ql8-uW-Lpd" secondAttribute="top" id="Xzw-FO-XNY"/>
+                                                                <constraint firstItem="Qep-Up-tQx" firstAttribute="leading" secondItem="ql8-uW-Lpd" secondAttribute="leading" id="dTU-Oe-QWC"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Qep-Up-tQx" secondAttribute="trailing" constant="2" id="hMQ-QW-tO2"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="ql8-uW-Lpd" firstAttribute="centerX" secondItem="nR7-cS-H4K" secondAttribute="centerX" id="IWo-SA-yJi"/>
+                                                        <constraint firstItem="ql8-uW-Lpd" firstAttribute="centerY" secondItem="nR7-cS-H4K" secondAttribute="centerY" id="N04-P9-mN8"/>
+                                                        <constraint firstItem="ql8-uW-Lpd" firstAttribute="leading" secondItem="nR7-cS-H4K" secondAttribute="leading" constant="49" id="TwJ-j8-D1z"/>
+                                                        <constraint firstItem="ql8-uW-Lpd" firstAttribute="top" secondItem="nR7-cS-H4K" secondAttribute="top" constant="7" id="Vev-n1-iV3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ql8-uW-Lpd" secondAttribute="trailing" constant="49" id="WaN-zu-oDd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ql8-uW-Lpd" secondAttribute="bottom" constant="7" id="lQv-9w-wyc"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="priceButton" destination="Qep-Up-tQx" id="PPc-dz-L3e"/>
+                                                    <outlet property="priceContainer" destination="ql8-uW-Lpd" id="JXf-Nn-7B7"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9pv-A4-QxB" id="VQJ-Qh-SgZ"/>
+                                            <outlet property="delegate" destination="9pv-A4-QxB" id="hQO-6R-vZR"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="zoe-4Q-Gai" firstAttribute="top" secondItem="r6A-Sc-li3" secondAttribute="bottom" constant="24" id="3AT-J0-mIq"/>
                                     <constraint firstItem="r6A-Sc-li3" firstAttribute="leading" secondItem="6oU-fO-cLM" secondAttribute="leading" constant="28" id="9iB-Sd-Vq5"/>
-                                    <constraint firstItem="r6A-Sc-li3" firstAttribute="top" secondItem="0C0-1d-tdd" secondAttribute="bottom" constant="20.5" id="Whu-iG-9Rg"/>
+                                    <constraint firstAttribute="bottom" secondItem="zoe-4Q-Gai" secondAttribute="bottom" id="RIf-oC-9Iz"/>
+                                    <constraint firstItem="r6A-Sc-li3" firstAttribute="top" secondItem="0C0-1d-tdd" secondAttribute="bottom" constant="22" id="Whu-iG-9Rg"/>
                                     <constraint firstAttribute="trailing" secondItem="0C0-1d-tdd" secondAttribute="trailing" constant="16" id="cW2-T4-699"/>
                                     <constraint firstAttribute="trailing" secondItem="r6A-Sc-li3" secondAttribute="trailing" constant="27" id="eZr-Oc-dBm"/>
                                     <constraint firstItem="0C0-1d-tdd" firstAttribute="top" secondItem="6oU-fO-cLM" secondAttribute="top" constant="31" id="gmJ-fL-Kfa"/>
+                                    <constraint firstAttribute="trailing" secondItem="zoe-4Q-Gai" secondAttribute="trailing" id="k5p-la-kr0"/>
                                     <constraint firstItem="0C0-1d-tdd" firstAttribute="leading" secondItem="6oU-fO-cLM" secondAttribute="leading" constant="16" id="pgN-af-mgj"/>
+                                    <constraint firstItem="zoe-4Q-Gai" firstAttribute="leading" secondItem="6oU-fO-cLM" secondAttribute="leading" id="wBc-du-IFf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -297,7 +356,9 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="bluetoothButton" destination="KFh-xY-Okh" id="dQz-Pb-qPG"/>
+                        <outlet property="chargePriceTableView" destination="zoe-4Q-Gai" id="8vl-8I-CpG"/>
                         <outlet property="containerView" destination="6oU-fO-cLM" id="LEU-uC-5y0"/>
+                        <outlet property="phoneNumberTextField" destination="r6A-Sc-li3" id="mlo-Kf-yDM"/>
                         <outlet property="sendButton" destination="vZu-Kj-jbL" id="tu4-ed-jjr"/>
                     </connections>
                 </viewController>
@@ -1234,7 +1295,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="شناسه قبض"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7D-ky-aUJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7D-ky-aUJ">
                                         <rect key="frame" x="65" y="367" width="246" height="44"/>
                                         <color key="backgroundColor" red="0.5607843137254902" green="0.63137254901960782" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1244,6 +1305,9 @@
                                         <state key="normal" title="بارکد‌خوان">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="ShowBarcodeReader:" destination="PiF-Z3-Vqp" eventType="touchUpInside" id="utO-9w-AS2"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4v-Kf-WOO" customClass="TweeAttributedTextField" customModule="Bingo" customModuleProvider="target">
                                         <rect key="frame" x="41" y="299" width="294" height="32"/>
@@ -1307,7 +1371,7 @@
                                     <constraint firstItem="FUv-B9-Xb3" firstAttribute="leading" secondItem="xfP-PP-wqV" secondAttribute="leading" constant="41" id="t7J-no-5pT"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-dX-10r">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-dX-10r">
                                 <rect key="frame" x="12" y="72" width="351" height="60"/>
                                 <color key="backgroundColor" red="0.27450980392156865" green="0.74509803921568629" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

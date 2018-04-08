@@ -87,10 +87,7 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
         inputData["currencyCode"] = "364"
         inputData["transactionType"] = NSNumber(value: BBDeviceTransactionType.payment.hashValue)
         
-        let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
-        let sum = arr.reduce(0, +)
-        inputData["amount"] = String(sum)
-        inputData["cashbackAmount1"] = String(sum)
+        inputData["cashbackAmount1"] = "1206"
         BBDeviceController.shared().setAmount(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
         
         
@@ -112,10 +109,8 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
             inputData["currencyCode"] = "364"
             inputData["transactionType"] = NSNumber(value: BBDeviceTransactionType.payment.hashValue)
             
-            let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
-            let sum = arr.reduce(0, +)
-            inputData["amount"] = String(sum)
-            inputData["cashbackAmount1"] = String(sum)
+            inputData["amount"] = "1206"
+            inputData["cashbackAmount1"] = "1206"
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
                 

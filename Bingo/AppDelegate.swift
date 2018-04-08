@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        
-//        
+//
+//
 //        let leftView = storyboard?.instantiateViewController(withIdentifier: "LeftMenuController")
 //        let rightView = storyboard?.instantiateViewController(withIdentifier: "RightMenuController")
 //        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
-//        
+//
 //        let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
 //        controller.leftSideOffset = 275
 //        controller.rightSideOffset = 275

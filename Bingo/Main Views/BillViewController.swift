@@ -8,8 +8,10 @@
 
 import UIKit
 import EMAlertController
+import BarcodeScanner
 
-class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate {
+class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,BarcodeScannerCodeDelegate,BarcodeScannerDismissalDelegate,BarcodeScannerErrorDelegate {
+
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var barcodeButton: UIButton!
     @IBOutlet weak var containerView: UIView!
@@ -178,6 +180,28 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     }
     
     @IBAction func ShowBLEList(_ sender: Any) {
+        
+    }
+    
+    @IBAction func ShowBarcodeReader(_ sender: Any) {
+        let viewController = BarcodeScannerController()
+        viewController.codeDelegate = self
+        viewController.errorDelegate = self
+        viewController.dismissalDelegate = self
+        
+        present(viewController, animated: true, completion: nil)
+    }
+    
+    func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
+//        controller.resetWithError(message: "Error message")
+         controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
+         controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
         
     }
     

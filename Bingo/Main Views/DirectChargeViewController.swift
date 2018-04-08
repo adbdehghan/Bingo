@@ -9,12 +9,18 @@
 import UIKit
 import EMAlertController
 
-class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate {
+class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+
+    @IBOutlet weak var phoneNumberTextField: TweeAttributedTextField!
     @IBOutlet weak var bluetoothButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var chargePriceTableView: UITableView!
     var waitForCartAlert:EMAlertController!
     var waitForAmountAlert:EMAlertController!
+    var priceArray = ["۱۰.۰۰۰","۲۰.۰۰۰","۵۰.۰۰۰","۱۰۰.۰۰۰","۲۰۰.۰۰۰"]
+    var priceArrayMap = ["10000","20000","50000","100000","200000"]
+    var selectedPrice = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,9 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
         BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+        
+        chargePriceTableView.dataSource = self
+        chargePriceTableView.delegate = self
         
         UICustomization()
     }
@@ -45,22 +54,39 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
     }
 
     @IBAction func SendEvent(_ sender: Any) {
-        let alert = EMAlertController(title: "ارسال به کارتخوان؟", message: "در صورت تایید درخواست شما به دستگاه خودپرداز ارسال می‌شود.")
-        alert.iconImage = UIImage(named: "pos")
-        let cancel = EMAlertAction(title: "لغو", style: .cancel)
-        cancel.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
-        cancel.titleColor =  UIColor.init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1)
-        let confirm = EMAlertAction(title: "تایید", style: .normal) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                self.ConfirmSend()
+        
+        if phoneNumberTextField.text?.count == 11 && !selectedPrice.isEmpty
+        {
+            let alert = EMAlertController(title: "ارسال به کارتخوان؟", message: "در صورت تایید درخواست شما به دستگاه خودپرداز ارسال می‌شود.")
+            alert.iconImage = UIImage(named: "pos")
+            let cancel = EMAlertAction(title: "لغو", style: .cancel)
+            cancel.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+            cancel.titleColor =  UIColor.init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1)
+            let confirm = EMAlertAction(title: "تایید", style: .normal) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    self.ConfirmSend()
+                }
+                
             }
-            
+            confirm.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+            confirm.titleColor = UIColor.init(red: 76/255, green: 182/255, blue: 172/255, alpha: 1)
+            alert.addAction(action: cancel)
+            alert.addAction(action: confirm)
+            present(alert, animated: true, completion: nil)
         }
-        confirm.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
-        confirm.titleColor = UIColor.init(red: 76/255, green: 182/255, blue: 172/255, alpha: 1)
-        alert.addAction(action: cancel)
-        alert.addAction(action: confirm)
-        present(alert, animated: true, completion: nil)
+        else
+        {
+            waitForAmountAlert = EMAlertController(title: "🙄", message: "لطفا تمامی مقادیر را تکمیل کنید")
+            waitForAmountAlert.iconImage = UIImage(named: "tick")
+            let cancel = EMAlertAction(title: "لغو", style: .cancel){
+                
+            }
+            cancel.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+            cancel.titleColor =  UIColor.init(red: 186/255, green: 186/255, blue: 186/255, alpha: 1)
+            waitForAmountAlert.addAction(action: cancel)
+            
+            present(waitForAmountAlert, animated: true, completion: nil)
+        }
     }
     
     func ConfirmSend()
@@ -89,10 +115,8 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         inputData["currencyCode"] = "364"
         inputData["transactionType"] = NSNumber(value: BBDeviceTransactionType.payment.hashValue)
         
-        let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
-        let sum = arr.reduce(0, +)
-        inputData["amount"] = String(sum)
-        inputData["cashbackAmount1"] = String(sum)
+        inputData["amount"] = selectedPrice
+        inputData["cashbackAmount1"] = selectedPrice
         BBDeviceController.shared().setAmount(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
         
         
@@ -113,11 +137,9 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
             inputData["currencyCharacters"] = currencyCharacter
             inputData["currencyCode"] = "364"
             inputData["transactionType"] = NSNumber(value: BBDeviceTransactionType.payment.hashValue)
-            
-            let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
-            let sum = arr.reduce(0, +)
-            inputData["amount"] = String(sum)
-            inputData["cashbackAmount1"] = String(sum)
+      
+            inputData["amount"] = selectedPrice
+            inputData["cashbackAmount1"] = selectedPrice
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
                 
@@ -179,6 +201,57 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ChargeTableViewCell
+        
+        cell.priceButton.tag = indexPath.row
+        cell.priceButton.setTitle(priceArray[indexPath.row], for: .normal)
+        cell.priceButton.addTarget(self, action:#selector(self.buttonClicked), for: .touchUpInside)
+        
+        cell.priceContainer.layer.cornerRadius = 3
+        cell.priceContainer.layer.borderWidth = 1
+        cell.priceContainer.layer.borderColor = UIColor.colorWithHexString(baseHexString: "b4c8d7", alpha: 1).cgColor
+     
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 54
+    }
+    
+    @objc func buttonClicked(sender:UIButton!)
+    {
+        let btn:UIButton = sender
+        let btnTag = btn.tag
+        selectedPrice = priceArrayMap[btnTag]
+        
+        ResetButtons()
+        
+        let cell = chargePriceTableView.cellForRow(at: IndexPath(row: btnTag, section: 0)) as! ChargeTableViewCell
+        cell.priceButton.setTitleColor(UIColor.colorWithHexString(baseHexString: "536e79", alpha: 1), for: .normal)
+        cell.priceContainer.layer.cornerRadius = 3
+        cell.priceContainer.layer.borderWidth = 1
+        cell.priceContainer.layer.borderColor = UIColor.colorWithHexString(baseHexString: "4cb6ac", alpha: 1).cgColor
+        cell.priceContainer.backgroundColor = UIColor.colorWithHexString(baseHexString: "ddf0ee", alpha: 1)
+    }
+    
+    func ResetButtons()
+    {
+        for i in 0..<5
+        {
+            let cell = chargePriceTableView.cellForRow(at: IndexPath(row: i, section: 0)) as! ChargeTableViewCell
+            cell.priceButton.setTitleColor(UIColor.colorWithHexString(baseHexString: "8fa1aa", alpha: 1), for: .normal)
+            cell.priceContainer.layer.cornerRadius = 3
+            cell.priceContainer.layer.borderWidth = 1
+            cell.priceContainer.layer.borderColor = UIColor.colorWithHexString(baseHexString: "a8bdc7", alpha: 1).cgColor
+            cell.priceContainer.backgroundColor = .white
+        }
+    }
+    
     func UICustomization()
     {
         sendButton.layer.cornerRadius = 3
@@ -193,6 +266,29 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         containerView.layer.shadowOpacity = 0.4
         containerView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
         containerView.layer.shadowRadius = 3
+    }
+    
+    @IBAction func phonenumberTextChanged(_ textField: UITextField) {
+        if textField.text?.count == 11 {
+            UIView.animate(withDuration: 0.6, animations: {() -> Void in
+                self.chargePriceTableView.alpha = 1
+            })
+        }
+        else
+        {
+            ResetButtons()
+            UIView.animate(withDuration: 0.6, animations: {() -> Void in
+                self.chargePriceTableView.alpha = 0
+                
+            })
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        
+        let newLength = text.utf16.count + string.utf16.count - range.length
+        return newLength <= 11 // Bool
     }
     
     override func didReceiveMemoryWarning() {

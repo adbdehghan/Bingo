@@ -17,7 +17,7 @@ target 'Bingo' do
   pod 'DualSlideMenu'
   pod 'EMAlertController'
   pod 'TIHexColor'
-  
+  pod 'BarcodeScanner'
   
   target 'BingoTests' do
     inherit! :search_paths
