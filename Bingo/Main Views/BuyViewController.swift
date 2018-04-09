@@ -9,6 +9,7 @@
 import UIKit
 import EMAlertController
 import TCPickerView
+import JHSpinner
 
 class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,TCPickerViewDelegate {
 
@@ -26,9 +27,11 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     @IBOutlet weak var fifthRowStack: UIStackView!
     @IBOutlet weak var calculatorContainerView: UIView!
     @IBOutlet weak var deviceConnectivityStatusLabel: UILabel!
+    @IBOutlet weak var batterIndicator: BatteryIndicator!
     var waitForCartAlert:EMAlertController!
     var waitForAmountAlert:EMAlertController!
     let picker = TCPickerView()
+    var spinner:JHSpinnerView!
     
     var displayValue: Double {
         get {
@@ -44,7 +47,7 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         super.viewDidLoad()
         
         basketCountLabel.text = String(BasketData.sharedInstance.items.count).replacedEnglishDigitsWithArabic
-        
+        batterIndicator.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
         BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
@@ -53,20 +56,48 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {
+        BleList.sharedInstance.devices.removeAllObjects()
         BleList.sharedInstance.devices.addObjects(from: devices)
-        BBDeviceController.shared().connectBT(devices[0] as! NSObject);
+        if spinner != nil
+        {
+            spinner.dismiss()
+        }
+        picker.title = "دستگاه ها"
         
+        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
+        picker.values = values
+        picker.delegate = self
+        picker.selection = .single
+        picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
+        picker.completion = { (selectedIndexes) in
+            for i in selectedIndexes {
+                BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[i] as! NSObject);
+            }
+        }
         
+        picker.show()
+
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
         BleList.sharedInstance.isConnected = true
-        bluetoothButton.isSelected = true        
+        bluetoothButton.isSelected = true
+        StartBatteryCheck()
+    }
+    
+    func onReturnDeviceInfo(_ deviceInfo: [AnyHashable : Any]!) {
+        let battery = deviceInfo["batteryPercentage"] as! String
+        batterIndicator.precentCharged = Double.init(battery)!
+        batterIndicator.animatedReveal = true
+        BleList.sharedInstance.batteryPercentage = Double.init(battery)!
     }
     
     func onBTDisconnected() {
         bluetoothButton.isSelected = false
+        batterIndicator.precentCharged = 0
+        batterIndicator.animatedReveal = true
+        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
     }
     
     func onError(_ errorType: BBDeviceErrorType, errorMessage: String!) {
@@ -302,28 +333,27 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     
     @IBAction func ShowBLEList(_ sender: Any) {
         
-        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+        BBDeviceController.shared().disconnectBT()
         
-        picker.title = "دستگاه ها"
-        
-        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
-        picker.values = values
-        picker.delegate = self
-        picker.selection = .single
-        picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
-        picker.completion = { (selectedIndexes) in
-            for i in selectedIndexes {
-                print(values[i].title)
-            }
-        }
-        picker.show()
+        spinner = JHSpinnerView.showOnView(view, spinnerColor:UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1), overlay:.circular, overlayColor:UIColor.init(white: 0.6, alpha: 1), attributedText: NSAttributedString(string: ""))
+        spinner.progress = 0.0
+        view.addSubview(spinner)
     }
     
     func pickerView(_ pickerView: TCPickerView, didSelectRowAtIndex index: Int) {
         
-        BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[index] as! NSObject);
+        
+    }
+        
+    func StartBatteryCheck()
+    {
+        Timer.scheduledTimer(timeInterval: 360, target: self, selector: #selector(self.GetBatteryPercentage), userInfo: nil, repeats: true)
     }
     
+    @objc func GetBatteryPercentage()
+    {
+        BBDeviceController.shared().getDeviceInfo();
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

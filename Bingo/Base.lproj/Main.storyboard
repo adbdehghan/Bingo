@@ -113,17 +113,26 @@
                                     <action selector="ShowBLEList:" destination="R1z-vt-FZM" eventType="touchUpInside" id="eLm-ZL-ptL"/>
                                 </connections>
                             </button>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQ7-pR-5Gv" customClass="BatteryIndicator" customModule="Bingo" customModuleProvider="target">
+                                <rect key="frame" x="59" y="40" width="16" height="9"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LQ7-pR-5Gv" secondAttribute="height" multiplier="15:5" constant="-11" id="0qa-7P-tC3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8980392157" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tz7-Id-yY8" firstAttribute="centerY" secondItem="Le4-GC-Lk0" secondAttribute="centerY" id="2bQ-hA-Ede"/>
+                            <constraint firstItem="LQ7-pR-5Gv" firstAttribute="centerY" secondItem="tz7-Id-yY8" secondAttribute="centerY" id="6PN-Xu-hOQ"/>
                             <constraint firstItem="PV8-d2-Qrg" firstAttribute="bottom" secondItem="YQm-iS-m3U" secondAttribute="bottom" id="6dO-Yl-ash"/>
                             <constraint firstItem="ZQ7-VE-KJS" firstAttribute="centerX" secondItem="PRV-N4-IfA" secondAttribute="centerX" id="6hH-jB-Qi9"/>
+                            <constraint firstItem="LQ7-pR-5Gv" firstAttribute="top" secondItem="YQm-iS-m3U" secondAttribute="top" constant="20" id="6ot-xf-JUN"/>
                             <constraint firstItem="tz7-Id-yY8" firstAttribute="leading" secondItem="Le4-GC-Lk0" secondAttribute="trailing" constant="9" id="91R-yB-Oss"/>
                             <constraint firstItem="PV8-d2-Qrg" firstAttribute="trailing" secondItem="YQm-iS-m3U" secondAttribute="trailing" id="9rG-VE-b2J"/>
                             <constraint firstItem="rm7-U2-4Fr" firstAttribute="leading" secondItem="YQm-iS-m3U" secondAttribute="leading" constant="12" id="DLL-uw-Qko"/>
                             <constraint firstItem="YQm-iS-m3U" firstAttribute="trailing" secondItem="MIG-cn-S0Z" secondAttribute="trailing" constant="13" id="OAC-Sb-wjg"/>
                             <constraint firstItem="Le4-GC-Lk0" firstAttribute="top" secondItem="YQm-iS-m3U" secondAttribute="top" constant="15" id="efU-k8-2l8"/>
+                            <constraint firstItem="LQ7-pR-5Gv" firstAttribute="leading" secondItem="tz7-Id-yY8" secondAttribute="trailing" constant="7" id="fpT-gr-UeP"/>
                             <constraint firstItem="MIG-cn-S0Z" firstAttribute="top" secondItem="YQm-iS-m3U" secondAttribute="top" constant="19" id="hbP-df-23g"/>
                             <constraint firstItem="PV8-d2-Qrg" firstAttribute="leading" secondItem="YQm-iS-m3U" secondAttribute="leading" id="hnL-Xs-liw"/>
                             <constraint firstItem="YQm-iS-m3U" firstAttribute="trailing" secondItem="rm7-U2-4Fr" secondAttribute="trailing" constant="12" id="jBJ-RW-lcQ"/>
@@ -139,6 +148,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="batterIndicator" destination="LQ7-pR-5Gv" id="NTV-Uk-Lyq"/>
                         <outlet property="bluetoothButton" destination="tz7-Id-yY8" id="xCG-hc-Uud"/>
                         <outlet property="containerView" destination="PV8-d2-Qrg" id="1Be-s5-a2R"/>
                         <outlet property="sendButton" destination="rm7-U2-4Fr" id="uOf-uV-baC"/>
@@ -330,14 +340,23 @@
                                     <constraint firstItem="zoe-4Q-Gai" firstAttribute="leading" secondItem="6oU-fO-cLM" secondAttribute="leading" id="wBc-du-IFf"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yy-Fy-wsH" customClass="BatteryIndicator" customModule="Bingo" customModuleProvider="target">
+                                <rect key="frame" x="59" y="40" width="16" height="9"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3yy-Fy-wsH" secondAttribute="height" multiplier="15:5" constant="-11" id="m3z-kZ-EbG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.89803921568627454" green="0.90980392156862744" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3yy-Fy-wsH" firstAttribute="centerY" secondItem="KFh-xY-Okh" secondAttribute="centerY" id="6HA-fi-kSB"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="BRb-po-emW" secondAttribute="trailing" constant="13" id="9Zm-Xm-2uV"/>
                             <constraint firstItem="KFh-xY-Okh" firstAttribute="leading" secondItem="oyE-IL-I9G" secondAttribute="trailing" constant="9" id="AAZ-Di-Nbt"/>
                             <constraint firstItem="6oU-fO-cLM" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="Auv-5T-4li"/>
                             <constraint firstItem="6oU-fO-cLM" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Cjg-PA-54s"/>
+                            <constraint firstItem="3yy-Fy-wsH" firstAttribute="leading" secondItem="KFh-xY-Okh" secondAttribute="trailing" constant="7" id="DM7-Xp-WjS"/>
                             <constraint firstItem="BRb-po-emW" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="19" id="L4I-mR-bDM"/>
+                            <constraint firstItem="3yy-Fy-wsH" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="OvU-FH-8pz"/>
                             <constraint firstItem="oyE-IL-I9G" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="12" id="QxE-Ao-PlI"/>
                             <constraint firstItem="vZu-Kj-jbL" firstAttribute="top" secondItem="doV-zJ-Aef" secondAttribute="bottom" constant="18" id="Spm-gm-y2I"/>
                             <constraint firstItem="doV-zJ-Aef" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="UBw-zk-JkU"/>
@@ -355,6 +374,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="batterIndicator" destination="3yy-Fy-wsH" id="VXi-Tw-iBG"/>
                         <outlet property="bluetoothButton" destination="KFh-xY-Okh" id="dQz-Pb-qPG"/>
                         <outlet property="chargePriceTableView" destination="zoe-4Q-Gai" id="8vl-8I-CpG"/>
                         <outlet property="containerView" destination="6oU-fO-cLM" id="LEU-uC-5y0"/>
@@ -375,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUl-IU-3Xm">
-                                <rect key="frame" x="12" y="72.5" width="351" height="60"/>
+                                <rect key="frame" x="12" y="73" width="351" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsF-6P-gHX">
                                         <rect key="frame" x="305" y="14" width="30" height="33"/>
@@ -478,7 +498,7 @@
                                 <state key="normal" image="menu"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fb-Gz-Vas">
-                                <rect key="frame" x="12" y="35.5" width="21" height="18"/>
+                                <rect key="frame" x="12" y="36" width="21" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Cd9-E6-bzx"/>
                                     <constraint firstAttribute="width" constant="21" id="VqY-do-JmZ"/>
@@ -486,13 +506,13 @@
                                 <state key="normal" image="Setting_menu"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gz-Ef-YQ6">
-                                <rect key="frame" x="0.0" y="141.5" width="375" height="476.5"/>
+                                <rect key="frame" x="0.0" y="142" width="375" height="476"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVN-kk-Ys0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="476.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="476"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-JE-VQC">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="476.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="476"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrR-0k-Gtv">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
@@ -531,13 +551,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9cR-W1-RO5">
-                                                        <rect key="frame" x="0.0" y="75.5" width="375" height="79.5"/>
+                                                        <rect key="frame" x="0.0" y="75.5" width="375" height="80"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ot0-yp-i2o">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVr-gr-7eP">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۱">
@@ -558,10 +578,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xU-sX-tIS">
-                                                                <rect key="frame" x="94" y="0.0" width="93" height="79.5"/>
+                                                                <rect key="frame" x="94" y="0.0" width="93" height="80"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5S-Bc-i5m">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۲">
@@ -582,10 +602,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERo-m7-SvJ">
-                                                                <rect key="frame" x="188" y="0.0" width="93" height="79.5"/>
+                                                                <rect key="frame" x="188" y="0.0" width="93" height="80"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUK-VG-MUm">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۳">
@@ -606,10 +626,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBu-DH-lXP">
-                                                                <rect key="frame" x="282" y="0.0" width="93" height="79.5"/>
+                                                                <rect key="frame" x="282" y="0.0" width="93" height="80"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdI-vv-CEW">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
                                                                         <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="+">
@@ -632,13 +652,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="l1t-L5-2as">
-                                                        <rect key="frame" x="0.0" y="156" width="375" height="82"/>
+                                                        <rect key="frame" x="0.0" y="156.5" width="375" height="81.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88D-KX-9tb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93" height="82"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93" height="81.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iec-td-bms">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="82"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="81.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۴">
@@ -659,10 +679,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uiU-Ys-5Gs">
-                                                                <rect key="frame" x="94" y="0.0" width="93" height="82"/>
+                                                                <rect key="frame" x="94" y="0.0" width="93" height="81.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5f-Tz-dgj">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="82"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="81.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۵">
@@ -683,10 +703,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPJ-ss-DPE">
-                                                                <rect key="frame" x="188" y="0.0" width="93" height="82"/>
+                                                                <rect key="frame" x="188" y="0.0" width="93" height="81.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsU-oA-FMe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="82"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="81.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۶">
@@ -707,10 +727,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DI6-dU-fTB">
-                                                                <rect key="frame" x="282" y="0.0" width="93" height="82"/>
+                                                                <rect key="frame" x="282" y="0.0" width="93" height="81.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuX-DZ-gGg">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="82"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="81.5"/>
                                                                         <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="×">
@@ -733,13 +753,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lxx-Kn-DMZ">
-                                                        <rect key="frame" x="0.0" y="239" width="375" height="80"/>
+                                                        <rect key="frame" x="0.0" y="239" width="375" height="79.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4Y-Ap-Pef">
-                                                                <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctO-ej-QlT">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۷">
@@ -760,10 +780,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdf-WC-scu">
-                                                                <rect key="frame" x="94" y="0.0" width="93" height="80"/>
+                                                                <rect key="frame" x="94" y="0.0" width="93" height="79.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lh1-cs-tGh">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۸">
@@ -784,10 +804,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnB-KF-SYl">
-                                                                <rect key="frame" x="188" y="0.0" width="93" height="80"/>
+                                                                <rect key="frame" x="188" y="0.0" width="93" height="79.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ae3-xU-q8s">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="۹">
@@ -808,10 +828,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJT-ad-OqZ">
-                                                                <rect key="frame" x="282" y="0.0" width="93" height="80"/>
+                                                                <rect key="frame" x="282" y="0.0" width="93" height="79.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wK-uh-NTL">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="79.5"/>
                                                                         <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="25"/>
                                                                         <state key="normal" title="=">
@@ -834,7 +854,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aIY-gp-6zT">
-                                                        <rect key="frame" x="0.0" y="320" width="375" height="80"/>
+                                                        <rect key="frame" x="0.0" y="319.5" width="375" height="80"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb0-Gy-zLy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="93" height="80"/>
@@ -935,13 +955,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxs-mY-aYz">
-                                                        <rect key="frame" x="0.0" y="401" width="375" height="75.5"/>
+                                                        <rect key="frame" x="0.0" y="400.5" width="375" height="75.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pa5-gu-Fmm">
-                                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="75"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="188" height="75.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-uG-JXL">
-                                                                        <rect key="frame" x="81" y="29.5" width="27" height="16"/>
+                                                                        <rect key="frame" x="81" y="30" width="27" height="16"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="27" id="1gy-fa-98z"/>
                                                                             <constraint firstAttribute="height" constant="16" id="d2C-AA-gUP"/>
@@ -952,7 +972,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwC-FC-jo8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="75.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="188" height="75.5"/>
                                                                         <connections>
                                                                             <action selector="clearCalcEvent:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Qul-ye-ILv"/>
                                                                         </connections>
@@ -1049,7 +1069,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKm-YE-meb">
-                                <rect key="frame" x="42" y="35" width="10" height="18"/>
+                                <rect key="frame" x="42" y="36" width="10" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="010-2F-CLV"/>
                                     <constraint firstAttribute="width" constant="10" id="Ujp-Vm-A0k"/>
@@ -1061,10 +1081,17 @@
                                     <action selector="ShowBLEList:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DnV-8r-sMW"/>
                                 </connections>
                             </button>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2u-vf-g1g" customClass="BatteryIndicator" customModule="Bingo" customModuleProvider="target">
+                                <rect key="frame" x="59" y="40" width="22" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y2u-vf-g1g" secondAttribute="height" multiplier="15:5" constant="-11" id="giO-a9-Y09"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8980392157" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xUl-IU-3Xm" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="12" id="0kf-A4-xPt"/>
+                            <constraint firstItem="y2u-vf-g1g" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="20" id="1JB-CO-KoR"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="xUl-IU-3Xm" secondAttribute="trailing" constant="12" id="1Jn-2o-hon"/>
                             <constraint firstItem="CKm-YE-meb" firstAttribute="leading" secondItem="1Fb-Gz-Vas" secondAttribute="trailing" constant="9" id="9eO-Yk-jG7"/>
                             <constraint firstItem="Grg-jE-yqg" firstAttribute="centerY" secondItem="1Fb-Gz-Vas" secondAttribute="centerY" id="Crz-NO-P8M"/>
@@ -1074,7 +1101,9 @@
                             <constraint firstItem="3gz-Ef-YQ6" firstAttribute="top" secondItem="xUl-IU-3Xm" secondAttribute="bottom" constant="9" id="PbO-DA-T19"/>
                             <constraint firstItem="Grg-jE-yqg" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="15" id="SkS-hN-3nC"/>
                             <constraint firstItem="Grg-jE-yqg" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="XVL-hd-R85"/>
+                            <constraint firstItem="y2u-vf-g1g" firstAttribute="leading" secondItem="CKm-YE-meb" secondAttribute="trailing" constant="7" id="XWE-ep-cmr"/>
                             <constraint firstItem="xUl-IU-3Xm" firstAttribute="top" secondItem="Grg-jE-yqg" secondAttribute="bottom" constant="18.666666666666742" id="Zpb-4d-RVr"/>
+                            <constraint firstItem="y2u-vf-g1g" firstAttribute="centerY" secondItem="CKm-YE-meb" secondAttribute="centerY" id="bff-SD-38D"/>
                             <constraint firstItem="3gz-Ef-YQ6" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="f3S-E2-2sT"/>
                             <constraint firstItem="3gz-Ef-YQ6" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="fHW-W7-aVT"/>
                             <constraint firstItem="xUl-IU-3Xm" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="mrx-Hi-rlU"/>
@@ -1089,6 +1118,7 @@
                     <connections>
                         <outlet property="basketCountLabel" destination="4HQ-oO-OeO" id="HWF-rE-967"/>
                         <outlet property="basketSumLabel" destination="Tev-N9-yrV" id="6tX-kY-hOF"/>
+                        <outlet property="batterIndicator" destination="y2u-vf-g1g" id="Qdz-zK-OGV"/>
                         <outlet property="bluetoothButton" destination="CKm-YE-meb" id="GCw-hB-X1S"/>
                         <outlet property="calculatorContainerView" destination="3gz-Ef-YQ6" id="wH0-6T-dtA"/>
                         <outlet property="currentPriceLabel" destination="pWh-5J-mkh" id="ZA3-iP-4r2"/>
@@ -1101,7 +1131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746.37681159420299" y="357.88043478260875"/>
+            <point key="canvasLocation" x="744.79999999999995" y="357.57121439280365"/>
         </scene>
         <!--Basket View Controller-->
         <scene sceneID="ceP-FQ-EYK">
@@ -1424,9 +1454,16 @@
                                     <action selector="ShowBLEList:" destination="PiF-Z3-Vqp" eventType="touchUpInside" id="me1-u7-xtp"/>
                                 </connections>
                             </button>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOl-Mm-0iT" customClass="BatteryIndicator" customModule="Bingo" customModuleProvider="target">
+                                <rect key="frame" x="59" y="40" width="16" height="9"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nOl-Mm-0iT" secondAttribute="height" multiplier="15:5" constant="-11" id="FTq-3N-8uB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8980392157" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nOl-Mm-0iT" firstAttribute="top" secondItem="7Y3-zT-uOm" secondAttribute="top" constant="20" id="9lF-wt-mDr"/>
                             <constraint firstItem="X3b-8o-S1E" firstAttribute="centerY" secondItem="daa-vA-Tcp" secondAttribute="centerY" id="AQh-Md-JAq"/>
                             <constraint firstItem="xfP-PP-wqV" firstAttribute="top" secondItem="hV0-dX-10r" secondAttribute="bottom" constant="9" id="BWA-i2-td9"/>
                             <constraint firstItem="daa-vA-Tcp" firstAttribute="leading" secondItem="7Y3-zT-uOm" secondAttribute="leading" constant="12" id="Dje-rC-PJg"/>
@@ -1438,6 +1475,8 @@
                             <constraint firstItem="l3m-va-FhJ" firstAttribute="top" secondItem="7Y3-zT-uOm" secondAttribute="top" constant="15" id="RLc-hW-Ood"/>
                             <constraint firstItem="hV0-dX-10r" firstAttribute="top" secondItem="l3m-va-FhJ" secondAttribute="bottom" constant="18" id="YUB-qa-pPa"/>
                             <constraint firstItem="xfP-PP-wqV" firstAttribute="bottom" secondItem="7Y3-zT-uOm" secondAttribute="bottom" id="bHH-dk-Ok8"/>
+                            <constraint firstItem="nOl-Mm-0iT" firstAttribute="centerY" secondItem="X3b-8o-S1E" secondAttribute="centerY" id="fnj-Pc-I9h"/>
+                            <constraint firstItem="nOl-Mm-0iT" firstAttribute="leading" secondItem="X3b-8o-S1E" secondAttribute="trailing" constant="7" id="jU2-DA-1m8"/>
                             <constraint firstItem="X3b-8o-S1E" firstAttribute="leading" secondItem="daa-vA-Tcp" secondAttribute="trailing" constant="9" id="oXf-6Q-Mpk"/>
                             <constraint firstItem="xfP-PP-wqV" firstAttribute="trailing" secondItem="7Y3-zT-uOm" secondAttribute="trailing" id="sHF-Qq-ENu"/>
                             <constraint firstItem="daa-vA-Tcp" firstAttribute="top" secondItem="7Y3-zT-uOm" secondAttribute="top" constant="15" id="yDi-FY-gw3"/>
@@ -1451,6 +1490,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="barcodeButton" destination="L7D-ky-aUJ" id="Mke-CI-Qyu"/>
+                        <outlet property="batterIndicator" destination="nOl-Mm-0iT" id="X1N-9y-d9K"/>
                         <outlet property="bluetoothButton" destination="X3b-8o-S1E" id="l7x-Gp-b8m"/>
                         <outlet property="containerView" destination="xfP-PP-wqV" id="h6F-VV-srN"/>
                         <outlet property="sendButton" destination="hV0-dX-10r" id="Prc-z2-4nk"/>

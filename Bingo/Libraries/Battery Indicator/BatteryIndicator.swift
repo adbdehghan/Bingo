@@ -49,13 +49,13 @@ class BatteryIndicator: UIView {
 		}
 	}
 	
-	var lineWidth: CGFloat = 2.0 {
+	var lineWidth: CGFloat = 1.0 {
 		didSet {
 			drawLayers()
 		}
 	}
 	
-	var cornerRadius: CGFloat = 10 {
+	var cornerRadius: CGFloat = 3 {
 		didSet {
 			drawLayers()
 		}

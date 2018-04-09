@@ -9,33 +9,70 @@
 import UIKit
 import EMAlertController
 import TCPickerView
+import JHSpinner
 
 class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,TCPickerViewDelegate{
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var bluetoothButton: UIButton!
+    @IBOutlet weak var batterIndicator: BatteryIndicator!
     var waitForCartAlert:EMAlertController!
     var waitForAmountAlert:EMAlertController!
     let picker = TCPickerView()
+    var spinner:JHSpinnerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        BBDeviceController.shared().isDebugLogEnabled = true;
+        BBDeviceController.shared().delegate = self;
         UICustomization()
+        GetBatteryPercentage()
+        StartBatteryCheck()
 
     }
     func onBTReturnScanResults(_ devices: [Any]!) {
-        BBDeviceController.shared().connectBT(devices[0] as! NSObject);
-        BBDeviceController.shared().stopBTScan()
+        BleList.sharedInstance.devices.removeAllObjects()
+        BleList.sharedInstance.devices.addObjects(from: devices)
+        if spinner != nil
+        {
+            spinner.dismiss()
+        }
+        picker.title = "دستگاه ها"
+        
+        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
+        picker.values = values
+        picker.delegate = self
+        picker.selection = .single
+        picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
+        picker.completion = { (selectedIndexes) in
+            for i in selectedIndexes {
+                BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[i] as! NSObject);
+            }
+        }
+        
+        picker.show()
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
         BBDeviceController.shared().getDeviceInfo();
-        bluetoothButton.isSelected = true
         BleList.sharedInstance.isConnected = true
+        bluetoothButton.isSelected = true
+        StartBatteryCheck()
+    }
+    
+    func onReturnDeviceInfo(_ deviceInfo: [AnyHashable : Any]!) {
+        let battery = deviceInfo["batteryPercentage"] as! String
+        batterIndicator.precentCharged = Double.init(battery)!
+        batterIndicator.animatedReveal = true
+        BleList.sharedInstance.batteryPercentage = Double.init(battery)!
+        
     }
     
     func onBTDisconnected() {
         bluetoothButton.isSelected = false
+        batterIndicator.precentCharged = 0
+        batterIndicator.animatedReveal = true
+        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
     }
     
     func onError(_ errorType: BBDeviceErrorType, errorMessage: String!) {
@@ -170,30 +207,32 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     
     @IBAction func ShowBLEList(_ sender: Any) {
         
-        BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
+        BBDeviceController.shared().disconnectBT()
         
-        picker.title = "دستگاه ها"
-        
-        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
-        picker.values = values
-        picker.delegate = self
-        picker.selection = .single
-        picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
-        picker.completion = { (selectedIndexes) in
-            for i in selectedIndexes {
-                print(values[i].title)
-            }
-        }
-        picker.show()
+        spinner = JHSpinnerView.showOnView(view, spinnerColor:UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1), overlay:.circular, overlayColor:UIColor.init(white: 0.6, alpha: 1), attributedText: NSAttributedString(string: ""))
+        spinner.progress = 0.0
+        view.addSubview(spinner)
     }
     
     func pickerView(_ pickerView: TCPickerView, didSelectRowAtIndex index: Int) {
         
-        BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[index] as! NSObject);
+        
+    }
+    
+    func StartBatteryCheck()
+    {
+        Timer.scheduledTimer(timeInterval: 360, target: self, selector: #selector(self.GetBatteryPercentage), userInfo: nil, repeats: true)
+    }    
+    
+    @objc func GetBatteryPercentage()
+    {
+        batterIndicator.precentCharged = BleList.sharedInstance.batteryPercentage
+        batterIndicator.animatedReveal = true
     }
     
     func UICustomization()
-    {        
+    {
+        batterIndicator.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         sendButton.layer.cornerRadius = 3
         sendButton.layer.shadowColor = UIColor.darkGray.cgColor
         sendButton.layer.shadowOpacity = 0.3

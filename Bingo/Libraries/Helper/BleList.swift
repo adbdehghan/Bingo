@@ -12,4 +12,5 @@ class BleList: NSObject {
     static let sharedInstance = BleList()
     var devices:NSMutableArray = NSMutableArray()
     var isConnected:Bool = false
+    var batteryPercentage:Double = 0
 }

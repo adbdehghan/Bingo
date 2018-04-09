@@ -4,6 +4,7 @@ PODS:
   - DualSlideMenu (1.7.3)
   - EMAlertController (1.0.1)
   - IQKeyboardManagerSwift (5.0.6)
+  - JHSpinner (0.2.1)
   - KVSpinnerView (1.0.1)
   - NVActivityIndicatorView (4.1.0):
     - NVActivityIndicatorView/Presenter (= 4.1.0)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - DualSlideMenu
   - EMAlertController
   - IQKeyboardManagerSwift
+  - JHSpinner
   - KVSpinnerView
   - NVActivityIndicatorView
   - paper-onboarding
@@ -34,6 +36,7 @@ SPEC CHECKSUMS:
   DualSlideMenu: 8e1c5255a95c3dcfc1c6dc470105278765f52093
   EMAlertController: db945aa666b737b86b0d22c9ee464e552fc63bb8
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
+  JHSpinner: bf7cc91a7e0ccad6336d2b0a3429dd34e7325e65
   KVSpinnerView: ce89cec80a5776ba4639c312770f01c8a091e80a
   NVActivityIndicatorView: dc4726052dc24e89fa8576d43acf9e96f61d49db
   paper-onboarding: 0aa1746d820fcf44371d41ee521aa3d8e5679263
@@ -42,6 +45,6 @@ SPEC CHECKSUMS:
   TIHexColor: cd08f26b7b0ca5056991beac157c8c0004efade1
   ZAlertView: 59fffdb4e37a01df461835566d5101052b8af953
 
-PODFILE CHECKSUM: cbc8fd1fb82b7edad172abd8550d331e6f46d2da
+PODFILE CHECKSUM: 94ed36626bf1fbea42dd01d40d5b06f4ec312219
 
 COCOAPODS: 1.4.0
