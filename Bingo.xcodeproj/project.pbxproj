@@ -27,6 +27,7 @@
 		3A3FFB90207A52B6008BD69B /* ChargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB8F207A52B6008BD69B /* ChargeTableViewCell.swift */; };
 		3A3FFB94207AC130008BD69B /* BleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB93207AC130008BD69B /* BleList.swift */; };
 		3A3FFB97207AD9E2008BD69B /* BatteryIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */; };
+		3A887A48208B9C92000B3B9B /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A887A47208B9C92000B3B9B /* TabbarViewController.swift */; };
 		3AADBEC3205C94CF00BFDD50 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */; };
 		3AADBEC6205D47D600BFDD50 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADBEC5205D47D600BFDD50 /* BasketTableViewCell.swift */; };
 		3AC68A66205426F100553184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC68A65205426F100553184 /* AppDelegate.swift */; };
@@ -97,6 +98,7 @@
 		3A3FFB8F207A52B6008BD69B /* ChargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeTableViewCell.swift; sourceTree = "<group>"; };
 		3A3FFB93207AC130008BD69B /* BleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleList.swift; sourceTree = "<group>"; };
 		3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryIndicator.swift; sourceTree = "<group>"; };
+		3A887A47208B9C92000B3B9B /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		3AADBEC5205D47D600BFDD50 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		3AC68A62205426F100553184 /* Bingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -385,6 +387,7 @@
 			children = (
 				3A17D9CF2066F449002F51A0 /* RightMenuViewController.swift */,
 				3A17D9D32066F7A9002F51A0 /* LeftMenuViewController.swift */,
+				3A887A47208B9C92000B3B9B /* TabbarViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				3AC68A60205426F100553184 /* Resources */,
 				C9D31AE54B7B773A52C66DB7 /* [CP] Embed Pods Frameworks */,
 				46CD7B3B05BA7950E5ABFC01 /* [CP] Copy Pods Resources */,
+				3A887A46208B736D000B3B9B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -472,6 +476,9 @@
 							};
 							com.apple.NetworkExtensions.iOS = {
 								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -552,6 +559,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingoUITests/Pods-BingoUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3A887A46208B736D000B3B9B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 2c2c66e25c8d9211b5096c219d323aa28306dbde 2d3125528c1d221607a87cf73cc1d6b9794d644bfecdaf8b190129f343c99383";
 		};
 		46CD7B3B05BA7950E5ABFC01 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -732,6 +752,7 @@
 				3A17D9D42066F7A9002F51A0 /* LeftMenuViewController.swift in Sources */,
 				3AF5637C20742CA700695CF9 /* TweeBorderedTextField.swift in Sources */,
 				3AC68A66205426F100553184 /* AppDelegate.swift in Sources */,
+				3A887A48208B9C92000B3B9B /* TabbarViewController.swift in Sources */,
 				3AF563932076645300695CF9 /* DoneViewController.swift in Sources */,
 				3AF5638F2076641700695CF9 /* CheckPersonalInfoViewController.swift in Sources */,
 				3AF5637D20742CA700695CF9 /* TweePlaceholderTextField.swift in Sources */,
@@ -920,11 +941,15 @@
 			baseConfigurationReference = 62F29584064AD9059EA96D39 /* Pods-Bingo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bingo/Bingo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D5G8SK67F3;
+				DEVELOPMENT_TEAM = FT842AS7AU;
 				INFOPLIST_FILE = Bingo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Bingo/Libraries/BBDeviceLibrary",
@@ -945,7 +970,7 @@
 					"\"ZAlertView\"",
 					"-lstdc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Teska.Bingo;
+				PRODUCT_BUNDLE_IDENTIFIER = Arena.Bingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Bingo/Bingo_Bridging_Header_h.h;
 				SWIFT_VERSION = 4.0;
@@ -958,15 +983,20 @@
 			baseConfigurationReference = DE84CD9B8100B9A83EF86CAE /* Pods-Bingo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bingo/Bingo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D5G8SK67F3;
+				DEVELOPMENT_TEAM = FT842AS7AU;
 				INFOPLIST_FILE = Bingo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Bingo/Libraries/BBDeviceLibrary",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -983,7 +1013,7 @@
 					"\"ZAlertView\"",
 					"-lstdc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Teska.Bingo;
+				PRODUCT_BUNDLE_IDENTIFIER = Arena.Bingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Bingo/Bingo_Bridging_Header_h.h;
 				SWIFT_VERSION = 4.0;
@@ -1000,7 +1030,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = BingoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Teska.BingoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1018,7 +1052,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = BingoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Teska.BingoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1035,7 +1073,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = BingoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Teska.BingoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1052,7 +1094,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5G8SK67F3;
 				INFOPLIST_FILE = BingoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Teska.BingoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -19,7 +19,9 @@ target 'Bingo' do
   pod 'TIHexColor'
   pod 'BarcodeScanner'
   pod 'TCPickerView'
-  pod 'JHSpinner'
+  pod 'JHSpinner'  
+  pod 'Fabric'
+  pod 'Crashlytics'
   
   target 'BingoTests' do
     inherit! :search_paths

@@ -42,7 +42,6 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +52,12 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         BBDeviceController.shared().startBTScan(nil, scanTimeout: 200);
         
         CustomizeViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        BBDeviceController.shared().isDebugLogEnabled = true;
+        BBDeviceController.shared().delegate = self;
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {
@@ -77,6 +82,13 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         
         picker.show()
 
+    }
+    
+    func onBTScanTimeout() {
+        if spinner != nil
+        {
+            spinner.dismiss()
+        }
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
@@ -192,7 +204,13 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     
     func onWaiting(forCard checkCardMode: BBDeviceCheckCardMode) {
         
+        
+        if waitForCartAlert != nil {
+            self.waitForCartAlert.dismiss(animated: true, completion: nil)
+        }
+        
         waitForCartAlert = EMAlertController(title: "", message: "منتظر کشیدن کارت")
+        
         waitForCartAlert.iconImage = UIImage(named: "pos")
         let cancel = EMAlertAction(title: "لغو", style: .cancel){
             BBDeviceController.shared().cancelCheckCard()
@@ -216,6 +234,8 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
             BBDeviceController.shared().startPinEntry(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
 
     }
+    
+    
     
     func onRequestPinEntry(_ pinEntrySource: BBDevicePinEntrySource) {
         
@@ -353,6 +373,14 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     @objc func GetBatteryPercentage()
     {
         BBDeviceController.shared().getDeviceInfo();
+    }
+    
+    @IBAction func RightMenuButtonEvent(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["side":"right"])
+    }
+    
+    @IBAction func LeftMenuButtonEvent(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["side":"left"])
     }
     
     override func didReceiveMemoryWarning() {

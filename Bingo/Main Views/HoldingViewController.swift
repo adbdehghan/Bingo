@@ -22,14 +22,18 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     var spinner:JHSpinnerView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        UICustomization()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
-        UICustomization()
         GetBatteryPercentage()
         StartBatteryCheck()
-
     }
+    
     func onBTReturnScanResults(_ devices: [Any]!) {
         BleList.sharedInstance.devices.removeAllObjects()
         BleList.sharedInstance.devices.addObjects(from: devices)
@@ -51,6 +55,13 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
         }
         
         picker.show()
+    }
+    
+    func onBTScanTimeout() {
+        if spinner != nil
+        {
+            spinner.dismiss()
+        }
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
@@ -162,6 +173,10 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     
     func onWaiting(forCard checkCardMode: BBDeviceCheckCardMode) {
         
+        if waitForCartAlert != nil {
+            self.waitForCartAlert.dismiss(animated: true, completion: nil)
+        }
+        
         waitForCartAlert = EMAlertController(title: "", message: "منتظر کشیدن کارت")
         waitForCartAlert.iconImage = UIImage(named: "pos")
         let cancel = EMAlertAction(title: "لغو", style: .cancel){
@@ -228,6 +243,14 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     {
         batterIndicator.precentCharged = BleList.sharedInstance.batteryPercentage
         batterIndicator.animatedReveal = true
+    }
+    
+    @IBAction func RightMenuButtonEvent(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["side":"right"])
+    }
+    
+    @IBAction func LeftMenuButtonEvent(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["side":"left"])
     }
     
     func UICustomization()

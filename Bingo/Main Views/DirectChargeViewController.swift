@@ -28,17 +28,19 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
     var spinner:JHSpinnerView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
         chargePriceTableView.dataSource = self
         chargePriceTableView.delegate = self
+        UICustomization()        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
-        UICustomization()
         GetBatteryPercentage()
         StartBatteryCheck()
     }
-    
     
     func onBTReturnScanResults(_ devices: [Any]!) {
         BleList.sharedInstance.devices.removeAllObjects()
@@ -61,6 +63,13 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         }
         
         picker.show()
+    }
+    
+    func onBTScanTimeout() {
+        if spinner != nil
+        {
+            spinner.dismiss()
+        }
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
@@ -189,6 +198,10 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
     }
     
     func onWaiting(forCard checkCardMode: BBDeviceCheckCardMode) {
+        
+        if waitForCartAlert != nil {
+            self.waitForCartAlert.dismiss(animated: true, completion: nil)
+        }
         
         waitForCartAlert = EMAlertController(title: "", message: "منتظر کشیدن کارت")
         waitForCartAlert.iconImage = UIImage(named: "pos")
@@ -351,6 +364,14 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
     {
         batterIndicator.precentCharged = BleList.sharedInstance.batteryPercentage
         batterIndicator.animatedReveal = true
+    }
+    
+    @IBAction func RightMenuButtonEvent(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["side":"right"])
+    }
+    
+    @IBAction func LeftMenuButtonEvent(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["side":"left"])
     }
     
     override func didReceiveMemoryWarning() {

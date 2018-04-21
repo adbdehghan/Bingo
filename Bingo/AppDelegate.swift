@@ -9,6 +9,8 @@
 import UIKit
 import DualSlideMenu
 import IQKeyboardManagerSwift
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var storyboard: UIStoryboard?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        Fabric.with([Crashlytics.self])
         IQKeyboardManager.sharedManager().enable = true
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -33,17 +35,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window!.rootViewController = controller
 //        window!.makeKeyAndVisible()
         
-        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        if #available(iOS 10.0, *) {
+            UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        } else {
+            if let items = UITabBar.appearance().items {
+                let tabBarImages = getTabBarImages() // tabBarImages: [UIImage]
+                for i in 0..<items.count {
+                    let tabBarItem = items[i]
+                    let tabBarImage = tabBarImages[i]
+                    tabBarItem.image = tabBarImage.withRenderingMode(.alwaysOriginal)
+                    tabBarItem.selectedImage = tabBarImage
+                }
+            }
+        }
         UINavigationBar.appearance().tintColor = UIColor.white
         UITabBarItem.appearance()
             .setTitleTextAttributes(
                 [NSAttributedStringKey.font: UIFont(name: "IRANSans-Medium", size: 11)!],
                 for: .normal)
+        
         UITabBarItem.appearance()
             .setTitleTextAttributes(
                 [NSAttributedStringKey.font: UIFont(name: "IRANSans-Medium", size: 11)!],
                 for: .selected)
         return true
+    }
+    
+    func getTabBarImages() -> [UIImage]
+    {
+        return [UIImage(named:"kharid")!,UIImage(named:"sharje_mostaghim")!,UIImage(named:"pardakht_ghabz")!,UIImage(named:"balance")!]
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

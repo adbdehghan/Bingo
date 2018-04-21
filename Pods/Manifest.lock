@@ -1,8 +1,11 @@
 PODS:
   - Alamofire (4.6.0)
   - BarcodeScanner (3.0.1)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
   - DualSlideMenu (1.7.3)
   - EMAlertController (1.0.1)
+  - Fabric (1.7.2)
   - IQKeyboardManagerSwift (5.0.6)
   - JHSpinner (0.2.1)
   - KVSpinnerView (1.0.1)
@@ -18,8 +21,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - BarcodeScanner
+  - Crashlytics
   - DualSlideMenu
   - EMAlertController
+  - Fabric
   - IQKeyboardManagerSwift
   - JHSpinner
   - KVSpinnerView
@@ -33,8 +38,10 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   BarcodeScanner: c1dd3174997dacde30fd0aae949691b65bc184fc
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   DualSlideMenu: 8e1c5255a95c3dcfc1c6dc470105278765f52093
   EMAlertController: db945aa666b737b86b0d22c9ee464e552fc63bb8
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   JHSpinner: bf7cc91a7e0ccad6336d2b0a3429dd34e7325e65
   KVSpinnerView: ce89cec80a5776ba4639c312770f01c8a091e80a
@@ -45,6 +52,6 @@ SPEC CHECKSUMS:
   TIHexColor: cd08f26b7b0ca5056991beac157c8c0004efade1
   ZAlertView: 59fffdb4e37a01df461835566d5101052b8af953
 
-PODFILE CHECKSUM: 94ed36626bf1fbea42dd01d40d5b06f4ec312219
+PODFILE CHECKSUM: 3e53e633f60149c3b1ca1a2878bc33a608cc1ce4
 
 COCOAPODS: 1.4.0

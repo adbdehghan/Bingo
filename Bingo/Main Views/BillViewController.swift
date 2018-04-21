@@ -26,9 +26,13 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UICustomization()  
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
-        UICustomization()
         GetBatteryPercentage()
         StartBatteryCheck()
     }
@@ -54,6 +58,13 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
         }
         
         picker.show()
+    }
+    
+    func onBTScanTimeout() {
+        if spinner != nil
+        {
+            spinner.dismiss()
+        }
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
@@ -170,6 +181,10 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     
     func onWaiting(forCard checkCardMode: BBDeviceCheckCardMode) {
         
+        if waitForCartAlert != nil {
+            self.waitForCartAlert.dismiss(animated: true, completion: nil)
+        }
+        
         waitForCartAlert = EMAlertController(title: "", message: "منتظر کشیدن کارت")
         waitForCartAlert.iconImage = UIImage(named: "pos")
         let cancel = EMAlertAction(title: "لغو", style: .cancel){
@@ -258,6 +273,14 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     
     func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
         
+    }
+    
+    @IBAction func RightMenuButtonEvent(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["side":"right"])
+    }
+    
+    @IBAction func LeftMenuButtonEvent(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["side":"left"])
     }
     
     func UICustomization()

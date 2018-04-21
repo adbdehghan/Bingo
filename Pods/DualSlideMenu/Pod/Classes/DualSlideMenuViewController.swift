@@ -45,7 +45,6 @@ public class DualSlideMenuViewController: UIViewController {
         view.insertSubview(leftMenu.view, belowSubview: mainView.view)
         amountOfMenus = 1;
         menuType = .Left
-        
     }
     
     public convenience init (mainViewController: UIViewController, rightMenuViewController: UIViewController) {
@@ -100,6 +99,7 @@ public class DualSlideMenuViewController: UIViewController {
         // adds the recognizers to the main view not the side views
         mainView.view.addGestureRecognizer(leftSwipe)
         mainView.view.addGestureRecognizer(rightSwipe)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
     }
     
     /**
@@ -127,6 +127,18 @@ public class DualSlideMenuViewController: UIViewController {
             toggle(swipeDirection: "right")
         }
         delegate?.onSwipe!()
+    }
+    
+    @objc func methodOfReceivedNotification(notification:Notification)
+    {
+        if notification.userInfo!["side"] as! String == "left"
+        {
+            toggle(swipeDirection: "right")
+        }
+        else
+        {
+            toggle(swipeDirection: "left")
+        }
     }
     
     /**
