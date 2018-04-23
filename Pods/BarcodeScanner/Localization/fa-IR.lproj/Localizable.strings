@@ -1,0 +1,7 @@
+"SCAN_BARCODE_TITLE" = "اسکن";
+"BUTTON_CLOSE" = "بستن";
+"BUTTON_SETTINGS" = "تنظیمات";
+"INFO_DESCRIPTION_TEXT" = "بارکد را بین پنجزه نگه دارید";
+"INFO_LOADING_TITLE" = "Looking for your product...";
+"NO_PRODUCT_ERROR_TITLE" = "No product found.";
+"ASK_FOR_PERMISSION_TEXT" = "برای اسکن بارکد دسترسی به دوربین الزامیست";
