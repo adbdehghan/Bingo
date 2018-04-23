@@ -27,7 +27,7 @@
         <scene sceneID="FYg-0o-5Uy">
             <objects>
                 <viewController id="R1z-vt-FZM" customClass="HoldingViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PRV-N4-IfA">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="PRV-N4-IfA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -168,7 +168,7 @@
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="DirectChargeViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -412,7 +412,7 @@
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="BuyViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1165,7 +1165,7 @@
         <scene sceneID="ceP-FQ-EYK">
             <objects>
                 <viewController id="B6a-XO-p5o" customClass="BasketViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NCR-bY-Gq3">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="NCR-bY-Gq3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1289,7 +1289,7 @@
         <scene sceneID="ZyH-zs-nlB">
             <objects>
                 <viewController id="PiF-Z3-Vqp" customClass="BillViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d2f-RA-NVK">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="d2f-RA-NVK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1525,8 +1525,10 @@
                     <connections>
                         <outlet property="barcodeButton" destination="L7D-ky-aUJ" id="Mke-CI-Qyu"/>
                         <outlet property="batterIndicator" destination="nOl-Mm-0iT" id="X1N-9y-d9K"/>
+                        <outlet property="billIDTextField" destination="Z7D-vC-fWh" id="9UD-Iv-qR6"/>
                         <outlet property="bluetoothButton" destination="X3b-8o-S1E" id="l7x-Gp-b8m"/>
                         <outlet property="containerView" destination="xfP-PP-wqV" id="h6F-VV-srN"/>
+                        <outlet property="payIDTextfield" destination="M4v-Kf-WOO" id="0b3-8Y-h4Z"/>
                         <outlet property="sendButton" destination="hV0-dX-10r" id="Prc-z2-4nk"/>
                     </connections>
                 </viewController>
@@ -1538,7 +1540,7 @@
         <scene sceneID="gSK-lA-jjn">
             <objects>
                 <viewController id="gJS-0N-JYW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4wz-Kj-yEK">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="4wz-Kj-yEK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1577,7 +1579,7 @@
         <scene sceneID="pAK-0C-vNU">
             <objects>
                 <viewController id="FKq-K9-4Wt" customClass="IntroductionViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mVL-sc-r5j">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="mVL-sc-r5j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1589,7 +1591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDM-OQ-f46" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-751" y="0.0"/>
+            <point key="canvasLocation" x="-769" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lav-ba-X0j">
@@ -1615,7 +1617,7 @@
         <scene sceneID="3DR-Km-A8J">
             <objects>
                 <viewController id="OWl-9p-MbB" customClass="EnterInfoViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sd2-cc-u4h">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="Sd2-cc-u4h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1781,7 +1783,7 @@
         <scene sceneID="dVB-Sl-CsS">
             <objects>
                 <viewController id="2iy-vU-o0r" customClass="CheckPersonalInfoViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MY4-cS-cfe">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="MY4-cS-cfe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2040,7 +2042,7 @@
                         <viewControllerLayoutGuide type="top" id="RAe-HE-G87"/>
                         <viewControllerLayoutGuide type="bottom" id="1t3-SN-6Uy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="b6o-tS-94H">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="b6o-tS-94H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2149,7 +2151,7 @@
                         <viewControllerLayoutGuide type="top" id="mq6-fG-S45"/>
                         <viewControllerLayoutGuide type="bottom" id="zV7-ja-G4K"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2vP-Xj-ifz">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="2vP-Xj-ifz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2250,7 +2252,7 @@
         <scene sceneID="79j-Ag-YyD">
             <objects>
                 <viewController id="VD3-0e-Zbv" customClass="CheckBusinessInfoViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kmk-29-Vxv">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="kmk-29-Vxv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2492,7 +2494,7 @@
         <scene sceneID="NvC-wa-FZq">
             <objects>
                 <viewController id="NHs-EC-JnJ" customClass="DoneViewController" customModule="Bingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bhn-GT-0XG">
+                    <view key="view" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" id="Bhn-GT-0XG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

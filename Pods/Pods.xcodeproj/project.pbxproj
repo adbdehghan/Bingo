@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,6 +42,7 @@
 		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B68045672368D1E711EF269396E40F /* TaskDelegate.swift */; };
 		36600E995DF9181E2248FCD11DFB97E4 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2628EC921B23C886A17CFB465F0F61A0 /* NVActivityIndicatorAnimationBallZigZag.swift */; };
 		3A836B077ABD94B0144FE6A3C015EBAE /* TCPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B75D91AC214736955444CE35083945 /* TCPickerView.swift */; };
+		3A9E4413208E839F000F24C3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DBCA664673D594C38D37AEA0BF4A12 /* Localizable.strings */; };
 		3BBE9035BF71170F5CD3E2FF845A1A34 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB7F9274A6D4ECB5E4213095B446EA95 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C607ADC9595216CA479F9F4A0D58D0C /* NVActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA431D2E46A4BDCC4C0D2AABB67181 /* NVActivityIndicatorAnimationDelegate.swift */; };
 		409BCBFBF2161753E6B85649EF6633C5 /* OnboardingContantViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77130D5A935B69B1EAEE40AD37BDE273 /* OnboardingContantViewItem.swift */; };
@@ -331,7 +332,7 @@
 		1C12B04D53BC62073C929D21D11A3EFC /* TIHexColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TIHexColor.swift; path = Sources/TIHexColor.swift; sourceTree = "<group>"; };
 		1CB9766EBB7F5C512AE7CEDD56FB4596 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		1CED89067190617B84FFFF8507F2C1A7 /* paper-onboarding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "paper-onboarding.modulemap"; sourceTree = "<group>"; };
-		1D1F0CCFE70C59F4337D82BF6A6B3B98 /* BarcodeScanner.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BarcodeScanner.bundle; path = "BarcodeScanner-BarcodeScanner.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D1F0CCFE70C59F4337D82BF6A6B3B98 /* BarcodeScanner.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodeScanner.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2231A2C8F386466E2A8CC13F3D172D /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		1D8B13AF5A2391862806308AA36CE5A2 /* Pods-BingoUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BingoUITests-frameworks.sh"; sourceTree = "<group>"; };
 		1E06A08A97888240151C93B8BBD43D04 /* Pods-Bingo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bingo-umbrella.h"; sourceTree = "<group>"; };
@@ -342,13 +343,13 @@
 		2118D0EE95D9305F73EFB3F835CEA2C1 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21C9D5359E96B4B927D5C7809E7D20FE /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		226A44438C47D30CBC83A95DE64C42EE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		239A61E0D3D3A36B4717F09AB5044825 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		239A61E0D3D3A36B4717F09AB5044825 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25512B77ACD5072822932A1C569DA734 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		2552B3FFF1DF6D4BBD587EEE7A215B0D /* Pods-Bingo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bingo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2628EC921B23C886A17CFB465F0F61A0 /* NVActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallZigZag.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallZigZag.swift; sourceTree = "<group>"; };
 		26EB01604291C569F39D127E54ADD295 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		27FCF56FC7DAEAA91305E556F6EC9D17 /* EMAlertController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EMAlertController.xcconfig; sourceTree = "<group>"; };
-		292EC78B7D5C2A84EE886213141F1147 /* Pods_Bingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bingo.framework; path = "Pods-Bingo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		292EC78B7D5C2A84EE886213141F1147 /* Pods_Bingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BBAA9EC09615301B11BDF108144666 /* paper-onboarding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "paper-onboarding-dummy.m"; sourceTree = "<group>"; };
 		2B0ADB12222B61D275BBA8C1B102F52C /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		2B4E3F489192D93CD1C53CA29506927F /* NVActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationCubeTransition.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationCubeTransition.swift; sourceTree = "<group>"; };
@@ -358,7 +359,7 @@
 		2DA2D54D226EB759CEFB790DD8BC9057 /* ZAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZAlertView.swift; path = Pod/Classes/ZAlertView.swift; sourceTree = "<group>"; };
 		2EB9B01335EF48A61016EE12B1C2FDC2 /* UIColor+EMAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+EMAlertController.swift"; path = "EMAlertController/EMAlertController/UIColor+EMAlertController.swift"; sourceTree = "<group>"; };
 		30F2A2FA900D1E307AE39932904F1C71 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31227DA2C6AA147094CB1DA41B0C3869 /* ZAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZAlertView.framework; path = ZAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31227DA2C6AA147094CB1DA41B0C3869 /* ZAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		322B1B802A841E588CA443F984525174 /* Pods-BingoUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BingoUITests-resources.sh"; sourceTree = "<group>"; };
 		3365EAEC6295706CD0A55608D4AFD8A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		341B70A697F379E409249D9C09E2C644 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -369,6 +370,7 @@
 		3787877BF41235493A6F08093F66D6D1 /* NVActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulse.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulse.swift; sourceTree = "<group>"; };
 		3A0A7489865C8BE92A8694CA7763568C /* Pods-BingoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BingoTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3A9C1F9F00188EE141799DF76F4B04BC /* KVSpinnerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVSpinnerView-prefix.pch"; sourceTree = "<group>"; };
+		3A9E4414208E85D4000F24C3 /* fa-IR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-IR"; path = "fa-IR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3C131482A62A06D69740E7200BC10B64 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
 		3C4387627430F7E53DE9EAEF11825397 /* KVSpinnerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KVSpinnerView-dummy.m"; sourceTree = "<group>"; };
 		3CD5FC643CAFFE71D6DC4EC0D4B265A8 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
@@ -391,7 +393,7 @@
 		4E362390B01B4893193C4D6DB75944FD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E378FE8C94D6189272D58D178093D57 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		4F70B9DAB920E647F0CA531F3754E4C3 /* NVActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScale.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
-		4F916E49D178C22657E6CD52438BB084 /* TIHexColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TIHexColor.framework; path = TIHexColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F916E49D178C22657E6CD52438BB084 /* TIHexColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TIHexColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A5CD116BF5462584B333CEEC8AA746 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
 		51F51A753F03D658F13BEB6D6B1C6CCC /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		52F0573F00F6084CDD3812010139BBBF /* JHSpinner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JHSpinner-dummy.m"; sourceTree = "<group>"; };
@@ -410,7 +412,7 @@
 		5C78A6E5133F81ED2C99B502723CAC9C /* NVActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleRipple.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = "<group>"; };
 		5CABB794EC43BD654AE53D1843DD59E7 /* NVActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridBeat.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
 		5D53EFCC4E52737C751AB8150B388D92 /* NVActivityIndicatorView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NVActivityIndicatorView-dummy.m"; sourceTree = "<group>"; };
-		5EA9C477773D95D78300295F08DDC92B /* Localization.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Localization.bundle; path = "BarcodeScanner-Localization.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EA9C477773D95D78300295F08DDC92B /* Localization.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Localization.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		603A638D24A0ADE588FDB8C7B7489A5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		66092A30C39CD8DB65CCDD4869C5FB7A /* Pods-BingoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BingoTests-umbrella.h"; sourceTree = "<group>"; };
 		6618D74B018DDFF396CA12BEB2218431 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
@@ -418,14 +420,14 @@
 		6849777B9CB6A50ED1EE32B073DB1F90 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		685073E4DD7A3565596CE67E306594E4 /* paper-onboarding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "paper-onboarding-prefix.pch"; sourceTree = "<group>"; };
 		6AB788193B102ADBD846E36F64F47FC3 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationTriangleSkewSpin.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = "<group>"; };
-		6ADAC9BC817FAD0A3EBC614EA9327D8C /* Pods_BingoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BingoTests.framework; path = "Pods-BingoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ADAC9BC817FAD0A3EBC614EA9327D8C /* Pods_BingoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0EE1471959B5D4F5847350CDB45BD4 /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Pod/Classes/UIColor.swift; sourceTree = "<group>"; };
-		6CD853E908C809B78CCE09869822533D /* TCPickerView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TCPickerView.bundle; path = "TCPickerView-TCPickerView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CD853E908C809B78CCE09869822533D /* TCPickerView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCPickerView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC972A33CB4C240423ABE1B5462A2D9 /* PaperOnboarding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaperOnboarding.swift; path = Source/PaperOnboarding.swift; sourceTree = "<group>"; };
 		6E507752055402D8275A4FE4B1F30856 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E79AFCC3A75B0DF63A7E790D63A9AC7 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
 		736ECD12BA6766EF7B9F6E62B935A1F2 /* ConstraintsHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintsHelper.swift; path = Source/Helpers/ConstraintsHelper.swift; sourceTree = "<group>"; };
-		7449A717567E5B4D0EFFE23DAD84BF3A /* TCPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TCPickerView.framework; path = TCPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7449A717567E5B4D0EFFE23DAD84BF3A /* TCPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TCPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7487A72A26E7456F6ABD284804859652 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		74B093477EE6510B3F227E175681FE7F /* ZAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZAlertView.modulemap; sourceTree = "<group>"; };
 		7502D93E497A92605FDCC90A457ED2EE /* NVActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotate.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
@@ -448,7 +450,7 @@
 		836E9D036ABAE5AF3AB56CBBFB81A67D /* KVSpinnerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVSpinnerView-umbrella.h"; sourceTree = "<group>"; };
 		846C9D714A22E4807EB87B9F5B1C3020 /* DualSlideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DualSlideMenu-prefix.pch"; sourceTree = "<group>"; };
 		8542BA0B34066DB3E635E4A65EAEB85E /* NVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorViewable.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Presenter/NVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
-		8680F8D26ADF90E7662E3D12DC343687 /* Pods_BingoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BingoUITests.framework; path = "Pods-BingoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8680F8D26ADF90E7662E3D12DC343687 /* Pods_BingoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CCBCBC6B2E6B5E53E0A626383E4732 /* Pods-BingoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BingoTests.modulemap"; sourceTree = "<group>"; };
 		89CBF2D3F07BEB93F088E65AD9C9BA49 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AC6E20E4AA91E72BE07B7602E407F7F /* Configuring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuring.swift; path = Source/Helpers/Configuring.swift; sourceTree = "<group>"; };
@@ -456,15 +458,15 @@
 		8B759C932F54BE19440606DE61478EBF /* ResourceBundle-DualSlideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DualSlideMenu-Info.plist"; sourceTree = "<group>"; };
 		8BFF17B951BB11EB34CC2A5951A35723 /* Pods-BingoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BingoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D84B9311559880B34856A79AD9D9C32 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DBB594A07936CE3060378A3AFF4B792 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NVActivityIndicatorView.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DBB594A07936CE3060378A3AFF4B792 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA66AC7EDF631A578F47BD8C1EE0395 /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Sources/Config.swift; sourceTree = "<group>"; };
 		93741E0E4355CF16775DA9D3F9D53905 /* NVActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationPacman.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		944406B8E157E126050AFA4D365B6E87 /* CircleLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleLayer.swift; path = KVSpinnerView/Layers/CircleLayer.swift; sourceTree = "<group>"; };
 		95036CC7F1EEC1A454771B40F10CCE29 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		9657AA5EB71145FF7F1C5A46C29E1BEC /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		9714C2DDC6B099D744AE761A8549DC50 /* EMAlertController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EMAlertController.modulemap; sourceTree = "<group>"; };
-		98847C57387BA6FD2CF6DC2BBB1A59A5 /* KVSpinnerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KVSpinnerView.framework; path = KVSpinnerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98847C57387BA6FD2CF6DC2BBB1A59A5 /* KVSpinnerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVSpinnerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E529EA624407207EA8CF7E6988EAF6 /* PageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Source/PageView/PageView.swift; sourceTree = "<group>"; };
 		9AB179696BB06FCE2AAB44EB5C017F8E /* FocusViewType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FocusViewType.swift; path = Sources/FocusViewType.swift; sourceTree = "<group>"; };
 		9BBEC7DCE7CFEF25D14DAA91959B94B8 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -474,14 +476,14 @@
 		9FCD36EE6C89DA9B23706429A3E086FE /* TIHexColor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TIHexColor.xcconfig; sourceTree = "<group>"; };
 		A04589557A7372576C259FA6DAED0C5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1982CC259B3AD165E6F6CA783C1AD2C /* DualSlideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DualSlideMenu.xcconfig; sourceTree = "<group>"; };
-		A20F1AEC11C860FBF4ACBA6C7B756DA0 /* paper_onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = paper_onboarding.framework; path = "paper-onboarding.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20F1AEC11C860FBF4ACBA6C7B756DA0 /* paper_onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = paper_onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22AEF4F9BB214781042BB51D480738C /* NVActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationAudioEqualizer.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
 		A69FC888D449E43D56DC53F3B6F73334 /* paper-onboarding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "paper-onboarding.xcconfig"; sourceTree = "<group>"; };
 		A8B6406EE98CFD3A7EA5F1AA63CB1215 /* FillAnimationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillAnimationView.swift; path = Source/FillAnimationView/FillAnimationView.swift; sourceTree = "<group>"; };
 		A9B1B7B0AE9D4CD48B591F9A6DFB8144 /* NVActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridPulse.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallGridPulse.swift; sourceTree = "<group>"; };
 		A9DF1DB6AF880ABAF003CDBFCA199528 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		AA0DC4B6C0C0404CE86B483F7DFE4BA8 /* KVSpinnerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KVSpinnerView.modulemap; sourceTree = "<group>"; };
-		AA819810FB2804D188006F21194D02C7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA819810FB2804D188006F21194D02C7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB657F80A94E60E4837D47299D7C22BE /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineSpinFadeLoader.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineSpinFadeLoader.swift; sourceTree = "<group>"; };
 		ABDC4C8757EA01663CA7C2F454A17E10 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		AC0E1E7C3E5BEF96B0F5A98A96B02F7B /* NVActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallTrianglePath.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = "<group>"; };
@@ -531,11 +533,11 @@
 		D3B75D91AC214736955444CE35083945 /* TCPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TCPickerView.swift; path = TCPickerView/Source/Classes/TCPickerView.swift; sourceTree = "<group>"; };
 		D46FB9B33CCF0F87306235F68DA2BB1A /* Pods-Bingo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bingo-acknowledgements.plist"; sourceTree = "<group>"; };
 		D4F61107D0C1FCE06BA48DA1A92E880D /* TCPickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TCPickerView-prefix.pch"; sourceTree = "<group>"; };
-		D558715E9E32F0ED418C0BCB2CE45896 /* EMAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EMAlertController.framework; path = EMAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D558715E9E32F0ED418C0BCB2CE45896 /* EMAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EMAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69186DB6921D4B4BA47B37413D7EBF2 /* KVSpinnerViewSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KVSpinnerViewSettings.swift; path = KVSpinnerView/KVSpinnerViewSettings.swift; sourceTree = "<group>"; };
 		D800DDF3B85716B350E34F313981D4A8 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
 		D82762087201D191C524F4D7958FCBAF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		D89C6523B7639B27A1262D1674FE3DE2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D89C6523B7639B27A1262D1674FE3DE2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97B902ED3475CE5C2B8FA54F9F46CDD /* Pods-Bingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bingo.release.xcconfig"; sourceTree = "<group>"; };
 		DA78C2074951968514F5453F49A5546D /* TCPickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TCPickerView.xcconfig; sourceTree = "<group>"; };
 		DB61D50B994122CC027DC3214889D2F3 /* ResourceBundle-Localization-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Localization-Info.plist"; sourceTree = "<group>"; };
@@ -551,7 +553,7 @@
 		E60DE260CBB3269E79A931CD61E5F0A1 /* Pods-BingoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BingoUITests-dummy.m"; sourceTree = "<group>"; };
 		E7123917F11E78F2431F4335383B543E /* PageContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageContainer.swift; path = Source/PageView/PageContainerView/PageContainer.swift; sourceTree = "<group>"; };
 		E77070B65296775EBB161B225B92CBDE /* BarcodeScanner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BarcodeScanner.xcconfig; sourceTree = "<group>"; };
-		E785EA5B97EF72D9F658FE5C2BF42134 /* BarcodeScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BarcodeScanner.framework; path = BarcodeScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E785EA5B97EF72D9F658FE5C2BF42134 /* BarcodeScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BarcodeScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA54E7BE59C7D83A9DB589D03460A6AA /* EMAlertController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EMAlertController-prefix.pch"; sourceTree = "<group>"; };
 		EA6BB02224BD831B479A5639A6EB35A9 /* TIHexColor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TIHexColor-prefix.pch"; sourceTree = "<group>"; };
 		EC473466C5A36266E8E0212D246095B2 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleMultiple.swift; path = NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = "<group>"; };
@@ -561,7 +563,7 @@
 		F0DE6C5A71FADC6DD637E91943750ED5 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		F1150B331B0F2349825FCD44CEEED4C4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F25C5FE6FE4C23C4D053CC4BD93978BC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F37E66FBA5BA924BE12B8D26BAB25C0B /* JHSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JHSpinner.framework; path = JHSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37E66FBA5BA924BE12B8D26BAB25C0B /* JHSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JHSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44F0DB59F04F1BFB0F780291C2363FC /* StatusTitleLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StatusTitleLayer.swift; path = KVSpinnerView/Layers/StatusTitleLayer.swift; sourceTree = "<group>"; };
 		F6356A2D06F26A6A62308F5ACF3CF63E /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		F6A43DA3E8AD02D9FBD58EDFE1365221 /* IQUIWindow+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIWindow+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIWindow+Hierarchy.swift"; sourceTree = "<group>"; };
@@ -570,10 +572,10 @@
 		F9EAED5EBD5A15345DD859A73EA59B29 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		FA062D0CC1799F791000B7E4717547A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5BBCD1532936D86DB081829C6FD1A8 /* TCPickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TCPickerView-umbrella.h"; sourceTree = "<group>"; };
-		FA6D0DCDC53A5CB15BAAD773EED68361 /* DualSlideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DualSlideMenu.framework; path = DualSlideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA6D0DCDC53A5CB15BAAD773EED68361 /* DualSlideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DualSlideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F42BE355BEE39EBD2D91506233B87 /* JHSpinner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JHSpinner.xcconfig; sourceTree = "<group>"; };
 		FAB229EB3D64C20ED8AB2F5967161073 /* DualSlideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DualSlideMenu-dummy.m"; sourceTree = "<group>"; };
-		FB90BDE85C46952553192F60FCFF495A /* DualSlideMenu.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DualSlideMenu.bundle; path = "DualSlideMenu-DualSlideMenu.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB90BDE85C46952553192F60FCFF495A /* DualSlideMenu.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DualSlideMenu.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE340D91357943484BCCE585E3F755C1 /* InfoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfoView.swift; path = Sources/InfoView.swift; sourceTree = "<group>"; };
 		FEDFD0A6E2CB89A81B8A5FED219347AF /* Pods-BingoTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BingoTests-frameworks.sh"; sourceTree = "<group>"; };
 		FFED1C8691161F85CEA8B81E6BFBB6EB /* AnimationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationManager.swift; path = KVSpinnerView/AnimationManager.swift; sourceTree = "<group>"; };
@@ -760,7 +762,6 @@
 				F44F0DB59F04F1BFB0F780291C2363FC /* StatusTitleLayer.swift */,
 				8F55D95366D5D327780B3DB3C9D633B5 /* Support Files */,
 			);
-			name = KVSpinnerView;
 			path = KVSpinnerView;
 			sourceTree = "<group>";
 		};
@@ -770,7 +771,6 @@
 				C51837E2EB90AD04DA5205EF3E14B544 /* SwiftyJSON.swift */,
 				420E5E52869C8E76F17BB455B35677EB /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -798,7 +798,6 @@
 				1C12B04D53BC62073C929D21D11A3EFC /* TIHexColor.swift */,
 				670C076F149EB421B3949F21E0826B22 /* Support Files */,
 			);
-			name = TIHexColor;
 			path = TIHexColor;
 			sourceTree = "<group>";
 		};
@@ -1011,7 +1010,6 @@
 				2EB9B01335EF48A61016EE12B1C2FDC2 /* UIColor+EMAlertController.swift */,
 				2B556686400EC4F9A360A6C989A25D07 /* Support Files */,
 			);
-			name = EMAlertController;
 			path = EMAlertController;
 			sourceTree = "<group>";
 		};
@@ -1166,7 +1164,6 @@
 				2DA2D54D226EB759CEFB790DD8BC9057 /* ZAlertView.swift */,
 				BE48FA7881D218D1B3F433DFDB76F427 /* Support Files */,
 			);
-			name = ZAlertView;
 			path = ZAlertView;
 			sourceTree = "<group>";
 		};
@@ -1178,7 +1175,6 @@
 				211CEAC0E75E2D0DF9A4F27B36798F72 /* Resources */,
 				B7769AEE30C920B2C56BC829CB36E32D /* Support Files */,
 			);
-			name = TCPickerView;
 			path = TCPickerView;
 			sourceTree = "<group>";
 		};
@@ -1194,7 +1190,6 @@
 				C83B6D456C5A4979A0ABD68447267978 /* Crashlytics.h */,
 				2917A7D442A13DD061B13A7A5AB658FB /* Frameworks */,
 			);
-			name = Crashlytics;
 			path = Crashlytics;
 			sourceTree = "<group>";
 		};
@@ -1204,7 +1199,6 @@
 				80EF431F245727E98DCBC2B004E5987B /* JHSpinnerView.swift */,
 				93FE50B1D77BBCA828B38A95FB8AF70B /* Support Files */,
 			);
-			name = JHSpinner;
 			path = JHSpinner;
 			sourceTree = "<group>";
 		};
@@ -1230,7 +1224,6 @@
 				61746BA09C116136D029623C4CDEFD36 /* Resources */,
 				1D7C8F92F5CBF52CBC385791188BCDB3 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -1255,7 +1248,6 @@
 				4467A3BC79AFB3C767631D67C2A57603 /* DualSlideMenuViewController.swift */,
 				48CBC94995CD8A0366AF828A1833ADDC /* Support Files */,
 			);
-			name = DualSlideMenu;
 			path = DualSlideMenu;
 			sourceTree = "<group>";
 		};
@@ -1280,7 +1272,6 @@
 				3C131482A62A06D69740E7200BC10B64 /* Fabric.h */,
 				180C5A777742A902F2F4AAB9196C9F20 /* Frameworks */,
 			);
-			name = Fabric;
 			path = Fabric;
 			sourceTree = "<group>";
 		};
@@ -1290,7 +1281,6 @@
 				854592988B4EBF14FD377B98F49B8F7B /* Presenter */,
 				7ECAFDA2B038710E7F232219D174F4CA /* Support Files */,
 			);
-			name = NVActivityIndicatorView;
 			path = NVActivityIndicatorView;
 			sourceTree = "<group>";
 		};
@@ -1316,7 +1306,6 @@
 				7487A72A26E7456F6ABD284804859652 /* Validation.swift */,
 				30BAE924E485B644C22AE72439DF47B1 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1345,7 +1334,6 @@
 				E1810E05C966A38F4596F30CB7B1F595 /* Resources */,
 				FFA4654814A20278DD34811BC669E90E /* Support Files */,
 			);
-			name = BarcodeScanner;
 			path = BarcodeScanner;
 			sourceTree = "<group>";
 		};
@@ -1366,7 +1354,6 @@
 				B87A6EF897C62941651D7077DC59E4A0 /* PaperOnboardingDelegate.swift */,
 				2ACBDE8752794C7BE33F3664A4BEA48C /* Support Files */,
 			);
-			name = "paper-onboarding";
 			path = "paper-onboarding";
 			sourceTree = "<group>";
 		};
@@ -1896,6 +1883,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"fa-IR",
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 6B96A0E08F33BF935C46291D7B8A4AB1 /* Products */;
@@ -1971,6 +1959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68141023C05954B629F953925DD12DB /* BarcodeScanner.bundle in Resources */,
+				3A9E4413208E839F000F24C3 /* Localizable.strings in Resources */,
 				D7F97F18007BF869120DB5FC960E44AE /* Localization.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2377,6 +2366,7 @@
 				2118D0EE95D9305F73EFB3F835CEA2C1 /* Localizable.strings */,
 				BC3AD78385D872DE663BA276EDD56F62 /* Localizable.strings */,
 				779BEAAE4B314D33D92D0070F3CDA19C /* Localizable.strings */,
+				3A9E4414208E85D4000F24C3 /* fa-IR */,
 			);
 			name = Localizable.strings;
 			path = Localization;

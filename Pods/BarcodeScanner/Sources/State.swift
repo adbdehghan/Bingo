@@ -66,8 +66,8 @@ enum State {
     case .scanning:
       styles = (
         tint: Info.tint,
-        font: Info.font,
-        alignment: .left
+        font: Info.font!,
+        alignment: .center
       )
     case .processing:
       styles = (
@@ -78,8 +78,8 @@ enum State {
     case .unauthorized:
       styles = (
         tint: Info.tint,
-        font: Info.font,
-        alignment: .left
+        font: Info.font!,
+        alignment: .center
       )
     case .notFound:
       styles = (

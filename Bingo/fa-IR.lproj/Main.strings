@@ -1,18 +1,162 @@
 
-/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "A5M-7J-77L"; */
-"A5M-7J-77L.text" = "Loaded by FirstViewController";
+/* Class = "UILabel"; text = "شماره موبایل را وارد کنید"; ObjectID = "0C0-1d-tdd"; */
+"0C0-1d-tdd.text" = "شماره موبایل را وارد کنید";
 
-/* Class = "UILabel"; text = "First View"; ObjectID = "KQZ-1w-vlD"; */
-"KQZ-1w-vlD.text" = "First View";
+/* Class = "UILabel"; text = "۰"; ObjectID = "4HQ-oO-OeO"; */
+"4HQ-oO-OeO.text" = "۰";
 
-/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
-"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+/* Class = "UIButton"; normalTitle = "="; ObjectID = "5wK-uh-NTL"; */
+"5wK-uh-NTL.normalTitle" = "=";
 
-/* Class = "UITabBarItem"; title = "First"; ObjectID = "acW-dT-cKf"; */
-"acW-dT-cKf.title" = "First";
+/* Class = "UILabel"; text = "Start Connection"; ObjectID = "5yQ-U0-ls8"; */
+"5yQ-U0-ls8.text" = "Start Connection";
 
-/* Class = "UITabBarItem"; title = "Second"; ObjectID = "cPa-gy-q4n"; */
-"cPa-gy-q4n.title" = "Second";
+/* Class = "UIButton"; normalTitle = "۳"; ObjectID = "BUK-VG-MUm"; */
+"BUK-VG-MUm.normalTitle" = "۳";
 
-/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
-"zEq-FU-wV5.text" = "Second View";
+/* Class = "UIButton"; normalTitle = "۶"; ObjectID = "EsU-oA-FMe"; */
+"EsU-oA-FMe.normalTitle" = "۶";
+
+/* Class = "UILabel"; text = "اطلاعات قبض را وارد نمایید. در صورت نیاز می‌توانید از بارکد خوان نیاز استفاده نمایید"; ObjectID = "FUv-B9-Xb3"; */
+"FUv-B9-Xb3.text" = "اطلاعات قبض را وارد نمایید. در صورت نیاز می‌توانید از بارکد خوان نیاز استفاده نمایید";
+
+/* Class = "UILabel"; text = "بینگو"; ObjectID = "Grg-jE-yqg"; */
+"Grg-jE-yqg.text" = "بینگو";
+
+/* Class = "UIButton"; normalTitle = "تایید"; ObjectID = "HlL-nA-dQa"; */
+"HlL-nA-dQa.normalTitle" = "تایید";
+
+/* Class = "UIButton"; normalTitle = "۴"; ObjectID = "Iec-td-bms"; */
+"Iec-td-bms.normalTitle" = "۴";
+
+/* Class = "UIButton"; normalTitle = "بارکد‌خوان"; ObjectID = "L7D-ky-aUJ"; */
+"L7D-ky-aUJ.normalTitle" = "بارکد‌خوان";
+
+/* Class = "UILabel"; text = "شماره فروشگاه"; ObjectID = "O1Z-AU-6S6"; */
+"O1Z-AU-6S6.text" = "شماره فروشگاه";
+
+/* Class = "UIButton"; normalTitle = "۰"; ObjectID = "Opm-W8-fkO"; */
+"Opm-W8-fkO.normalTitle" = "۰";
+
+/* Class = "UIButton"; normalTitle = "۱۰.۰۰۰"; ObjectID = "Qep-Up-tQx"; */
+"Qep-Up-tQx.normalTitle" = "۱۰.۰۰۰";
+
+/* Class = "UILabel"; text = "اطلاعات خود را وارد کنید"; ObjectID = "RTb-sK-jrk"; */
+"RTb-sK-jrk.text" = "اطلاعات خود را وارد کنید";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "SdI-vv-CEW"; */
+"SdI-vv-CEW.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "نام فروشگاه"; ObjectID = "SmT-ZF-hr1"; */
+"SmT-ZF-hr1.text" = "نام فروشگاه";
+
+/* Class = "UILabel"; text = "۰"; ObjectID = "Tev-N9-yrV"; */
+"Tev-N9-yrV.text" = "۰";
+
+/* Class = "UIButton"; normalTitle = "×"; ObjectID = "VuX-DZ-gGg"; */
+"VuX-DZ-gGg.normalTitle" = "×";
+
+/* Class = "UIButton"; normalTitle = "فعال‌سازی"; ObjectID = "WkB-Wx-6ca"; */
+"WkB-Wx-6ca.normalTitle" = "فعال‌سازی";
+
+/* Class = "UILabel"; text = "شرکت کارت اعتباری ایران کیش"; ObjectID = "YBU-4I-oAM"; */
+"YBU-4I-oAM.text" = "شرکت کارت اعتباری ایران کیش";
+
+/* Class = "UIButton"; normalTitle = "۱"; ObjectID = "YVr-gr-7eP"; */
+"YVr-gr-7eP.normalTitle" = "۱";
+
+/* Class = "UILabel"; text = "بینگو"; ObjectID = "ZQ7-VE-KJS"; */
+"ZQ7-VE-KJS.text" = "بینگو";
+
+/* Class = "UILabel"; text = "دستگاه با موفقیت متصل شد"; ObjectID = "ZpA-JK-PdH"; */
+"ZpA-JK-PdH.text" = "دستگاه با موفقیت متصل شد";
+
+/* Class = "UIButton"; normalTitle = "ارسال"; ObjectID = "ZsF-6P-gHX"; */
+"ZsF-6P-gHX.normalTitle" = "ارسال";
+
+/* Class = "UIButton"; normalTitle = "."; ObjectID = "ZsG-Wg-6Xj"; */
+"ZsG-Wg-6Xj.normalTitle" = ".";
+
+/* Class = "UITabBarItem"; title = "شارژ مستقیم"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "شارژ مستقیم";
+
+/* Class = "UIButton"; normalTitle = "۹"; ObjectID = "ae3-xU-q8s"; */
+"ae3-xU-q8s.normalTitle" = "۹";
+
+/* Class = "UIButton"; normalTitle = "۲"; ObjectID = "c5S-Bc-i5m"; */
+"c5S-Bc-i5m.normalTitle" = "۲";
+
+/* Class = "UILabel"; text = "مجموع"; ObjectID = "c7o-q4-yX4"; */
+"c7o-q4-yX4.text" = "مجموع";
+
+/* Class = "UITabBarItem"; title = "خرید"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "خرید";
+
+/* Class = "UIButton"; normalTitle = "۷"; ObjectID = "ctO-ej-QlT"; */
+"ctO-ej-QlT.normalTitle" = "۷";
+
+/* Class = "UILabel"; text = "شماره موبایل"; ObjectID = "cyW-1r-kwL"; */
+"cyW-1r-kwL.text" = "شماره موبایل";
+
+/* Class = "UILabel"; text = "بینگو"; ObjectID = "doV-zJ-Aef"; */
+"doV-zJ-Aef.text" = "بینگو";
+
+/* Class = "UILabel"; text = "شماره ملی"; ObjectID = "eiJ-J7-hE2"; */
+"eiJ-J7-hE2.text" = "شماره ملی";
+
+/* Class = "UIButton"; normalTitle = "۰۰"; ObjectID = "f7m-lQ-tIR"; */
+"f7m-lQ-tIR.normalTitle" = "۰۰";
+
+/* Class = "UILabel"; text = "در صورت صحت اطلاعات،‌ تایید کنید"; ObjectID = "gbM-vB-lVh"; */
+"gbM-vB-lVh.text" = "در صورت صحت اطلاعات،‌ تایید کنید";
+
+/* Class = "UIButton"; normalTitle = "ارسال"; ObjectID = "hV0-dX-10r"; */
+"hV0-dX-10r.normalTitle" = "ارسال";
+
+/* Class = "UIButton"; normalTitle = "تایید"; ObjectID = "je7-iL-izs"; */
+"je7-iL-izs.normalTitle" = "تایید";
+
+/* Class = "UILabel"; text = "بینگو"; ObjectID = "l3m-va-FhJ"; */
+"l3m-va-FhJ.text" = "بینگو";
+
+/* Class = "UIButton"; normalTitle = "۸"; ObjectID = "lh1-cs-tGh"; */
+"lh1-cs-tGh.normalTitle" = "۸";
+
+/* Class = "UITabBarItem"; title = "پرداخت قبض"; ObjectID = "nKH-vp-elR"; */
+"nKH-vp-elR.title" = "پرداخت قبض";
+
+/* Class = "UIButton"; normalTitle = "۰۰۰"; ObjectID = "oYE-EX-JW4"; */
+"oYE-EX-JW4.normalTitle" = "۰۰۰";
+
+/* Class = "UIButton"; normalTitle = "شروع"; ObjectID = "ofd-6D-99u"; */
+"ofd-6D-99u.normalTitle" = "شروع";
+
+/* Class = "UILabel"; text = "۰"; ObjectID = "pWh-5J-mkh"; */
+"pWh-5J-mkh.text" = "۰";
+
+/* Class = "UIButton"; normalTitle = "ارسال"; ObjectID = "rm7-U2-4Fr"; */
+"rm7-U2-4Fr.normalTitle" = "ارسال";
+
+/* Class = "UITabBarItem"; title = "موجودی"; ObjectID = "sOL-lc-KGd"; */
+"sOL-lc-KGd.title" = "موجودی";
+
+/* Class = "UILabel"; text = "نسخه: ۱"; ObjectID = "sgT-hB-Y7m"; */
+"sgT-hB-Y7m.text" = "نسخه: ۱";
+
+/* Class = "UILabel"; text = "آدرس فروشگاه"; ObjectID = "tVL-8C-yXJ"; */
+"tVL-8C-yXJ.text" = "آدرس فروشگاه";
+
+/* Class = "UIButton"; normalTitle = "۵"; ObjectID = "v5f-Tz-dgj"; */
+"v5f-Tz-dgj.normalTitle" = "۵";
+
+/* Class = "UIButton"; normalTitle = "ارسال"; ObjectID = "vZu-Kj-jbL"; */
+"vZu-Kj-jbL.normalTitle" = "ارسال";
+
+/* Class = "UILabel"; text = "نام و نام‌خانوادگی"; ObjectID = "x8u-Gw-rcN"; */
+"x8u-Gw-rcN.text" = "نام و نام‌خانوادگی";
+
+/* Class = "UILabel"; text = "در صورت صحت اطلاعات،‌ تایید کنید"; ObjectID = "xrW-Zu-tlZ"; */
+"xrW-Zu-tlZ.text" = "در صورت صحت اطلاعات،‌ تایید کنید";
+
+/* Class = "UILabel"; text = "دریافت موجودی، با کارمزد ۱۲۰۶ ریال می‌باشد، تایید می‌کنید؟"; ObjectID = "zfu-iE-fWC"; */
+"zfu-iE-fWC.text" = "دریافت موجودی، با کارمزد ۱۲۰۶ ریال می‌باشد، تایید می‌کنید؟";

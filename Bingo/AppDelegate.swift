@@ -21,19 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
         IQKeyboardManager.sharedManager().enable = true
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//
-//        let leftView = storyboard?.instantiateViewController(withIdentifier: "LeftMenuController")
-//        let rightView = storyboard?.instantiateViewController(withIdentifier: "RightMenuController")
-//        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
-//
-//        let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
-//        controller.leftSideOffset = 275
-//        controller.rightSideOffset = 275
-//        window!.rootViewController = controller
-//        window!.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+
+        let leftView = storyboard?.instantiateViewController(withIdentifier: "LeftMenuController")
+        let rightView = storyboard?.instantiateViewController(withIdentifier: "RightMenuController")
+        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
+
+        let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
+        controller.leftSideOffset = 275
+        controller.rightSideOffset = 275
+        window!.rootViewController = controller
+        window!.makeKeyAndVisible()
         
         if #available(iOS 10.0, *) {
             UITabBar.appearance().unselectedItemTintColor = UIColor.white

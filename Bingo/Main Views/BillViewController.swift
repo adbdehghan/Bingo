@@ -14,6 +14,8 @@ import JHSpinner
 
 class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,BarcodeScannerCodeDelegate,BarcodeScannerDismissalDelegate,BarcodeScannerErrorDelegate,TCPickerViewDelegate {
 
+    @IBOutlet weak var payIDTextfield: TweeAttributedTextField!
+    @IBOutlet weak var billIDTextField: TweeAttributedTextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var barcodeButton: UIButton!
     @IBOutlet weak var containerView: UIView!
@@ -263,7 +265,14 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     }
     
     func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
-//        controller.resetWithError(message: "Error message")
+        
+        let sperated = code.replacingOccurrences(of: "0000", with: " ")
+        let codeArray = sperated.split(separator: " ")
+        let billID:String = String(codeArray.first!)
+        let payID:String = String(codeArray.last!)
+        billIDTextField.text = billID
+        payIDTextfield.text = payID
+        
          controller.dismiss(animated: true, completion: nil)
     }
     

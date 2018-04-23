@@ -5,14 +5,14 @@ import AVFoundation
 
 public struct Title {
   public static var text = localizedString("SCAN_BARCODE_TITLE")
-  public static var font = UIFont.boldSystemFont(ofSize: 17)
+  public static var font = UIFont(name: "IRANSans", size: 17)
   public static var color = UIColor.black
   public static var backgroundColor = UIColor.white
 }
 
 public struct CloseButton {
   public static var text = localizedString("BUTTON_CLOSE")
-  public static var font = UIFont.boldSystemFont(ofSize: 17)
+  public static var font = UIFont(name: "IRANSans", size: 17)
   public static var color = UIColor.black
 }
 
@@ -28,7 +28,7 @@ public struct Info {
   public static var notFoundText = localizedString("NO_PRODUCT_ERROR_TITLE")
   public static var settingsText = localizedString("ASK_FOR_PERMISSION_TEXT")
 
-  public static var font = UIFont.boldSystemFont(ofSize: 14)
+  public static var font = UIFont(name: "IRANSans", size: 17)
   public static var textColor = UIColor.black
   public static var tint = UIColor.black
 

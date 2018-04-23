@@ -101,6 +101,7 @@
 		3A3FFB93207AC130008BD69B /* BleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleList.swift; sourceTree = "<group>"; };
 		3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryIndicator.swift; sourceTree = "<group>"; };
 		3A887A47208B9C92000B3B9B /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		3A9E4416208E93B4000F24C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		3AADBEC5205D47D600BFDD50 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		3AC68A62205426F100553184 /* Bingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -819,6 +820,7 @@
 				3AC68A6C205426F100553184 /* Base */,
 				3AC68A952054286D00553184 /* fa-IR */,
 				3AC68A972054287B00553184 /* ar-IQ */,
+				3A9E4416208E93B4000F24C3 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
