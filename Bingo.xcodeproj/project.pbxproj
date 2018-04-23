@@ -42,6 +42,8 @@
 		3AC68AA520545D6000553184 /* IRANSans_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AC68AA020545D6000553184 /* IRANSans_Medium.ttf */; };
 		3AC68AA620545D6000553184 /* IRANSans_UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AC68AA120545D6000553184 /* IRANSans_UltraLight.ttf */; };
 		3AC68AA8205472F500553184 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC68AA7205472F500553184 /* BuyViewController.swift */; };
+		3AC740AD208D4AFC0057DBDB /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC740AC208D4AFC0057DBDB /* ShadowView.swift */; };
+		3AC740AF208D4B0E0057DBDB /* TransactionResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC740AE208D4B0E0057DBDB /* TransactionResultView.xib */; };
 		3AF563722074277E00695CF9 /* EnterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF563712074277E00695CF9 /* EnterInfoViewController.swift */; };
 		3AF5637920742CA700695CF9 /* FontAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637420742CA700695CF9 /* FontAnimation.swift */; };
 		3AF5637A20742CA700695CF9 /* TweeActiveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637520742CA700695CF9 /* TweeActiveTextField.swift */; };
@@ -124,6 +126,8 @@
 		3AC68AA120545D6000553184 /* IRANSans_UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IRANSans_UltraLight.ttf; sourceTree = "<group>"; };
 		3AC68AA7205472F500553184 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		3AC69E3F2055B0150033C5EA /* Bingo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bingo.entitlements; sourceTree = "<group>"; };
+		3AC740AC208D4AFC0057DBDB /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		3AC740AE208D4B0E0057DBDB /* TransactionResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionResultView.xib; sourceTree = "<group>"; };
 		3AF563712074277E00695CF9 /* EnterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterInfoViewController.swift; sourceTree = "<group>"; };
 		3AF5637420742CA700695CF9 /* FontAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAnimation.swift; sourceTree = "<group>"; };
 		3AF5637520742CA700695CF9 /* TweeActiveTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweeActiveTextField.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 		3AC68A9B20545D2B00553184 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3AC740AB208D4AFC0057DBDB /* TransactionResultView */,
 				3A3FFB95207AD9E2008BD69B /* Battery Indicator */,
 				3AF5637320742CA700695CF9 /* TweeTextField */,
 				3AADBEC4205D47AE00BFDD50 /* TableCell */,
@@ -315,6 +320,15 @@
 				3AC68AA120545D6000553184 /* IRANSans_UltraLight.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		3AC740AB208D4AFC0057DBDB /* TransactionResultView */ = {
+			isa = PBXGroup;
+			children = (
+				3AC740AC208D4AFC0057DBDB /* ShadowView.swift */,
+				3AC740AE208D4B0E0057DBDB /* TransactionResultView.xib */,
+			);
+			path = TransactionResultView;
 			sourceTree = "<group>";
 		};
 		3AF563702074275B00695CF9 /* Setup */ = {
@@ -522,6 +536,7 @@
 				3AC68A72205426F200553184 /* LaunchScreen.storyboard in Resources */,
 				3AC68AA320545D6000553184 /* IRANSans_Bold.ttf in Resources */,
 				3AC68A9A2054593300553184 /* Assets.xcassets in Resources */,
+				3AC740AF208D4B0E0057DBDB /* TransactionResultView.xib in Resources */,
 				3AC68A6D205426F100553184 /* Main.storyboard in Resources */,
 				3AC68AA420545D6000553184 /* IRANSans_Light.ttf in Resources */,
 				3AC68AA220545D6000553184 /* IRANSans.ttf in Resources */,
@@ -745,6 +760,7 @@
 				3A3FFB97207AD9E2008BD69B /* BatteryIndicator.swift in Sources */,
 				3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */,
 				3A3FFB94207AC130008BD69B /* BleList.swift in Sources */,
+				3AC740AD208D4AFC0057DBDB /* ShadowView.swift in Sources */,
 				3AF5637A20742CA700695CF9 /* TweeActiveTextField.swift in Sources */,
 				3AF563722074277E00695CF9 /* EnterInfoViewController.swift in Sources */,
 				64AA6F1120744B2500857580 /* BillViewController.swift in Sources */,

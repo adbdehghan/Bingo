@@ -13,6 +13,7 @@ import JHSpinner
 
 class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOTAControllerDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,TCPickerViewDelegate {
 
+    @IBOutlet weak var operatorImageView: UIImageView!
     @IBOutlet weak var phoneNumberTextField: TweeAttributedTextField!
     @IBOutlet weak var bluetoothButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
@@ -31,15 +32,16 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         super.viewDidLoad()        
         chargePriceTableView.dataSource = self
         chargePriceTableView.delegate = self
-        UICustomization()        
+        UICustomization()
+        StartBatteryCheck()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
-        GetBatteryPercentage()
-        StartBatteryCheck()
+        GetBatteryPercentage()            
+        
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {
@@ -332,6 +334,46 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
                 
             })
         }
+        
+        DetermineOperator(text: textField.text!)
+        
+    }
+    
+    func DetermineOperator(text:String)
+    {
+        if text.hasPrefix("092")
+        {
+            UIView.animate(withDuration: 0.4, animations: {
+                self.operatorImageView.alpha = 1
+                self.operatorImageView.image = UIImage(named: "rightel")
+            })
+        }
+        else if text.hasPrefix("091") || text.hasPrefix("0990") || text.hasPrefix("0991") || text.hasPrefix("0994")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.operatorImageView.alpha = 1
+                self.operatorImageView.image = UIImage(named: "hamrahaval")
+            })
+        }
+        else if text.hasPrefix("0919")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.operatorImageView.alpha = 1
+                self.operatorImageView.image = UIImage(named: "talia")
+            })
+        }
+        else if text.hasPrefix("093") || text.hasPrefix("0901") || text.hasPrefix("0902") || text.hasPrefix("0903") || text.hasPrefix("093") || text.hasPrefix("093")
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.operatorImageView.alpha = 1
+                self.operatorImageView.image = UIImage(named: "irancell")
+            })
+        }
+        else
+        {
+            self.operatorImageView.alpha = 0
+            self.operatorImageView.image = nil
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -378,16 +420,7 @@ class DirectChargeViewController: UIViewController,BBDeviceControllerDelegate, B
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+

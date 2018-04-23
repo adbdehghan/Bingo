@@ -58,6 +58,14 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         super.viewDidAppear(true)
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
+        
+        let arr:[Double] = NSArray(array:BasketData.sharedInstance.items) as! [Double]
+        let sum = arr.reduce(0, +)
+        basketSumLabel.text = String(sum.withCommas()).replacedEnglishDigitsWithArabic
+        basketCountLabel.text = String(BasketData.sharedInstance.items.count).replacedEnglishDigitsWithArabic
+        
+        batterIndicator.precentCharged = BleList.sharedInstance.batteryPercentage
+        batterIndicator.animatedReveal = true
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {
@@ -253,6 +261,31 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     
     func onReturn(_ result: BBDevicePinEntryResult, data: [AnyHashable : Any]!) {
         waitForCartAlert.dismiss(animated: true, completion: nil)
+        
+        ///TODO
+        
+        currentPriceLabel.text?.removeAll()
+        currentPriceLabel.text = "۰"
+        userIsInTheMiddleOfTyping = false
+        brain.reset()
+        BasketData.sharedInstance.items.removeAllObjects()
+        basketSumLabel.text = "۰"
+        basketCountLabel.text = "۰"
+        
+        ShowRecipe()
+
+    }
+    
+    func ShowRecipe()
+    {
+        let headerView:ShadowView = (Bundle.main.loadNibNamed("TransactionResultView", owner:
+            self, options: nil)?.first as? ShadowView)!
+        self.view.addSubview(headerView)
+        headerView.backgroundColor = UIColor.white
+        headerView.shadowRadius = 10.0
+        headerView.frame = CGRect(x: view.frame.size.width/2 - 150, y: view.frame.size.height, width: 300, height: 470)
+        headerView.isHidden = true
+        headerView.animShow()
     }
     
     func CustomizeViews()

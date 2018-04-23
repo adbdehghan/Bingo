@@ -24,14 +24,14 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     override func viewDidLoad() {
         super.viewDidLoad()        
         UICustomization()
+        StartBatteryCheck()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
-        GetBatteryPercentage()
-        StartBatteryCheck()
+        GetBatteryPercentage()        
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {

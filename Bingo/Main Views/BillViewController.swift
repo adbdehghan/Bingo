@@ -26,15 +26,15 @@ class BillViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceO
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UICustomization()  
+        UICustomization()
+        StartBatteryCheck()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         BBDeviceController.shared().isDebugLogEnabled = true;
         BBDeviceController.shared().delegate = self;
-        GetBatteryPercentage()
-        StartBatteryCheck()
+        GetBatteryPercentage()        
     }
     
     func onBTReturnScanResults(_ devices: [Any]!) {
