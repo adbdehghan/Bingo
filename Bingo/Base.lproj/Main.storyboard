@@ -1318,7 +1318,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.56078431370000004" green="0.63137254899999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.6588235294" green="0.74117647060000003" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1374,7 +1374,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.56078431370000004" green="0.63137254899999995" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.6588235294" green="0.74117647060000003" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -2097,15 +2097,38 @@
                                     <outlet property="delegate" destination="bnw-02-3eo" id="RPV-UY-V59"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBm-F2-6Hy">
+                                <rect key="frame" x="275" y="607" width="100" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسخه: ۱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgT-hB-Y7m">
+                                        <rect key="frame" x="29" y="20" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Omx-BE-ckf"/>
+                                            <constraint firstAttribute="width" constant="42" id="d8C-K1-Nqd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="euv-nc-cFA"/>
+                                    <constraint firstAttribute="width" constant="100" id="fvr-nR-Dza"/>
+                                    <constraint firstItem="sgT-hB-Y7m" firstAttribute="centerX" secondItem="bBm-F2-6Hy" secondAttribute="centerX" id="oOs-kU-NJv"/>
+                                    <constraint firstItem="sgT-hB-Y7m" firstAttribute="centerY" secondItem="bBm-F2-6Hy" secondAttribute="centerY" id="xNs-BI-3dt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.32549019607843138" green="0.43137254901960786" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1t3-SN-6Uy" firstAttribute="top" secondItem="TZ5-Oo-E79" secondAttribute="bottom" id="6Sf-59-jw0"/>
                             <constraint firstAttribute="trailing" secondItem="TZ5-Oo-E79" secondAttribute="trailing" id="AbE-8O-Ieh"/>
                             <constraint firstItem="TZ5-Oo-E79" firstAttribute="top" secondItem="RAe-HE-G87" secondAttribute="bottom" constant="-20" id="EDZ-K4-JVX"/>
+                            <constraint firstItem="1t3-SN-6Uy" firstAttribute="top" secondItem="bBm-F2-6Hy" secondAttribute="bottom" id="GD1-67-ftf"/>
                             <constraint firstItem="hHH-rK-9NT" firstAttribute="trailing" secondItem="hhH-tQ-0ae" secondAttribute="trailing" id="HwS-Vt-Wfd"/>
                             <constraint firstItem="TZ5-Oo-E79" firstAttribute="leading" secondItem="b6o-tS-94H" secondAttribute="leading" id="MNw-gp-PaO"/>
                             <constraint firstItem="hHH-rK-9NT" firstAttribute="top" secondItem="b6o-tS-94H" secondAttribute="top" constant="30" id="Rli-sT-JmC"/>
+                            <constraint firstItem="bBm-F2-6Hy" firstAttribute="trailing" secondItem="hhH-tQ-0ae" secondAttribute="trailing" id="hD4-6S-TuE"/>
                             <constraint firstItem="1t3-SN-6Uy" firstAttribute="top" secondItem="hHH-rK-9NT" secondAttribute="bottom" id="xDr-yZ-aib"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hhH-tQ-0ae"/>
@@ -2116,7 +2139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqg-Vy-BvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="706"/>
+            <point key="canvasLocation" x="-39.200000000000003" y="705.69715142428788"/>
         </scene>
         <!--Left Menu View Controller-->
         <scene sceneID="iaJ-qm-toV">
