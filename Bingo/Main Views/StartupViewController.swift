@@ -67,7 +67,7 @@ class StartupViewController: UIViewController {
                 if  self.remoteVersion != self.currentVersion
                 {
                     
-                    
+                    self.GotoMain()
                     
                 }
                 else {

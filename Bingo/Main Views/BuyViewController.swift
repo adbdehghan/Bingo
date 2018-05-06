@@ -104,12 +104,8 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         BleList.sharedInstance.isConnected = true
         bluetoothButton.isSelected = true
         StartBatteryCheck()
-        var imageCommand:String = BBDeviceController.shared().getImageCommand(UIImage(named: "aghlam"))
-        
-        var inputData = Dictionary<AnyHashable, Any>()
-        inputData["currencyCode"] = "364"
-//        BBDeviceController.shared().sendPrint(<#Data!#>)
     }
+
     
     func onReturnDeviceInfo(_ deviceInfo: [AnyHashable : Any]!) {
         let battery = deviceInfo["batteryPercentage"] as! String
@@ -280,10 +276,50 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         basketCountLabel.text = "۰"
         
         ShowRecipe()
-
     }
     
-    func ShowRecipe()
+    func onRequestPrintData(_ index: Int32, isReprint: Bool) {
+        let recipe = CreatePrintableRecipe()
+        var recipeImage = UIImage(view: recipe)        
+        recipeImage = recipeImage.scaled(to: CGSize(width: 384, height: 0))
+        
+        let imageCommand:String = BBDeviceController.shared().getImageCommand(recipeImage)
+        
+        BBDeviceController.shared().sendPrint(dataWithHexString(hex: imageCommand))
+        
+    }
+    
+    func dataWithHexString(hex: String) -> Data {
+        var hex = hex
+        var data = Data()
+        while(hex.count > 0) {
+            let subIndex = hex.index(hex.startIndex, offsetBy: 2)
+            let c = String(hex[..<subIndex])
+            hex = String(hex[subIndex...])
+            var ch: UInt32 = 0
+            Scanner(string: c).scanHexInt32(&ch)
+            var char = UInt8(ch)
+            data.append(&char, count: 1)
+        }
+        return data
+    }
+    
+    func onReturn(_ result: BBDevicePrintResult) {
+        
+    }
+    
+    func CreatePrintableRecipe() -> UIView
+    {
+        let headerView:PrintableView = (Bundle.main.loadNibNamed("PrintableView", owner:
+            self, options: nil)?.first as? PrintableView)!
+        self.view.addSubview(headerView)
+        headerView.backgroundColor = UIColor.white
+        headerView.shadowRadius = 10.0
+        headerView.frame = CGRect(x: view.frame.size.width/2 - 150, y: view.frame.size.height, width: 300, height: 470)
+        return headerView
+    }
+    
+    func ShowRecipe() 
     {
         let headerView:ShadowView = (Bundle.main.loadNibNamed("TransactionResultView", owner:
             self, options: nil)?.first as? ShadowView)!

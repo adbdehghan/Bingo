@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShadowView: UIView {
+class PrintableView: UIView {
 
     /// The corner radius of the `ShadowView`, inspectable in Interface Builder
 	@IBInspectable var cornerRadius: CGFloat = 5.0 {
@@ -74,40 +74,12 @@ class ShadowView: UIView {
 	/**
 	Updates the shadow path everytime the views frame changes.
 	*/
-    
-    @IBAction func electronicButtonEvent(_ sender: Any) {
-        self.animHide()
-    }
-    
-    @IBAction func paperButtonEvent(_ sender: Any) {
-        
-        self.animHide()
-        BBDeviceController.shared().startPrint(2 , reprintOrPrintNextTimeout: 100)
-    }
+  
     
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		self.updateShadowPath()
 	}
 }
-extension UIView{
-    func animShow(){
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseIn],
-                       animations: {
-                        self.center.y = (self.superview?.center.y)!
-                        self.layoutIfNeeded()
-        }, completion: nil)
-        self.isHidden = false
-    }
-    func animHide(){
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveLinear],
-                       animations: {
-                        self.center.y += (self.superview?.frame.height)!
-                        self.layoutIfNeeded()
-                        
-        },  completion: {(_ completed: Bool) -> Void in
-            self.isHidden = true
-        })
-    }
-}
+
 

@@ -1544,20 +1544,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="T9H-y5-uMp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bingo_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="T9H-y5-uMp">
                                 <rect key="frame" x="114" y="289" width="146" height="89"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شرکت کارت اعتباری ایران کیش" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBU-4I-oAM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بینگو" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBU-4I-oAM">
                                 <rect key="frame" x="16" y="585" width="343" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="UcL-3n-oMm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.32549019607843138" green="0.43137254901960786" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.8901960784313725" green="0.44313725490196076" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="T9H-y5-uMp" firstAttribute="centerY" secondItem="4wz-Kj-yEK" secondAttribute="centerY" id="5LZ-27-wzW"/>
                             <constraint firstItem="YBU-4I-oAM" firstAttribute="leading" secondItem="qEg-8o-x1x" secondAttribute="leading" constant="16" id="6ig-HM-xmL"/>
@@ -2643,6 +2643,7 @@
     <resources>
         <image name="AC" width="27" height="18"/>
         <image name="Add_button" width="27" height="27"/>
+        <image name="Bingo_Icon" width="1000" height="1000"/>
         <image name="Ble_Off" width="10" height="18"/>
         <image name="Setting_menu" width="21" height="18"/>
         <image name="aghlam" width="20" height="20"/>
@@ -2658,7 +2659,6 @@
         <image name="hazf" width="22" height="22"/>
         <image name="kharid" width="17" height="16"/>
         <image name="location" width="10" height="14"/>
-        <image name="logo" width="146" height="89"/>
         <image name="menu" width="21" height="13"/>
         <image name="mojoodi" width="488" height="464"/>
         <image name="oval" width="17" height="16"/>
