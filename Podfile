@@ -22,6 +22,8 @@ target 'Bingo' do
   pod 'JHSpinner'  
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/RemoteConfig'
   
   target 'BingoTests' do
     inherit! :search_paths

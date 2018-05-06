@@ -42,7 +42,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شماره تلفن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikw-YZ-xn6">
-                    <rect key="frame" x="299" y="158" width="58" height="22.5"/>
+                    <rect key="frame" x="299" y="158" width="58" height="23"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22.5" id="8wC-cY-sTI"/>
                         <constraint firstAttribute="width" constant="58" id="NTh-26-9K3"/>
@@ -52,7 +52,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رسیده پذیرنده" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JF-jl-tdd">
-                    <rect key="frame" x="150" y="220" width="74" height="23"/>
+                    <rect key="frame" x="150" y="221" width="74" height="23"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="IVs-bo-txr"/>
                         <constraint firstAttribute="height" constant="23" id="NFA-Uv-Yus"/>
@@ -62,7 +62,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شماره پایانه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-iE-4y3">
-                    <rect key="frame" x="298" y="244" width="61" height="15"/>
+                    <rect key="frame" x="298" y="245" width="61" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="61" id="1Yc-2Y-oL9"/>
                         <constraint firstAttribute="height" constant="15" id="7B2-tf-0yh"/>
@@ -72,7 +72,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰۳۰۰۵۷۱۵" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ3-Uf-ppA">
-                    <rect key="frame" x="16" y="244" width="51" height="15"/>
+                    <rect key="frame" x="16" y="245" width="51" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="E3U-64-4hQ"/>
                     </constraints>
@@ -81,7 +81,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۲۲۴۹۰۰۰۰۴۶۰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8S-ez-scf">
-                    <rect key="frame" x="16" y="265" width="73" height="15"/>
+                    <rect key="frame" x="16" y="266" width="73" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="Rvf-jd-Mb6"/>
                     </constraints>
@@ -90,7 +90,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بانک ملت" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jy-FR-inJ">
-                    <rect key="frame" x="16" y="286" width="52" height="15"/>
+                    <rect key="frame" x="16" y="287" width="52" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="33B-Wt-deo"/>
                         <constraint firstAttribute="width" constant="52" id="ShU-Mj-dFi"/>
@@ -100,7 +100,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۵۰۲۲۲۹۱۰****۵۰۶۹" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xi-Th-STe">
-                    <rect key="frame" x="16" y="307" width="98" height="15"/>
+                    <rect key="frame" x="16" y="308" width="98" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="gGQ-Yr-ezE"/>
                     </constraints>
@@ -109,7 +109,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۳۶۰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABB-cx-3ec">
-                    <rect key="frame" x="16" y="328" width="20.5" height="15"/>
+                    <rect key="frame" x="16" y="329" width="21" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="wYA-xt-Xyq"/>
                     </constraints>
@@ -118,7 +118,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شماره پذیرنده" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1w-og-NgV">
-                    <rect key="frame" x="287" y="265" width="72" height="15"/>
+                    <rect key="frame" x="287" y="266" width="72" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="72" id="NIQ-FH-xgv"/>
                         <constraint firstAttribute="height" constant="15" id="YHa-fP-uOx"/>
@@ -128,7 +128,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موجودی کارت بانک" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wy-Lt-pQ8">
-                    <rect key="frame" x="258" y="286" width="101" height="15"/>
+                    <rect key="frame" x="258" y="287" width="101" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="101" id="8q9-De-W1c"/>
                         <constraint firstAttribute="height" constant="15" id="Neh-Jj-gku"/>
@@ -138,7 +138,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شماره کارت" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw4-0a-qcW">
-                    <rect key="frame" x="301" y="307" width="58" height="15"/>
+                    <rect key="frame" x="301" y="308" width="58" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="5rR-cR-5Gx"/>
                         <constraint firstAttribute="width" constant="58" id="DaR-xL-asd"/>
@@ -148,7 +148,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شماره پیگیری" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef0-zY-IeG">
-                    <rect key="frame" x="289" y="328" width="70" height="15"/>
+                    <rect key="frame" x="289" y="329" width="70" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="1Sz-WO-DMO"/>
                         <constraint firstAttribute="height" constant="15" id="Loe-Pk-VOn"/>
@@ -158,7 +158,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شماره مرجع" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4J-yf-2b2">
-                    <rect key="frame" x="298" y="349" width="61" height="15"/>
+                    <rect key="frame" x="298" y="350" width="61" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="61" id="7Ze-3o-dQe"/>
                         <constraint firstAttribute="height" constant="15" id="RCD-zG-hQk"/>
@@ -168,7 +168,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موجودی به ریال" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM0-u1-lBI">
-                    <rect key="frame" x="146" y="371" width="83" height="23"/>
+                    <rect key="frame" x="146" y="372" width="83" height="23"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="83" id="Fbo-VM-unY"/>
                         <constraint firstAttribute="height" constant="23" id="kDi-8s-Z85"/>
@@ -178,13 +178,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۷۲،۵۴۸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGu-J7-6SO">
-                    <rect key="frame" x="19" y="399" width="338" height="31"/>
+                    <rect key="frame" x="19" y="400" width="338" height="31"/>
                     <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="18"/>
                     <color key="textColor" red="0.38134517766497467" green="0.38134517766497467" blue="0.38134517766497467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="آدرس:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rG0-Sr-GCL">
-                    <rect key="frame" x="323" y="186" width="34" height="15"/>
+                    <rect key="frame" x="323" y="187" width="34" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="a03-KC-vmR"/>
                         <constraint firstAttribute="width" constant="34" id="iit-dn-VKE"/>
@@ -194,13 +194,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تهران تهران میرداماد خیابان نسا خیابان زرنگار ۳۵" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hG-Zh-9J5">
-                    <rect key="frame" x="18" y="185" width="300" height="19"/>
+                    <rect key="frame" x="18" y="186" width="300" height="19"/>
                     <fontDescription key="fontDescription" name="IRANSans" family="IRANSans" pointSize="11"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰۲۱۴۴۶۰۶۵۲۱" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-3t-9YG">
-                    <rect key="frame" x="16" y="158" width="65" height="22.5"/>
+                    <rect key="frame" x="16" y="158" width="65" height="23"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22.5" id="ZqG-nn-Kzf"/>
                         <constraint firstAttribute="width" constant="65" id="mmM-cm-3r3"/>
@@ -210,21 +210,21 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9v-BR-rO9">
-                    <rect key="frame" x="16" y="210" width="343" height="2"/>
+                    <rect key="frame" x="16" y="211" width="343" height="2"/>
                     <color key="backgroundColor" red="0.87717498523502113" green="0.87605087269780724" blue="0.89568631872912952" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="8bb-Ab-SJi"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJf-PX-Srv">
-                    <rect key="frame" x="16" y="435" width="343" height="2"/>
+                    <rect key="frame" x="16" y="436" width="343" height="2"/>
                     <color key="backgroundColor" red="0.87717498520000003" green="0.87605087270000004" blue="0.89568631870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="3oh-yf-FPh"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yk6-iA-k5k">
-                    <rect key="frame" x="0.0" y="438" width="186" height="45"/>
+                    <rect key="frame" x="0.0" y="439" width="186" height="45"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz0-eH-PnS">
                             <rect key="frame" x="58" y="4" width="71" height="38"/>
@@ -248,18 +248,18 @@
                         <constraint firstItem="Kz0-eH-PnS" firstAttribute="centerY" secondItem="yk6-iA-k5k" secondAttribute="centerY" id="xuN-hf-067"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmn-XB-Cze">
-                    <rect key="frame" x="187" y="445" width="1" height="32"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmn-XB-Cze">
+                    <rect key="frame" x="187" y="446" width="1" height="32"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1" id="ARq-yK-hMO"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWP-ly-jJ0">
-                    <rect key="frame" x="187" y="438" width="188" height="45"/>
+                    <rect key="frame" x="187" y="439" width="188" height="45"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fb-ir-QTU">
-                            <rect key="frame" x="48.5" y="4" width="92" height="38"/>
+                            <rect key="frame" x="48" y="4" width="92" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="92" id="7fJ-NS-VFz"/>
                                 <constraint firstAttribute="height" constant="38" id="JgL-JR-IVo"/>
@@ -281,7 +281,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۸۰۴۱۰۰۹۲۸۲۱۸" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whf-aC-nr7">
-                    <rect key="frame" x="16" y="349" width="73" height="15"/>
+                    <rect key="frame" x="16" y="350" width="73" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="l6z-Cp-jdY"/>
                     </constraints>
@@ -325,6 +325,7 @@
                 <constraint firstItem="wJf-PX-Srv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="W79-fI-xQk"/>
                 <constraint firstItem="JM0-u1-lBI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WN1-hM-jgX"/>
                 <constraint firstItem="ZGu-J7-6SO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="19" id="WW7-jo-XcP"/>
+                <constraint firstItem="jmn-XB-Cze" firstAttribute="centerY" secondItem="yk6-iA-k5k" secondAttribute="centerY" id="WwU-wH-r63"/>
                 <constraint firstItem="Ikw-YZ-xn6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="138" id="aHx-KC-rW3"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ikw-YZ-xn6" secondAttribute="trailing" constant="18" id="asX-z8-C39"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pfV-iE-4y3" secondAttribute="trailing" constant="16" id="cet-3A-jnm"/>
@@ -348,6 +349,7 @@
                 <constraint firstItem="o8S-ez-scf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="t5E-Yd-JXu"/>
                 <constraint firstItem="1JF-jl-tdd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tLp-HH-5Rb"/>
                 <constraint firstItem="yWP-ly-jJ0" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="u1o-YH-lC2"/>
+                <constraint firstItem="jmn-XB-Cze" firstAttribute="top" secondItem="wJf-PX-Srv" secondAttribute="bottom" constant="8" symbolic="YES" id="x8S-9d-cx0"/>
                 <constraint firstAttribute="trailing" secondItem="wJf-PX-Srv" secondAttribute="trailing" constant="16" id="xhr-XI-Q3x"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

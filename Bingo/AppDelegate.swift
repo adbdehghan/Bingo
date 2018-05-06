@@ -11,29 +11,31 @@ import DualSlideMenu
 import IQKeyboardManagerSwift
 import Fabric
 import Crashlytics
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?    
+    var window: UIWindow?
     var storyboard: UIStoryboard?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
+        FirebaseApp.configure()
         IQKeyboardManager.sharedManager().enable = true
-        window = UIWindow(frame: UIScreen.main.bounds)
-        storyboard = UIStoryboard(name: "Main", bundle: nil)
-        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        UIView.appearance().semanticContentAttribute = .forceLeftToRight
 
-        let leftView = storyboard?.instantiateViewController(withIdentifier: "LeftMenuController")
-        let rightView = storyboard?.instantiateViewController(withIdentifier: "RightMenuController")
-        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
-
-        let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
-        controller.leftSideOffset = 275
-        controller.rightSideOffset = 275
-        window!.rootViewController = controller
-        window!.makeKeyAndVisible()
+//        let leftView = storyboard?.instantiateViewController(withIdentifier: "LeftMenuController")
+//        let rightView = storyboard?.instantiateViewController(withIdentifier: "RightMenuController")
+//        let mainView = storyboard?.instantiateViewController(withIdentifier: "MainController")
+//
+//        let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
+//        controller.leftSideOffset = 275
+//        controller.rightSideOffset = 275
+//        window!.rootViewController = controller
+//        window!.makeKeyAndVisible()
         
         if #available(iOS 10.0, *) {
             UITabBar.appearance().unselectedItemTintColor = UIColor.white
@@ -65,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         return [UIImage(named:"kharid")!,UIImage(named:"sharje_mostaghim")!,UIImage(named:"pardakht_ghabz")!,UIImage(named:"balance")!]
     }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -67,7 +67,7 @@ class AnimationManager: NSObject {
     
     internal func infiniteStrokeRotateAnimation(isOdd: Bool) -> CAAnimation  {
         let animation = CABasicAnimation(keyPath: "transform.rotation")
-       	animation.byValue = isOdd ? M_PI * -2.0 : M_PI * 2.0
+       	animation.byValue = isOdd ? .pi * -2.0 : .pi * 2.0
         
         let group = CAAnimationGroup()
         group.beginTime = 0.5

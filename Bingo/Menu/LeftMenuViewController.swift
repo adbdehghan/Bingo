@@ -30,7 +30,7 @@ class LeftMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.menuButton.tag = indexPath.row
         cell.menuButton.tintColor = .lightGray
         cell.menuButton.addTarget(self, action:#selector(self.MenuTapped), for: .touchUpInside)
-        cell.titleLabel.text = menuTitles[indexPath.row] as! String
+        cell.titleLabel.text = (menuTitles[indexPath.row] as! String)
         cell.titleLabel.numberOfLines = 0
         cell.backgroundColor = UIColor.clear
         return cell

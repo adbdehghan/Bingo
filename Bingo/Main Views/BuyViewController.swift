@@ -104,6 +104,11 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         BleList.sharedInstance.isConnected = true
         bluetoothButton.isSelected = true
         StartBatteryCheck()
+        var imageCommand:String = BBDeviceController.shared().getImageCommand(UIImage(named: "aghlam"))
+        
+        var inputData = Dictionary<AnyHashable, Any>()
+        inputData["currencyCode"] = "364"
+//        BBDeviceController.shared().sendPrint(<#Data!#>)
     }
     
     func onReturnDeviceInfo(_ deviceInfo: [AnyHashable : Any]!) {
@@ -263,6 +268,8 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         waitForCartAlert.dismiss(animated: true, completion: nil)
         
         ///TODO
+        
+        
         
         currentPriceLabel.text?.removeAll()
         currentPriceLabel.text = "۰"
