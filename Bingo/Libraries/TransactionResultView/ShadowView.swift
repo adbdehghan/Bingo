@@ -81,8 +81,8 @@ class ShadowView: UIView {
     
     @IBAction func paperButtonEvent(_ sender: Any) {
         
-        self.animHide()
-        BBDeviceController.shared().startPrint(2 , reprintOrPrintNextTimeout: 100)
+        self.animHide()        
+        BBDeviceController.shared().startPrint(2 , reprintOrPrintNextTimeout: 10)
     }
     
 	override func layoutSubviews() {

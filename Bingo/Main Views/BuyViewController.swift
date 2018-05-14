@@ -75,10 +75,15 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         {
             spinner.dismiss()
         }
+        
         picker.title = "دستگاه ها"
         
-        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: ($0 as! EAAccessory).serialNumber) }
+//        BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[0] as! NSObject);
+        
+        
+        let values = BleList.sharedInstance.devices.map { TCPickerView.Value(title: (($0 as? EAAccessory)?.serialNumber ?? ($0 as! CBPeripheral).name)!) }
         picker.values = values
+        
         picker.delegate = self
         picker.selection = .single
         picker.mainColor = UIColor.colorWithHexString(baseHexString: "46BECD", alpha: 1)
@@ -87,7 +92,7 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
                 BBDeviceController.shared().connectBT(BleList.sharedInstance.devices[i] as! NSObject);
             }
         }
-        
+
         picker.show()
 
     }
@@ -104,14 +109,16 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         BleList.sharedInstance.isConnected = true
         bluetoothButton.isSelected = true
         StartBatteryCheck()
+        
+        ShowRecipe()
     }
 
     
     func onReturnDeviceInfo(_ deviceInfo: [AnyHashable : Any]!) {
         let battery = deviceInfo["batteryPercentage"] as! String
-        batterIndicator.precentCharged = Double.init(battery)!
+        batterIndicator.precentCharged = Double.init(battery == "" ? "0" : battery)!
         batterIndicator.animatedReveal = true
-        BleList.sharedInstance.batteryPercentage = Double.init(battery)!
+        BleList.sharedInstance.batteryPercentage = Double.init(battery == "" ? "0" : battery)!
     }
     
     func onBTDisconnected() {
@@ -264,8 +271,6 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         waitForCartAlert.dismiss(animated: true, completion: nil)
         
         ///TODO
-        
-        
         
         currentPriceLabel.text?.removeAll()
         currentPriceLabel.text = "۰"

@@ -27,6 +27,10 @@
 		3A3FFB90207A52B6008BD69B /* ChargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB8F207A52B6008BD69B /* ChargeTableViewCell.swift */; };
 		3A3FFB94207AC130008BD69B /* BleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB93207AC130008BD69B /* BleList.swift */; };
 		3A3FFB97207AD9E2008BD69B /* BatteryIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */; };
+		3A4C28BD20A9F6670065959D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C28BC20A9F6670065959D /* DataManager.swift */; };
+		3A4C28C220A9F69E0065959D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C28BF20A9F69E0065959D /* APIResponse.swift */; };
+		3A4C28C420A9F69E0065959D /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C28C120A9F69E0065959D /* TokenManager.swift */; };
+		3A4C28C620A9FE4A0065959D /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C28C520A9FE4A0065959D /* DateHelper.swift */; };
 		3A887A48208B9C92000B3B9B /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A887A47208B9C92000B3B9B /* TabbarViewController.swift */; };
 		3A8E0CBE20967AC3008059E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AB6FB3C209633B60005B7DB /* GoogleService-Info.plist */; };
 		3AADBEC3205C94CF00BFDD50 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */; };
@@ -106,6 +110,10 @@
 		3A3FFB8F207A52B6008BD69B /* ChargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeTableViewCell.swift; sourceTree = "<group>"; };
 		3A3FFB93207AC130008BD69B /* BleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleList.swift; sourceTree = "<group>"; };
 		3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryIndicator.swift; sourceTree = "<group>"; };
+		3A4C28BC20A9F6670065959D /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3A4C28BF20A9F69E0065959D /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		3A4C28C120A9F69E0065959D /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		3A4C28C520A9FE4A0065959D /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		3A887A47208B9C92000B3B9B /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		3A9E4416208E93B4000F24C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +223,7 @@
 				3A3DCEFE20558380006D5E28 /* BasketData.swift */,
 				3A3FFB93207AC130008BD69B /* BleList.swift */,
 				647FF394209F9589000A2B95 /* Extensions.swift */,
+				3A4C28C520A9FE4A0065959D /* DateHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -239,6 +248,23 @@
 				3A3FFB96207AD9E2008BD69B /* BatteryIndicator.swift */,
 			);
 			path = "Battery Indicator";
+			sourceTree = "<group>";
+		};
+		3A4C28BB20A9F6670065959D /* DataManagement */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C28BC20A9F6670065959D /* DataManager.swift */,
+			);
+			path = DataManagement;
+			sourceTree = "<group>";
+		};
+		3A4C28BE20A9F69E0065959D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C28BF20A9F69E0065959D /* APIResponse.swift */,
+				3A4C28C120A9F69E0065959D /* TokenManager.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3AADBEC4205D47AE00BFDD50 /* TableCell */ = {
@@ -314,6 +340,8 @@
 		3AC68A9B20545D2B00553184 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3A4C28BE20A9F69E0065959D /* Models */,
+				3A4C28BB20A9F6670065959D /* DataManagement */,
 				647FF396209FB16E000A2B95 /* Printable Recipe */,
 				3AC740AB208D4AFC0057DBDB /* TransactionResultView */,
 				3A3FFB95207AD9E2008BD69B /* Battery Indicator */,
@@ -796,6 +824,7 @@
 				3A3FFB97207AD9E2008BD69B /* BatteryIndicator.swift in Sources */,
 				647FF395209F9589000A2B95 /* Extensions.swift in Sources */,
 				3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */,
+				3A4C28C620A9FE4A0065959D /* DateHelper.swift in Sources */,
 				3A3FFB94207AC130008BD69B /* BleList.swift in Sources */,
 				3AC740AD208D4AFC0057DBDB /* ShadowView.swift in Sources */,
 				3AF5637A20742CA700695CF9 /* TweeActiveTextField.swift in Sources */,
@@ -804,9 +833,12 @@
 				3AF5637B20742CA700695CF9 /* TweeAttributedTextField.swift in Sources */,
 				3A17D9D42066F7A9002F51A0 /* LeftMenuViewController.swift in Sources */,
 				3AF5637C20742CA700695CF9 /* TweeBorderedTextField.swift in Sources */,
+				3A4C28C420A9F69E0065959D /* TokenManager.swift in Sources */,
+				3A4C28BD20A9F6670065959D /* DataManager.swift in Sources */,
 				3AB6FB41209674FC0005B7DB /* StartupViewController.swift in Sources */,
 				3AC68A66205426F100553184 /* AppDelegate.swift in Sources */,
 				3A887A48208B9C92000B3B9B /* TabbarViewController.swift in Sources */,
+				3A4C28C220A9F69E0065959D /* APIResponse.swift in Sources */,
 				3AF563932076645300695CF9 /* DoneViewController.swift in Sources */,
 				3AF5638F2076641700695CF9 /* CheckPersonalInfoViewController.swift in Sources */,
 				3AF5637D20742CA700695CF9 /* TweePlaceholderTextField.swift in Sources */,
