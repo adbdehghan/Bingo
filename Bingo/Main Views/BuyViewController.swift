@@ -32,6 +32,7 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     var waitForAmountAlert:EMAlertController!
     let picker = TCPickerView()
     var spinner:JHSpinnerView!
+    var keyCharge = KeyChange()
     
     var displayValue: Double {
         get {
@@ -105,14 +106,37 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     }
     
     func onBTConnected(_ connectedDevice: NSObject!) {
-        BBDeviceController.shared().getDeviceInfo();
+//        BBDeviceController.shared().getDeviceInfo();
         BleList.sharedInstance.isConnected = true
         bluetoothButton.isSelected = true
-        StartBatteryCheck()
+//        StartBatteryCheck()
         
-        ShowRecipe()
+        GetKey()
+    }
+    
+    func GetKey()
+    {
+        let manager = DataManager()
+        manager.KeyCharge(completion: {(APIResponse)-> Void in
+            
+            self.keyCharge = APIResponse
+            self.InjectPosValues()
+        })
     }
 
+    func InjectPosValues()
+    {
+        var inputData = Dictionary<AnyHashable, Any>()
+//        inputData["encDataKey"] = keyCharge.dataKey
+//        inputData["encMacKey"] = keyCharge.macKey
+        inputData["encPinKey"] = keyCharge.pinKey
+        
+        BBDeviceController.shared().injectSessionKey(inputData)
+    }
+    
+    func onReturnInjectSessionKeyResult(_ isSuccess: Bool, data: [AnyHashable : Any]!) {
+        
+    }
     
     func onReturnDeviceInfo(_ deviceInfo: [AnyHashable : Any]!) {
         let battery = deviceInfo["batteryPercentage"] as! String
@@ -181,6 +205,9 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         let sum = arr.reduce(0, +)
         inputData["amount"] = String(sum)
         inputData["cashbackAmount1"] = String(sum)
+        inputData["encDataKey"] = keyCharge.dataKey
+        inputData["encMacKey"] = keyCharge.macKey
+        inputData["encPinKey"] = keyCharge.pinKey
         BBDeviceController.shared().setAmount(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
         
 
@@ -206,8 +233,12 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
             let sum = arr.reduce(0, +)
             inputData["amount"] = String(sum)
             inputData["cashbackAmount1"] = String(sum)
+            inputData["encDataKey"] = keyCharge.dataKey
+            inputData["encMacKey"] = keyCharge.macKey
+            inputData["encPinKey"] = keyCharge.pinKey
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+//                BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+                BBDeviceController.shared().checkCard(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
 
             }
 
@@ -271,6 +302,7 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         waitForCartAlert.dismiss(animated: true, completion: nil)
         
         ///TODO
+        
         
         currentPriceLabel.text?.removeAll()
         currentPriceLabel.text = "۰"

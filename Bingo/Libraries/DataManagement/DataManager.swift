@@ -50,14 +50,59 @@ class DataManager: NSObject {
             completion(response)
         }
     }
-    
-    
-    func ChangeKey(Code:String,phonenumber:String,completion: @escaping (APIResponse) -> Void) {
         
-        let params: [String: Any] = ["phone":phonenumber,"password":Code]
+    func KeyCharge(completion: @escaping (KeyChange) -> Void) {
+        
+        let params: [String: Any] = ["TerminalId":terminalId,"CardAcqId":merchantId,"SystemTraceNo":"523288","LocalTime":DateHelper.GetLocalTime(),"LocalDate":DateHelper.GetLocalDate()]
+        let response = KeyChange()
+        
+        Alamofire.request(baseURL+"MPosManagement/KeyChangeRequest", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                
+                print(responseData)
+                //to get status code
+                if let status = responseData.response?.statusCode {
+                    switch(status){
+                    case 200:
+                        if let resData = JSON(responseData.result.value!).dictionaryObject {
+                            if resData.count > 0 {
+                                response.message = resData["message"] as? String
+                                response.result = true
+                                response.terminalId = resData["TerminalId"] as? String
+                                response.cardAcqId = resData["CardAcqId"] as? String
+                                response.localDate = resData["LocalDate"] as? String
+                                response.localTime = resData["LocalTime"] as? String
+                                response.systemTraceNo = resData["SystemTraceNo"] as? String
+                                response.pinKey = resData["PinKey"] as? String
+                                response.macKey = resData["MacKey"] as? String
+                                response.dataKey = resData["DataKey"] as? String
+                                response.resCode = resData["ResCode"] as? String
+                                response.apiResCode = resData["ApiResCode"] as? String
+                            }
+                        }
+                    default:
+                        if let resData = JSON(responseData.result.value!).dictionaryObject {
+                            if resData.count > 0 {
+                                response.message = resData["message"] as? String
+                                response.result = false
+                            }
+                        }
+                        print("error with response status: \(status)")
+                    }
+                }
+                
+                
+            }
+            completion(response)
+        }
+    }
+    
+    func GetBalance(Pin:String,Track2:String,completion: @escaping (APIResponse) -> Void) {
+        
+        let params: [String: Any] = ["Pin":Pin,"SystemTraceNo":"","Track2":Track2,"LocalDate":DateHelper.GetLocalDate(),"LocalTime": DateHelper.GetLocalTime(),"CardAcqId":merchantId,"Amount":0,"TerminalId":terminalId ]
         let response = APIResponse()
         
-        Alamofire.request(baseURL+"gettoken", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) -> Void in
+        Alamofire.request(baseURL+"MobBalance/GetBalance", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 
                 print(responseData)

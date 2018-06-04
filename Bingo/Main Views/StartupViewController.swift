@@ -19,6 +19,7 @@ class StartupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // [START get_remote_config_instance]
         remoteConfig = RemoteConfig.remoteConfig()
         // [END get_remote_config_instance]

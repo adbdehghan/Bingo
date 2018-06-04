@@ -31,6 +31,7 @@
 		3A4C28C220A9F69E0065959D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C28BF20A9F69E0065959D /* APIResponse.swift */; };
 		3A4C28C420A9F69E0065959D /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C28C120A9F69E0065959D /* TokenManager.swift */; };
 		3A4C28C620A9FE4A0065959D /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C28C520A9FE4A0065959D /* DateHelper.swift */; };
+		3A4C28C920AB07350065959D /* KeyChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C28C820AB07350065959D /* KeyChange.swift */; };
 		3A887A48208B9C92000B3B9B /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A887A47208B9C92000B3B9B /* TabbarViewController.swift */; };
 		3A8E0CBE20967AC3008059E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AB6FB3C209633B60005B7DB /* GoogleService-Info.plist */; };
 		3AADBEC3205C94CF00BFDD50 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */; };
@@ -114,6 +115,7 @@
 		3A4C28BF20A9F69E0065959D /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		3A4C28C120A9F69E0065959D /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		3A4C28C520A9FE4A0065959D /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		3A4C28C820AB07350065959D /* KeyChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChange.swift; sourceTree = "<group>"; };
 		3A887A47208B9C92000B3B9B /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		3A9E4416208E93B4000F24C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3AADBEC2205C94CF00BFDD50 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				3A4C28BF20A9F69E0065959D /* APIResponse.swift */,
 				3A4C28C120A9F69E0065959D /* TokenManager.swift */,
+				3A4C28C820AB07350065959D /* KeyChange.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				647FF395209F9589000A2B95 /* Extensions.swift in Sources */,
 				3A3DCF192055A358006D5E28 /* IntroductionViewController.swift in Sources */,
 				3A4C28C620A9FE4A0065959D /* DateHelper.swift in Sources */,
+				3A4C28C920AB07350065959D /* KeyChange.swift in Sources */,
 				3A3FFB94207AC130008BD69B /* BleList.swift in Sources */,
 				3AC740AD208D4AFC0057DBDB /* ShadowView.swift in Sources */,
 				3AF5637A20742CA700695CF9 /* TweeActiveTextField.swift in Sources */,

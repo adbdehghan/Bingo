@@ -134,10 +134,9 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
         inputData["currencyCharacters"] = currencyCharacter
         inputData["currencyCode"] = "364"
         inputData["transactionType"] = NSNumber(value: BBDeviceTransactionType.payment.hashValue)
-        
+        inputData["amount"] = "1206"
         inputData["cashbackAmount1"] = "1206"
         BBDeviceController.shared().setAmount(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
-        
         
     }
     
@@ -153,14 +152,16 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
             
             let currencyCharacter = NSArray(objects: NSNumber(value: (BBDeviceCurrencyCharacter.U.hashValue)),NSNumber(value: BBDeviceCurrencyCharacter.S.hashValue),NSNumber(value: BBDeviceCurrencyCharacter.D.hashValue))
             
-            inputData["currencyCharacters"] = currencyCharacter
-            inputData["currencyCode"] = "364"
-            inputData["transactionType"] = NSNumber(value: BBDeviceTransactionType.payment.hashValue)
-            
-            inputData["amount"] = "1206"
-            inputData["cashbackAmount1"] = "1206"
+//            inputData["currencyCharacters"] = currencyCharacter
+//            inputData["currencyCode"] = "364"
+//            inputData["transactionType"] = BBDeviceTransactionType.payment.hashValue
+            inputData["checkCardMode"] = BBDeviceCheckCardMode.swipe.hashValue
+//            inputData["amount"] = "1206"
+//            inputData["cashbackAmount1"] = "1206"
+            inputData["checkCardTimeout"] = "120"
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+//                BBDeviceController.shared().startEmv(withData: NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+                BBDeviceController.shared().checkCard(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
                 
             }
             
@@ -193,6 +194,12 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
         
         waitForCartAlert.dismiss(animated: true, completion: nil)
         
+        let track2 = cardData["encTrack2"]
+        let pan = cardData["maskedPAN"]
+        
+        print(track2)
+        print(pan)
+        
         var inputData = Dictionary<AnyHashable, Any>()
         
         inputData["pinEntryTimeout"] = "15"
@@ -218,6 +225,10 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     
     func onReturn(_ result: BBDevicePinEntryResult, data: [AnyHashable : Any]!) {
         waitForCartAlert.dismiss(animated: true, completion: nil)
+        
+        let pin = data["epb"]
+        print(pin)
+        
     }
     
     @IBAction func ShowBLEList(_ sender: Any) {
