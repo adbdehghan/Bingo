@@ -20,6 +20,8 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     var waitForAmountAlert:EMAlertController!
     let picker = TCPickerView()
     var spinner:JHSpinnerView!
+    var track2 = ""
+    var pin = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -194,7 +196,7 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
         
         waitForCartAlert.dismiss(animated: true, completion: nil)
         
-        let track2 = cardData["encTrack2"]
+        track2 = cardData["encTrack2"] as! String
         let pan = cardData["maskedPAN"]
         
         print(track2)
@@ -226,9 +228,36 @@ class HoldingViewController: UIViewController,BBDeviceControllerDelegate, BBDevi
     func onReturn(_ result: BBDevicePinEntryResult, data: [AnyHashable : Any]!) {
         waitForCartAlert.dismiss(animated: true, completion: nil)
         
-        let pin = data["epb"]
+        pin = data["epb"] as! String
         print(pin)
         
+        GetBalance()
+        
+    }
+    
+    func GetBalance()
+    {
+        let manager = DataManager()
+        manager.GetBalance(Pin: pin, Track2: track2, completion:  {(APIResponse)-> Void in
+            
+            let balance = APIResponse
+            
+            let alert = EMAlertController(title: "موجودی", message: (Double(balance.amount!)?.withCommas())! + " ریال")
+            alert.iconImage = UIImage(named: "pos")
+      
+            let confirm = EMAlertAction(title: "تایید", style: .normal) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    
+                }
+            }
+            
+            confirm.titleFont = UIFont(name: "IRANSans-Bold", size: 14)
+            confirm.titleColor = UIColor.init(red: 76/255, green: 182/255, blue: 172/255, alpha: 1)
+            alert.addAction(action: confirm)
+            self.present(alert, animated: true, completion: nil)
+            
+        })
+
     }
     
     @IBAction func ShowBLEList(_ sender: Any) {

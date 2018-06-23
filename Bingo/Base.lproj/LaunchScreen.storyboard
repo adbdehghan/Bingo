@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14111" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bingo_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Uai-aY-rZl">
-                                <rect key="frame" x="114.5" y="288.5" width="146" height="89"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teska-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Uai-aY-rZl">
+                                <rect key="frame" x="114.5" y="289" width="146" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Uai-aY-rZl" secondAttribute="height" multiplier="146:89" id="U1t-ch-9KH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.8901960784313725" green="0.44313725490196076" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.27334490418434143" green="0.57632821798324585" blue="0.80787581205368042" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uai-aY-rZl" secondAttribute="trailing" constant="114.5" id="NNK-wJ-aup"/>
                             <constraint firstItem="Uai-aY-rZl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="imC-eb-SgD"/>
@@ -42,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bingo_Icon" width="1000" height="1000"/>
+        <image name="Teska-Logo" width="1024" height="1024"/>
     </resources>
 </document>

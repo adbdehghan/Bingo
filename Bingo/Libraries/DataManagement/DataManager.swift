@@ -97,10 +97,10 @@ class DataManager: NSObject {
         }
     }
     
-    func GetBalance(Pin:String,Track2:String,completion: @escaping (APIResponse) -> Void) {
+    func GetBalance(Pin:String,Track2:String,completion: @escaping (Balance) -> Void) {
         
-        let params: [String: Any] = ["Pin":Pin,"SystemTraceNo":"","Track2":Track2,"LocalDate":DateHelper.GetLocalDate(),"LocalTime": DateHelper.GetLocalTime(),"CardAcqId":merchantId,"Amount":0,"TerminalId":terminalId ]
-        let response = APIResponse()
+        let params: [String: Any] = ["Pin":Pin,"SystemTraceNo":DateHelper.GenerateRandomDigits(6),"Track2":Track2,"LocalDate":DateHelper.GetLocalDate(),"LocalTime": DateHelper.GetLocalTime(),"CardAcqId":merchantId,"Amount":0,"TerminalId":terminalId ]
+        let response = Balance()
         
         Alamofire.request(baseURL+"MobBalance/GetBalance", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -115,6 +115,16 @@ class DataManager: NSObject {
                                 response.message = resData["message"] as? String
                                 response.result = true
                                 response.token = resData["token"] as? String
+                                response.amount = String(resData["Amount"] as! Int)
+                                response.terminalId = resData["TerminalId"] as? String
+                                response.cardAcqId = resData["CardAcqId"] as? String
+                                response.localDate = resData["LocalDate"] as? String
+                                response.localTime = resData["LocalTime"] as? String
+                                response.systemTraceNo = resData["SystemTraceNo"] as? String
+                                response.retrivalRefNo = resData["RetrivalRefNo"] as? String
+                                response.systemTraceNo = resData["SystemTraceNo"] as? String
+                                response.resCode = resData["ResCode"] as? String
+                                response.apiResCode = resData["ApiResCode"] as? String
                             }
                         }
                     default:

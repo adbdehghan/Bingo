@@ -52,6 +52,7 @@
 		3AC68AA8205472F500553184 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC68AA7205472F500553184 /* BuyViewController.swift */; };
 		3AC740AD208D4AFC0057DBDB /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC740AC208D4AFC0057DBDB /* ShadowView.swift */; };
 		3AC740AF208D4B0E0057DBDB /* TransactionResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC740AE208D4B0E0057DBDB /* TransactionResultView.xib */; };
+		3ADB15EE20DEA35300FE4FB7 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB15ED20DEA35300FE4FB7 /* Balance.swift */; };
 		3AF563722074277E00695CF9 /* EnterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF563712074277E00695CF9 /* EnterInfoViewController.swift */; };
 		3AF5637920742CA700695CF9 /* FontAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637420742CA700695CF9 /* FontAnimation.swift */; };
 		3AF5637A20742CA700695CF9 /* TweeActiveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5637520742CA700695CF9 /* TweeActiveTextField.swift */; };
@@ -136,7 +137,6 @@
 		3AC68A89205426F300553184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AC68A952054286D00553184 /* fa-IR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-IR"; path = "fa-IR.lproj/Main.strings"; sourceTree = "<group>"; };
 		3AC68A962054286D00553184 /* fa-IR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-IR"; path = "fa-IR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		3AC68A972054287B00553184 /* ar-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-IQ"; path = "ar-IQ.lproj/Main.strings"; sourceTree = "<group>"; };
 		3AC68A982054287B00553184 /* ar-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-IQ"; path = "ar-IQ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3AC68A992054593300553184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AC68A9D20545D6000553184 /* IRANSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IRANSans.ttf; sourceTree = "<group>"; };
@@ -148,6 +148,8 @@
 		3AC69E3F2055B0150033C5EA /* Bingo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bingo.entitlements; sourceTree = "<group>"; };
 		3AC740AC208D4AFC0057DBDB /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		3AC740AE208D4B0E0057DBDB /* TransactionResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionResultView.xib; sourceTree = "<group>"; };
+		3ADB15EC20DE979600FE4FB7 /* ar-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-IQ"; path = "ar-IQ.lproj/Main.strings"; sourceTree = "<group>"; };
+		3ADB15ED20DEA35300FE4FB7 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		3AF563712074277E00695CF9 /* EnterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterInfoViewController.swift; sourceTree = "<group>"; };
 		3AF5637420742CA700695CF9 /* FontAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAnimation.swift; sourceTree = "<group>"; };
 		3AF5637520742CA700695CF9 /* TweeActiveTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweeActiveTextField.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				3A4C28BF20A9F69E0065959D /* APIResponse.swift */,
 				3A4C28C120A9F69E0065959D /* TokenManager.swift */,
 				3A4C28C820AB07350065959D /* KeyChange.swift */,
+				3ADB15ED20DEA35300FE4FB7 /* Balance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				3A4C28C420A9F69E0065959D /* TokenManager.swift in Sources */,
 				3A4C28BD20A9F6670065959D /* DataManager.swift in Sources */,
 				3AB6FB41209674FC0005B7DB /* StartupViewController.swift in Sources */,
+				3ADB15EE20DEA35300FE4FB7 /* Balance.swift in Sources */,
 				3AC68A66205426F100553184 /* AppDelegate.swift in Sources */,
 				3A887A48208B9C92000B3B9B /* TabbarViewController.swift in Sources */,
 				3A4C28C220A9F69E0065959D /* APIResponse.swift in Sources */,
@@ -893,8 +897,8 @@
 			children = (
 				3AC68A6C205426F100553184 /* Base */,
 				3AC68A952054286D00553184 /* fa-IR */,
-				3AC68A972054287B00553184 /* ar-IQ */,
 				3A9E4416208E93B4000F24C3 /* en */,
+				3ADB15EC20DE979600FE4FB7 /* ar-IQ */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1063,7 +1067,7 @@
 					"\"ZAlertView\"",
 					"-lstdc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Arena.Bingo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Teska.pay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Bingo/Bingo_Bridging_Header_h.h;
 				SWIFT_VERSION = 4.0;
@@ -1107,7 +1111,7 @@
 					"\"ZAlertView\"",
 					"-lstdc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Arena.Bingo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Teska.pay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Bingo/Bingo_Bridging_Header_h.h;
 				SWIFT_VERSION = 4.0;
