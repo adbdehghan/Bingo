@@ -33,6 +33,8 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
     let picker = TCPickerView()
     var spinner:JHSpinnerView!
     var keyCharge = KeyChange()
+    var track2 = ""
+    var pin = ""
     
     var displayValue: Double {
         get {
@@ -273,12 +275,15 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         
         waitForCartAlert.dismiss(animated: true, completion: nil)
         
-            var inputData = Dictionary<AnyHashable, Any>()
-            
-            inputData["pinEntryTimeout"] = "15"
-//            inputData["orderID"] = "364"
-            
-            BBDeviceController.shared().startPinEntry(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
+        var inputData = Dictionary<AnyHashable, Any>()
+        
+        track2 = cardData["encTrack2"] as! String
+        let pan = cardData["maskedPAN"]
+        
+        inputData["pinEntryTimeout"] = "15"
+        //            inputData["orderID"] = "364"
+        
+        BBDeviceController.shared().startPinEntry(NSDictionary.init(dictionary: inputData) as! [AnyHashable : Any])
 
     }
     
@@ -312,7 +317,24 @@ class BuyViewController: UIViewController,BBDeviceControllerDelegate, BBDeviceOT
         basketSumLabel.text = "۰"
         basketCountLabel.text = "۰"
         
-        ShowRecipe()
+        pin = data["epb"] as! String
+        print(pin)
+        
+
+    }
+    
+    func GetBalance()
+    {
+        let manager = DataManager()
+        manager.GetBalance(Pin: pin, Track2: track2, completion:  {(APIResponse)-> Void in
+            
+            let balance = APIResponse
+            
+            ShowRecipe()
+      
+            
+        })
+        
     }
     
     func onRequestPrintData(_ index: Int32, isReprint: Bool) {

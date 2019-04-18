@@ -574,6 +574,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"fa-IR",
+				"ar-IQ",
 			);
 			mainGroup = 3AC68A59205426F100553184;
 			productRefGroup = 3AC68A63205426F100553184 /* Products */;

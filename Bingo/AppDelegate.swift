@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
         FirebaseApp.configure()
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        UIView.appearance().semanticContentAttribute = .forceLeftToRight
